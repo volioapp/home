@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volio – Share Your Next Flight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #060E1E;
+      --white: #ffffff;
+      --gray-bg: #F0F0F0;
+      --gray-text: #888;
+      --card-border: #e0e0e0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
+      background: #EEF2FA;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid #eee;
+      padding: 18px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+      color: var(--navy);
+    }
+
+    .btn-nav {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.8px;
+      padding: 11px 22px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      text-transform: uppercase;
+    }
+    .btn-nav:hover { opacity: 0.82; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 60px 60px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      height: 100%;
+      box-sizing: border-box;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;   /* clips the zoomed phone — nothing escapes into the banner */
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left { flex: 1; padding-left: 48px; }
+
+    .hero-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 96px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #444;
+      max-width: 420px;
+    }
+
+    .store-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1.5px solid #ccc;
+      background: #f5f5f5;
+      color: #aaa;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: not-allowed;
+      opacity: 0.6;
+      user-select: none;
+    }
+
+    .store-btn svg { width: 18px; height: 18px; fill: #aaa; flex-shrink: 0; }
+    .store-btn-label { display: flex; flex-direction: column; line-height: 1.2; }
+    .store-btn-sub { font-size: 10px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px; }
+    .store-btn-name { font-size: 14px; font-weight: 700; }
+
+    .hero-card {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 40px 48px;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex-shrink: 0;
+      margin-top: 0;
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-card p {
+      font-size: 17px;
+      line-height: 1.7;
+      opacity: 0.88;
+      max-width: 520px;
+    }
+
+    .btn-beta {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn-beta:hover { opacity: 0.85; }
+
+    /* ── PHONE MOCKUP ── */
+    .hero-right {
+      flex: 0 0 260px;
+      display: flex;
+      justify-content: center;
+      padding-top: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone-img {
+      width: 300px;
+      display: block;
+      transform: scale(0.55) rotate(-6deg);
+      transition: transform 0.8s cubic-bezier(0.34, 1.5, 0.64, 1), filter 0.8s ease;
+      filter: blur(2px) brightness(0.7);
+      transform-origin: center center;
+      mix-blend-mode: multiply;
+    }
+    .phone-img.zoomed {
+      transform: scale(1) rotate(0deg);
+      filter: blur(0px) brightness(1);
+    }
+
+    .phone-notch {
+      width: 80px;
+      height: 22px;
+      background: var(--navy);
+      border-radius: 0 0 14px 14px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .phone-screen {
+      background: #f5f7fa;
+      flex: 1;
+      margin: 0 4px 4px;
+      border-radius: 0 0 34px 34px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-topbar {
+      background: var(--white);
+      padding: 8px 12px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .phone-feed { flex: 1; overflow: hidden; padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+
+    .feed-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 8px;
+      font-size: 9px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .feed-user {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .feed-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--navy);
+    }
+
+    .feed-name { font-weight: 700; color: var(--navy); font-size: 9px; }
+    .feed-sub { color: #888; font-size: 8px; }
+
+    .feed-map {
+      height: 70px;
+      background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 40%, #b3e5fc 100%);
+      border-radius: 7px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+
+    .map-route {
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: var(--navy);
+      opacity: 0.6;
+      transform: rotate(-8deg);
+    }
+    .map-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--navy);
+    }
+    .map-dot.start { top: 44%; left: 13%; }
+    .map-dot.end { top: 52%; right: 13%; }
+
+    .feed-stats {
+      display: flex;
+      gap: 8px;
+      font-size: 8px;
+      color: #555;
+      font-weight: 600;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .how-map-bg {
+      position: absolute;
+      inset: -20px;          /* extra margin so blur edges don't show */
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+      object-fit: cover;
+      object-position: center;
+      filter: blur(3px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .how-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .how {
+      position: relative;
+      z-index: 2;
+      padding: 80px 60px;
+      text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 36px;
+      color: var(--navy);
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .step-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: #555;
+      text-align: center;
+    }
+
+    /* ── TEAM ── */
+    .team {
+      background: #EEF2FA;
+      padding: 72px 60px;
+      text-align: center;
+    }
+
+    .team-inner { max-width: 900px; margin: 0 auto; }
+
+    .team .section-title { margin-bottom: 48px; }
+
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .member {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      text-align: center;
+    }
+
+    .member-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #ccc;
+      flex-shrink: 0;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 3px solid var(--navy);
+    }
+
+    .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .member-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .member-role {
+      font-size: 12px;
+      font-weight: 600;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+    }
+
+    .member-bio {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .member-social {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    .member-social a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+      border-radius: 50px;
+      padding: 6px 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .member-social a:hover {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .member-social a svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* ── MISSION ── */
+    .mission {
+      padding: 80px 60px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .mission .section-title { margin-bottom: 28px; }
+
+    .mission p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: #444;
+      font-style: italic;
+    }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: var(--navy);
+      padding: 36px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .newsletter-text {
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 13px 20px;
+      border-radius: 50px;
+      border: none;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      color: var(--navy);
+    }
+
+    .btn-subscribe {
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 13px 24px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .btn-subscribe:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 24px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+    }
+
+    .footer-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      color: var(--navy);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: var(--gray-text);
+    }
+
+    /* ── WAITLIST COUNTER ── */
+    .waitlist-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .waitlist-avatars {
+      display: flex;
+    }
+    .waitlist-avatars span {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid #1a2d5a;
+      background: #1a3a6a;
+      margin-left: -8px;
+      display: block;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .waitlist-avatars span:first-child { margin-left: 0; }
+    .waitlist-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.4;
+    }
+    .waitlist-text strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 14px 20px;
+      background: rgba(6, 14, 30, 0.97);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.34, 1.3, 0.64, 1);
+    }
+    .sticky-cta.visible {
+      transform: translateY(0);
+    }
+    .sticky-cta-btn {
+      width: 100%;
+      background: var(--white);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 15px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.2s;
+    }
+    .sticky-cta-btn:hover { opacity: 0.88; }
+
+    @media (max-width: 768px) {
+      .sticky-cta { display: block; }
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 14, 30, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 48px 40px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      transform: scale(0.9) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+      position: relative;
+    }
+    .modal-overlay.open .modal {
+      transform: scale(1) translateY(0);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: #aaa;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--navy); }
+    .modal-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+    .modal-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .modal-sub {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+    .modal-input {
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 50px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--navy);
+      outline: none;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+    .modal-input:focus { border-color: var(--navy); }
+    .modal-submit {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .modal-submit:hover { opacity: 0.85; }
+
+    /* success state */
+    .modal-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .modal-success.show { display: flex; }
+    .modal-form.hide { display: none; }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .success-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      color: var(--navy);
+    }
+    .success-sub {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── PHONE SCALE WRAPPER ── */
+    .phone-scale-wrapper {
+      transform-origin: center top;
+      will-change: transform;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* staggered delays for step cards and members */
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.34s; }
+
+    /* slide in from left / right for hero columns */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal-left.visible,
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* fade-scale for section titles */
+    .reveal-title {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-title.visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    /* disable sticky hero on mobile */
+    @media (max-width: 768px) {
+      #heroWrapper { height: auto !important; }
+      #heroSection { position: relative !important; height: auto !important; }
+      .hero { height: auto !important; justify-content: flex-start !important; padding-bottom: 80px !important; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .hero { padding: 40px 24px 0; }
+      .hero-top { flex-direction: column; }
+      .hero-left { padding-left: 0; }
+      .hero-right { width: 100%; justify-content: center; padding: 16px 0 0; }
+      .hero-headline { font-size: 52px; }
+      .hero-card { padding: 32px 24px; }
+      .how { padding: 60px 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .team { padding: 60px 24px; }
+      .team-members { grid-template-columns: 1fr; }
+      .mission { padding: 60px 24px; }
+      .newsletter { flex-direction: column; align-items: flex-start; padding: 36px 24px; }
+      .newsletter-form { max-width: 100%; width: 100%; }
+      footer { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <img src="logo.png" alt="Volio logo">
+      <span class="nav-logo-text">volio</span>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <button id="langToggle" style="background:none;border:1.5px solid var(--navy);color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;border-radius:50px;cursor:pointer;transition:all 0.2s;">🇮🇹 IT</button>
+      <button class="btn-nav" disabled style="opacity:0.6;cursor:default;" data-i18n="nav-cta">Coming Soon</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div id="heroWrapper" style="height: 220vh; position: relative;">
+  <section style="position: sticky; top: 0; height: 100vh; background: #EEF2FA; overflow: hidden;" id="heroSection">
+    <div class="hero">
+
+      <!-- Top row: headline + phone -->
+      <div class="hero-top">
+        <div class="hero-left">
+          <h1 class="hero-headline" data-i18n="hero-title">Share Your<br>Next Flight</h1>
+          <p class="hero-desc" data-i18n="hero-desc">A Social Network to connect with your friends and share your last flight! Show the others your last adventure in the sky in the Volio App.</p>
+          <div class="store-buttons">
+            <div class="store-btn">
+              <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div class="store-btn-label">
+                <span class="store-btn-sub">Coming soon on</span>
+                <span class="store-btn-name">App Store</span>
+              </div>
+            </div>
+            <div class="store-btn">
+              <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.28.15.59.19.9.12l12.18-7.04-2.58-2.58-10.5 9.5zm-1.12-20.9C2.03 3.1 2 3.35 2 3.61v16.78c0 .26.03.51.06.76l10.79-9.77-10.79-9.32zM20.12 9.9l-2.55-1.47-2.88 2.6 2.88 2.6 2.58-1.49c.73-.43.73-1.81-.03-2.24zM4.08.24C3.77.17 3.46.21 3.18.36l10.5 9.5 2.58-2.58L4.08.24z"/></svg>
+              <div class="store-btn-label">
+                <span class="store-btn-sub">Coming soon on</span>
+                <span class="store-btn-name">Google Play</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="phone-scale-wrapper">
+            <img src="phone-mockup.png" alt="Volio app" class="phone-img zoomed" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: centered navy CTA card -->
+      <div class="hero-card reveal">
+        <p data-i18n="hero-beta-desc">We are now looking for beta testers. Interested? Write us a message on LinkedIn — you will be added to the list.</p>
+        <button class="btn-beta" style="font-size:15px;padding:14px 36px;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;" data-i18n="hero-beta-btn" onclick="window.open('https://www.linkedin.com/company/volioapp/','_blank')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          Contact via LinkedIn
+        </button>
+      </div>
+
+    </div>
+  </section>
+  </div><!-- /heroWrapper -->
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section">
+    <img class="how-map-bg" src="map-bg.png" alt="" aria-hidden="true">
+    <div class="how">
+      <h2 class="section-title reveal-title" data-i18n="how-title">How does it work?</h2>
+      <div class="steps">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <div class="step-title" data-i18n="step1-title">Fly</div>
+          <p class="step-desc" data-i18n="step1-desc">Via the ADS-B implementation, after your flight just look up your registration number!</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <div class="step-title" data-i18n="step2-title">Share</div>
+          <p class="step-desc" data-i18n="step2-desc">On the feed all other users can see the activity. Add a title, a comment and show it to the others!</p>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <div class="step-title" data-i18n="step3-title">Inspire</div>
+          <p class="step-desc" data-i18n="step3-desc">Let your friends and colleagues know about your last flight. It could help them plan their next adventure!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="team-inner">
+      <h2 class="section-title reveal-title" data-i18n="team-title">Built for pilots by enthusiasts</h2>
+      <div class="team-members">
+
+        <!-- Issak Zanini -->
+        <div class="member reveal reveal-delay-1">
+          <div class="member-avatar">
+            <img src="iz.jpg" alt="Issak Zanini">
+          </div>
+          <div class="member-name">Issak Zanini</div>
+          <div class="member-role" data-i18n="member1-role">Commercial Pilot &amp; Aerospace Engineer</div>
+          <p class="member-bio" data-i18n="member1-bio">From a young age, working in aviation has been a dream. Curiosity, determination, and an open mind have shaped my journey, pushing me to explore new challenges and expand my knowledge. I am driven by the idea of being part of an industry that not only moves people, but also inspires innovation and global connection.</p>
+          <div class="member-social">
+            <a href="https://www.linkedin.com/in/issak-zanini-957897168/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.554v-5.569c0-1.328-.025-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.354V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/issak_zanini/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Gavriel Barlevi -->
+        <div class="member reveal reveal-delay-2">
+          <div class="member-avatar">
+            <img src="gb.jpg" alt="Gavriel Barlevi">
+          </div>
+          <div class="member-name">Gavriel Barlevi</div>
+          <div class="member-role" data-i18n="member2-role">Complex System Engineering &amp; Management</div>
+          <p class="member-bio" data-i18n="member2-bio">Entrepreneurship has always been the mindset. Driven by precision, discipline, and a strong engineering mindset, the focus is on navigating complexity, optimizing systems, and turning challenges into efficient, scalable solutions.</p>
+          <div class="member-social">
+            <a href="https://www.linkedin.com/in/gavriel-barlevi-4222b6241/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.554v-5.569c0-1.328-.025-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.354V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.284zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section style="background: #fff;">
+    <div class="mission">
+      <h2 class="section-title reveal-title" data-i18n="mission-title">Mission</h2>
+      <p class="reveal" data-i18n="mission-desc">"Volio was born from a simple idea — every flight has a story worth sharing. Whether you're a student pilot on your first solo or a seasoned captain crossing the Atlantic, Volio gives you the tools to log, share, and inspire the aviation community around you."</p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <span class="newsletter-text" data-i18n="newsletter-text">Join the waitlist</span>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" data-i18n-placeholder="newsletter-placeholder" placeholder="email address" />
+      <button class="btn-subscribe" id="newsletterBtn" disabled style="opacity:0.6;cursor:default;" data-i18n="newsletter-btn">Coming Soon</button>
+    </div>
+  </section>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <button class="sticky-cta-btn" disabled style="opacity:0.6;cursor:default;" data-i18n="sticky-btn">✈️ Coming Soon</button>
+  </div>
+
+  <!-- EMAIL MODAL -->
+  <div class="modal-overlay" id="emailModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+
+      <!-- Form state -->
+      <div class="modal-form" id="modalForm">
+        <div class="modal-icon">✈️</div>
+        <div class="modal-title" id="modalTitle">Join the Release</div>
+        <p class="modal-sub" id="modalSub">Be the first to know when Volio launches.<br>No spam, ever.</p>
+        <input class="modal-input" id="modalEmail" type="email" placeholder="your@email.com" />
+        <button class="modal-submit" id="modalSubmit">Count me in</button>
+      </div>
+
+      <!-- Success state -->
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">✓</div>
+        <div class="success-title">You're on the list!</div>
+        <p class="success-sub">We'll be in touch as soon as Volio is ready for takeoff. 🛫</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="Volio logo">
+      <span class="footer-logo-text">volio</span>
+    </div>
+    <span class="footer-copy">Copyright © 2026</span>
+  </footer>
+
+  <script>
+    // Trigger hero animations immediately on load
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
+          el.classList.add('visible');
+        });
+      }, 100);
+    });
+
+    // Intersection Observer — re-triggers every time elements enter/leave view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal, .reveal-title').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ── TRANSLATIONS ──
+    const translations = {
+      en: {
+        'nav-cta': 'Coming Soon',
+        'hero-title': 'Share Your<br>Next Flight',
+        'hero-desc': 'A Social Network to connect with your friends and share your last flight! Show the others your last adventure in the sky in the Volio App.',
+        'hero-beta-desc': 'We are now looking for beta testers. Interested? Write us a message on LinkedIn — you will be added to the list.',
+        'hero-beta-btn': 'Contact via LinkedIn',
+        'waitlist-pilots': 'pilots',
+        'waitlist-text': 'already on the waitlist',
+        'how-title': 'How does it work?',
+        'step1-title': 'Fly',
+        'step1-desc': 'Via the ADS-B implementation, after your flight just look up your registration number!',
+        'step2-title': 'Share',
+        'step2-desc': 'On the feed all other users can see the activity. Add a title, a comment and show it to the others!',
+        'step3-title': 'Inspire',
+        'step3-desc': 'Let your friends and colleagues know about your last flight. It could help them plan their next adventure!',
+        'team-title': 'Built for pilots by enthusiasts',
+        'member1-role': 'Commercial Pilot &amp; Aerospace Engineer',
+        'member1-bio': 'From a young age, working in aviation has been a dream. Curiosity, determination, and an open mind have shaped my journey, pushing me to explore new challenges and expand my knowledge. I am driven by the idea of being part of an industry that not only moves people, but also inspires innovation and global connection.',
+        'member2-role': 'Complex System Engineering &amp; Management',
+        'member2-bio': 'Entrepreneurship has always been the mindset. Driven by precision, discipline, and a strong engineering mindset, the focus is on navigating complexity, optimizing systems, and turning challenges into efficient, scalable solutions.',
+        'mission-title': 'Mission',
+        'mission-desc': '"Volio was born from a simple idea — every flight has a story worth sharing. Whether you\'re a student pilot on your first solo or a seasoned captain crossing the Atlantic, Volio gives you the tools to log, share, and inspire the aviation community around you."',
+        'newsletter-text': 'Join the waitlist',
+        'newsletter-placeholder': 'email address',
+        'newsletter-btn': 'Coming Soon',
+        'modal-title': 'Join the Release',
+        'modal-sub': 'Be the first to know when Volio launches.<br>No spam, ever.',
+        'modal-submit': 'Count me in',
+        'success-title': "You're on the list!",
+        'success-sub': "We'll be in touch as soon as Volio is ready for takeoff. 🛫",
+        'sticky-btn': '✈️ Coming Soon',
+        'lang-btn': '🇮🇹 IT'
+      },
+      it: {
+        'nav-cta': 'Prossimamente',
+        'hero-title': 'Condividi il tuo<br>Prossimo Volo',
+        'hero-desc': 'Un Social Network per connetterti con i tuoi amici e condividere il tuo ultimo volo! Mostra agli altri la tua ultima avventura nel cielo sull\'App Volio.',
+        'hero-beta-desc': 'Stiamo cercando beta tester. Sei interessato? Scrivici un messaggio su LinkedIn — verrai aggiunto alla lista.',
+        'hero-beta-btn': 'Contattaci su LinkedIn',
+        'waitlist-pilots': 'piloti',
+        'waitlist-text': 'già in lista d\'attesa',
+        'how-title': 'Come funziona?',
+        'step1-title': 'Vola',
+        'step1-desc': 'Tramite l\'implementazione ADS-B, dopo il tuo volo cerca semplicemente il tuo numero di registrazione!',
+        'step2-title': 'Condividi',
+        'step2-desc': 'Nel feed tutti gli altri utenti possono vedere l\'attività. Aggiungi un titolo, un commento e mostralo agli altri!',
+        'step3-title': 'Ispira',
+        'step3-desc': 'Fai sapere ai tuoi amici e colleghi del tuo ultimo volo. Potrebbe aiutarli a pianificare la prossima avventura!',
+        'team-title': 'Fatto per piloti da appassionati',
+        'member1-role': 'Pilota Commerciale e Ingegnere Aerospaziale',
+        'member1-bio': 'Fin da piccolo, lavorare nell\'aviazione è stato un sogno. Curiosità, determinazione e apertura mentale hanno plasmato il mio percorso, spingendomi ad esplorare nuove sfide e ad ampliare le mie conoscenze. Sono mosso dall\'idea di far parte di un settore che non solo muove le persone, ma ispira anche innovazione e connessione globale.',
+        'member2-role': 'Ingegneria e Gestione di Sistemi Complessi',
+        'member2-bio': 'L\'imprenditorialità è sempre stata la mentalità di riferimento. Guidato da precisione, disciplina e una solida cultura ingegneristica, il focus è navigare la complessità, ottimizzare i sistemi e trasformare le sfide in soluzioni efficienti e scalabili.',
+        'mission-title': 'Missione',
+        'mission-desc': '"Volio è nato da un\'idea semplice — ogni volo ha una storia che vale la pena condividere. Che tu sia un pilota alle prime armi o un comandante esperto che attraversa l\'Atlantico, Volio ti dà gli strumenti per registrare, condividere e ispirare la comunità aeronautica intorno a te."',
+        'newsletter-text': 'Unisciti alla lista d\'attesa',
+        'newsletter-placeholder': 'indirizzo email',
+        'newsletter-btn': 'Prossimamente',
+        'modal-title': 'Unisciti al lancio',
+        'modal-sub': 'Sii il primo a sapere quando Volio sarà disponibile.<br>Niente spam, promesso.',
+        'modal-submit': 'Sono dentro',
+        'success-title': 'Sei in lista!',
+        'success-sub': 'Ti contatteremo non appena Volio sarà pronto al decollo. 🛫',
+        'sticky-btn': '✈️ Prossimamente',
+        'lang-btn': '🇬🇧 EN'
+      }
+    };
+
+    let currentLang = 'en';
+
+    function applyTranslations(lang) {
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) el.placeholder = t[key];
+      });
+      // Update modal text directly
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSub = document.getElementById('modalSub');
+      const modalSubmitBtn = document.getElementById('modalSubmit');
+      const successTitle = document.querySelector('.success-title');
+      const successSub = document.querySelector('.success-sub');
+      const stickyCta = document.querySelector('.sticky-cta-btn');
+      if (modalTitle) modalTitle.innerHTML = t['modal-title'];
+      if (modalSub) modalSub.innerHTML = t['modal-sub'];
+      if (modalSubmitBtn) modalSubmitBtn.textContent = t['modal-submit'];
+      if (successTitle) successTitle.textContent = t['success-title'];
+      if (successSub) successSub.textContent = t['success-sub'];
+      if (stickyCta) stickyCta.innerHTML = t['sticky-btn'];
+      document.getElementById('langToggle').textContent = t['lang-btn'];
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'it' : 'en';
+      applyTranslations(currentLang);
+    });
+
+    // ── NEWSLETTER INLINE SUBMIT ──
+    const newsletterBtn = document.getElementById('newsletterBtn');
+    const newsletterInput = document.querySelector('.newsletter-input');
+    const newsletterForm = document.querySelector('.newsletter-form');
+    const newsletterSection = document.querySelector('.newsletter');
+
+    newsletterBtn.addEventListener('click', () => {
+      const email = newsletterInput.value.trim();
+      if (!email || !email.includes('@')) {
+        newsletterInput.style.outline = '2px solid #e74c3c';
+        newsletterInput.focus();
+        setTimeout(() => newsletterInput.style.outline = '', 1500);
+        return;
+      }
+      // Store email
+      const emails = JSON.parse(localStorage.getItem('volio_emails') || '[]');
+      emails.push({ email, date: new Date().toISOString() });
+      localStorage.setItem('volio_emails', JSON.stringify(emails));
+      // Show inline success
+      newsletterForm.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;You're on the list!</span>`;
+    });
+
+    newsletterInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') newsletterBtn.click();
+    });
+
+    // ── STICKY MOBILE CTA ──
+    const stickyCta = document.getElementById('stickyCta');
+    const heroSection = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      const heroBounds = heroSection.getBoundingClientRect();
+      if (heroBounds.bottom < 0) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+
+    // ── MODAL LOGIC ──
+    const modal = document.getElementById('emailModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalSubmit = document.getElementById('modalSubmit');
+    const modalEmail = document.getElementById('modalEmail');
+    const modalForm = document.getElementById('modalForm');
+    const modalSuccess = document.getElementById('modalSuccess');
+
+    function openModal() {
+      // reset to form state each time
+      modalForm.classList.remove('hide');
+      modalSuccess.classList.remove('show');
+      modalEmail.value = '';
+      modal.classList.add('open');
+      setTimeout(() => modalEmail.focus(), 350);
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+    }
+
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', openModal);
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    modalSubmit.addEventListener('click', () => {
+      const email = modalEmail.value.trim();
+      if (!email || !email.includes('@')) {
+        modalEmail.style.borderColor = '#e74c3c';
+        modalEmail.focus();
+        setTimeout(() => modalEmail.style.borderColor = '', 1500);
+        return;
+      }
+      // Store email locally (swap for real API call later)
+      const emails = JSON.parse(localStorage.getItem('volio_emails') || '[]');
+      emails.push({ email, date: new Date().toISOString() });
+      localStorage.setItem('volio_emails', JSON.stringify(emails));
+
+      // Show success
+      modalForm.classList.add('hide');
+      modalSuccess.classList.add('show');
+      setTimeout(closeModal, 3000);
+    });
+
+    // Allow Enter key to submit
+    modalEmail.addEventListener('keydown', e => {
+      if (e.key === 'Enter') modalSubmit.click();
+    });
+
+    // ── SCROLL-DRIVEN HERO ANIMATION ──
+    // Hero is sticky inside #heroWrapper (220vh).
+    // Phone starts BIG and already in position — bottom hidden behind the blue banner.
+    // Sequence:
+    //   Phase 1 (0→42%)  phone zooms out → full device revealed above the banner
+    //   Phase 2 (36→72%) phone slides to the RIGHT
+    //   Phase 3 (64→100%) headline + text fade in from the left
+    (function () {
+      const heroWrapper  = document.getElementById('heroWrapper');
+      const heroLeft     = document.querySelector('.hero-left');
+      const heroRight    = document.querySelector('.hero-right');
+      const phoneWrapper = document.querySelector('.phone-scale-wrapper');
+      if (!heroLeft || !heroRight || !phoneWrapper || !heroWrapper) return;
+
+      const SCALE_START = 2.2;
+      const GAP = 48;
+
+      let phoneOffset = 0;
+      let isMobile = window.innerWidth <= 768;
+
+      function computeOffset() {
+        isMobile    = window.innerWidth <= 768;
+        phoneOffset = (heroLeft.offsetWidth + GAP) / 2;
+      }
+
+      function eo(t, power) {
+        const tc = Math.min(Math.max(t, 0), 1);
+        return 1 - Math.pow(1 - tc, power);
+      }
+
+      function getP() {
+        const rect  = heroWrapper.getBoundingClientRect();
+        const total = heroWrapper.offsetHeight - window.innerHeight;
+        return Math.min(Math.max(-rect.top / total, 0), 1);
+      }
+
+      function applyAnim() {
+        if (isMobile) {
+          heroLeft.style.opacity       = '1';
+          heroLeft.style.transform     = 'none';
+          heroRight.style.transform    = 'none';
+          phoneWrapper.style.transform = 'none';
+          return;
+        }
+
+        const p = getP();
+
+        // Phase 1 – zoom out, banner reveals the full phone from bottom up
+        const scale = SCALE_START - (SCALE_START - 1) * eo(p / 0.42, 2);
+
+        // Phase 2 – phone slides to the right
+        const xVal  = -phoneOffset * (1 - eo((p - 0.36) / 0.36, 2));
+
+        // Phase 3 – text fades in from the left
+        const textE = eo((p - 0.64) / 0.36, 2);
+
+        heroRight.style.transform    = `translateX(${xVal}px)`;
+        phoneWrapper.style.transform = `scale(${scale})`;
+        heroLeft.style.opacity       = String(textE);
+        heroLeft.style.transform     = `translateX(${-55 * (1 - textE)}px)`;
+      }
+
+      // ── initial state: phone centred, zoomed in, already in position ──
+      heroLeft.style.opacity        = '0';
+      heroLeft.style.transform      = 'translateX(-55px)';
+      heroLeft.style.willChange     = 'opacity, transform';
+      heroRight.style.willChange    = 'transform';
+      phoneWrapper.style.willChange = 'transform';
+      phoneWrapper.style.transform  = `scale(${SCALE_START})`;
+
+      function init() {
+        computeOffset();
+        // Centre the phone horizontally at the start
+        heroRight.style.transform = `translateX(${-phoneOffset}px)`;
+        applyAnim();
+      }
+
+      window.addEventListener('scroll', applyAnim, { passive: true });
+      window.addEventListener('resize', init);
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        requestAnimationFrame(init);
+      }
+    })();
+  </script>
+
+</body>
+</html>
