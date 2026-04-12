@@ -601,6 +601,51 @@
       color: var(--gray-text);
     }
 
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--gray-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--navy); }
+
+    /* ── MODAL CONSENT ── */
+    .modal-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .modal-consent input[type="checkbox"] {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      accent-color: var(--navy);
+      cursor: pointer;
+    }
+
+    .modal-consent label {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+
+    .modal-consent label a {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
     /* ── WAITLIST COUNTER ── */
     .waitlist-counter {
       display: flex;
@@ -1043,6 +1088,10 @@
         <div class="modal-title" id="modalTitle">Join the Release</div>
         <p class="modal-sub" id="modalSub">Be the first to know when Volio launches.<br>No spam, ever.</p>
         <input class="modal-input" id="modalEmail" type="email" placeholder="your@email.com" />
+        <div class="modal-consent">
+          <input type="checkbox" id="modalConsent">
+          <label for="modalConsent" id="modalConsentLabel">I have read and agree to the <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> and <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Terms &amp; Conditions</a>.</label>
+        </div>
         <button class="modal-submit" id="modalSubmit">Count me in</button>
       </div>
 
@@ -1060,6 +1109,10 @@
     <div class="footer-logo">
       <img src="logo.png" alt="Volio logo">
       <span class="footer-logo-text">volio</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" data-i18n="footer-privacy">Privacy Policy</a>
+      <a href="https://volioapp.github.io/termsandconditions/" target="_blank" rel="noopener" data-i18n="footer-terms">Terms &amp; Conditions</a>
     </div>
     <span class="footer-copy">Copyright © 2026</span>
   </footer>
@@ -1122,6 +1175,9 @@
         'success-title': "You're on the list!",
         'success-sub': "We'll be in touch as soon as Volio is ready for takeoff. 🛫",
         'sticky-btn': '✈️ Coming Soon',
+        'modal-consent': 'I have read and agree to the <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> and <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Terms &amp; Conditions</a>.',
+        'footer-privacy': 'Privacy Policy',
+        'footer-terms': 'Terms &amp; Conditions',
         'lang-btn': '🇮🇹 IT'
       },
       it: {
@@ -1155,6 +1211,9 @@
         'success-title': 'Sei in lista!',
         'success-sub': 'Ti contatteremo non appena Volio sarà pronto al decollo. 🛫',
         'sticky-btn': '✈️ Prossimamente',
+        'modal-consent': 'Ho letto e accetto la <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> e i <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Termini e Condizioni</a>.',
+        'footer-privacy': 'Privacy Policy',
+        'footer-terms': 'Termini e Condizioni',
         'lang-btn': '🇬🇧 EN'
       }
     };
@@ -1184,6 +1243,8 @@
       if (successTitle) successTitle.textContent = t['success-title'];
       if (successSub) successSub.textContent = t['success-sub'];
       if (stickyCta) stickyCta.innerHTML = t['sticky-btn'];
+      const consentLabel = document.getElementById('modalConsentLabel');
+      if (consentLabel) consentLabel.innerHTML = t['modal-consent'];
       document.getElementById('langToggle').textContent = t['lang-btn'];
     }
 
@@ -1260,12 +1321,20 @@
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+    const modalConsent = document.getElementById('modalConsent');
+
     modalSubmit.addEventListener('click', () => {
       const email = modalEmail.value.trim();
       if (!email || !email.includes('@')) {
         modalEmail.style.borderColor = '#e74c3c';
         modalEmail.focus();
         setTimeout(() => modalEmail.style.borderColor = '', 1500);
+        return;
+      }
+      if (!modalConsent.checked) {
+        const label = document.getElementById('modalConsentLabel');
+        label.style.color = '#e74c3c';
+        setTimeout(() => label.style.color = '', 1500);
         return;
       }
       // Store email locally (swap for real API call later)
