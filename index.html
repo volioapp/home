@@ -9,7 +9,8 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #060E1E;
+      --navy: #050e1e;
+      --blue: #1d419f;
       --white: #ffffff;
       --gray-bg: #F0F0F0;
       --gray-text: #888;
@@ -21,7 +22,7 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--navy);
-      background: #EEF2FA;
+      background: #e8edf8;
     }
 
     /* ── NAV ── */
@@ -60,7 +61,7 @@
     }
 
     .btn-nav {
-      background: var(--navy);
+      background: var(--blue);
       color: var(--white);
       font-family: 'Inter', sans-serif;
       font-weight: 600;
@@ -197,7 +198,7 @@
     }
 
     .phone-img {
-      width: 300px;
+      width: 260px;
       display: block;
       transform: scale(0.55) rotate(-6deg);
       transition: transform 0.8s cubic-bezier(0.34, 1.5, 0.64, 1), filter 0.8s ease;
@@ -348,6 +349,20 @@
       font-size: 36px;
       color: var(--navy);
       margin-bottom: 48px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--blue);
     }
 
     .steps {
@@ -373,7 +388,7 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: var(--navy);
+      background: var(--blue);
       color: var(--white);
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
@@ -400,7 +415,7 @@
 
     /* ── TEAM ── */
     .team {
-      background: #EEF2FA;
+      background: #e8edf8;
       padding: 72px 60px;
       text-align: center;
     }
@@ -435,7 +450,7 @@
       flex-shrink: 0;
       overflow: hidden;
       margin-bottom: 16px;
-      border: 3px solid var(--navy);
+      border: 3px solid var(--blue);
     }
 
     .member-avatar img {
@@ -521,7 +536,7 @@
 
     /* ── NEWSLETTER ── */
     .newsletter {
-      background: var(--navy);
+      background: var(--blue);
       padding: 36px 60px;
       display: flex;
       align-items: center;
@@ -894,13 +909,13 @@
     </div>
     <div style="display:flex;gap:12px;align-items:center;">
       <button id="langToggle" style="background:none;border:1.5px solid var(--navy);color:var(--navy);font-family:'Inter',sans-serif;font-weight:600;font-size:13px;padding:9px 18px;border-radius:50px;cursor:pointer;transition:all 0.2s;"></button>
-      <button class="btn-nav" disabled style="opacity:0.6;cursor:default;" data-i18n="nav-cta">Coming Soon</button>
+      <button class="btn-nav open-modal" data-i18n="nav-cta">Join Now</button>
     </div>
   </nav>
 
   <!-- HERO -->
   <div id="heroWrapper" style="height: 220vh; position: relative;">
-  <section style="position: sticky; top: 0; height: 100vh; background: #EEF2FA; overflow: hidden;" id="heroSection">
+  <section style="position: sticky; top: 0; height: 100vh; background: #e8edf8; overflow: hidden;" id="heroSection">
     <div class="hero">
 
       <!-- Top row: headline + phone -->
@@ -912,14 +927,14 @@
             <div class="store-btn">
               <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
               <div class="store-btn-label">
-                <span class="store-btn-sub">Coming soon on</span>
+                <span class="store-btn-sub">Available soon on</span>
                 <span class="store-btn-name">App Store</span>
               </div>
             </div>
             <div class="store-btn">
               <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.28.15.59.19.9.12l12.18-7.04-2.58-2.58-10.5 9.5zm-1.12-20.9C2.03 3.1 2 3.35 2 3.61v16.78c0 .26.03.51.06.76l10.79-9.77-10.79-9.32zM20.12 9.9l-2.55-1.47-2.88 2.6 2.88 2.6 2.58-1.49c.73-.43.73-1.81-.03-2.24zM4.08.24C3.77.17 3.46.21 3.18.36l10.5 9.5 2.58-2.58L4.08.24z"/></svg>
               <div class="store-btn-label">
-                <span class="store-btn-sub">Coming soon on</span>
+                <span class="store-btn-sub">Available soon on</span>
                 <span class="store-btn-name">Google Play</span>
               </div>
             </div>
@@ -1029,7 +1044,7 @@
     <span class="newsletter-text" data-i18n="newsletter-text">Join the waitlist</span>
     <div class="newsletter-form">
       <input class="newsletter-input" type="email" data-i18n-placeholder="newsletter-placeholder" placeholder="email address" />
-      <button class="btn-subscribe" id="newsletterBtn" disabled style="opacity:0.6;cursor:default;" data-i18n="newsletter-btn">Coming Soon</button>
+      <button class="btn-subscribe" id="newsletterBtn" data-i18n="newsletter-btn">Join</button>
     </div>
   </section>
 
@@ -1102,7 +1117,7 @@
     // ── TRANSLATIONS ──
     const translations = {
       en: {
-        'nav-cta': 'Coming Soon',
+        'nav-cta': 'Join Now',
         'hero-title': 'Share Your<br>Next Flight',
         'hero-desc': 'A Social Network to connect with your friends and share your last flight! Show the others your last adventure in the sky in the Volio App.',
         'hero-beta-desc': 'We are now looking for beta testers. Interested? Write us a message on LinkedIn — you will be added to the list.',
@@ -1125,20 +1140,20 @@
         'mission-desc': '"Volio was born from a simple idea — every flight has a story worth sharing. Whether you\'re a student pilot on your first solo or a seasoned captain crossing the Atlantic, Volio gives you the tools to log, share, and inspire the aviation community around you."',
         'newsletter-text': 'Join the waitlist',
         'newsletter-placeholder': 'email address',
-        'newsletter-btn': 'Coming Soon',
+        'newsletter-btn': 'Join',
         'modal-title': 'Join the Release',
         'modal-sub': 'Be the first to know when Volio launches.<br>No spam, ever.',
         'modal-submit': 'Count me in',
         'success-title': "You're on the list!",
         'success-sub': "We'll be in touch as soon as Volio is ready for takeoff. 🛫",
-        'sticky-btn': '✈️ Coming Soon',
+        'sticky-btn': '✈️ Join Now',
         'modal-consent': 'I have read and agree to the <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> and <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Terms &amp; Conditions</a>.',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Terms &amp; Conditions',
         'lang-btn': '🇮🇹 IT'
       },
       it: {
-        'nav-cta': 'Prossimamente',
+        'nav-cta': 'Unisciti Ora',
         'hero-title': 'Condividi il tuo<br>Prossimo Volo',
         'hero-desc': 'Un Social Network per connetterti con i tuoi amici e condividere il tuo ultimo volo! Mostra agli altri la tua ultima avventura nel cielo sull\'App Volio.',
         'hero-beta-desc': 'Stiamo cercando beta tester. Sei interessato? Scrivici un messaggio su LinkedIn — verrai aggiunto alla lista.',
@@ -1161,13 +1176,13 @@
         'mission-desc': '"Volio è nato da un\'idea semplice — ogni volo ha una storia che vale la pena condividere. Che tu sia un pilota alle prime armi o un comandante esperto che attraversa l\'Atlantico, Volio ti dà gli strumenti per registrare, condividere e ispirare la comunità aeronautica intorno a te."',
         'newsletter-text': 'Unisciti alla lista d\'attesa',
         'newsletter-placeholder': 'indirizzo email',
-        'newsletter-btn': 'Prossimamente',
+        'newsletter-btn': 'Iscriviti',
         'modal-title': 'Unisciti al lancio',
         'modal-sub': 'Sii il primo a sapere quando Volio sarà disponibile.<br>Niente spam, promesso.',
         'modal-submit': 'Sono dentro',
         'success-title': 'Sei in lista!',
         'success-sub': 'Ti contatteremo non appena Volio sarà pronto al decollo. 🛫',
-        'sticky-btn': '✈️ Prossimamente',
+        'sticky-btn': '✈️ Unisciti Ora',
         'modal-consent': 'Ho letto e accetto la <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> e i <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Termini e Condizioni</a>.',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Termini e Condizioni',
@@ -1220,7 +1235,27 @@
     const newsletterForm = document.querySelector('.newsletter-form');
     const newsletterSection = document.querySelector('.newsletter');
 
-    newsletterBtn.addEventListener('click', () => {
+    // ── BREVO INTEGRATION via AWS Lambda ──
+    const LAMBDA_URL = 'https://9ek2lcmtx8.execute-api.eu-west-1.amazonaws.com/prod/subscribe';
+
+    async function subscribeToBrevo(email) {
+      try {
+        const res = await fetch(LAMBDA_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (res.ok) return { ok: true };
+        const data = await res.json().catch(() => ({}));
+        return { ok: false, message: data.error || data.message || `HTTP ${res.status}` };
+      } catch (err) {
+        // Network/CORS error — Lambda endpoint unreachable
+        console.error('[Volio] Subscribe error:', err);
+        return { ok: false, message: 'Network error — please try again.' };
+      }
+    }
+
+    newsletterBtn.addEventListener('click', async () => {
       const email = newsletterInput.value.trim();
       if (!email || !email.includes('@')) {
         newsletterInput.style.outline = '2px solid #e74c3c';
@@ -1228,12 +1263,17 @@
         setTimeout(() => newsletterInput.style.outline = '', 1500);
         return;
       }
-      // Store email
-      const emails = JSON.parse(localStorage.getItem('volio_emails') || '[]');
-      emails.push({ email, date: new Date().toISOString() });
-      localStorage.setItem('volio_emails', JSON.stringify(emails));
-      // Show inline success
-      newsletterForm.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;You're on the list!</span>`;
+      newsletterBtn.disabled = true;
+      newsletterBtn.textContent = '...';
+      const result = await subscribeToBrevo(email);
+      if (result.ok) {
+        newsletterForm.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;${currentLang === 'it' ? 'Sei in lista!' : "You're on the list!"}</span>`;
+      } else {
+        newsletterBtn.disabled = false;
+        newsletterBtn.textContent = currentLang === 'it' ? 'Riprova' : 'Try again';
+        newsletterInput.style.outline = '2px solid #e74c3c';
+        setTimeout(() => newsletterInput.style.outline = '', 2000);
+      }
     });
 
     newsletterInput.addEventListener('keydown', e => {
@@ -1273,7 +1313,7 @@
 
     const modalConsent = document.getElementById('modalConsent');
 
-    modalSubmit.addEventListener('click', () => {
+    modalSubmit.addEventListener('click', async () => {
       const email = modalEmail.value.trim();
       if (!email || !email.includes('@')) {
         modalEmail.style.borderColor = '#e74c3c';
@@ -1287,15 +1327,24 @@
         setTimeout(() => label.style.color = '', 1500);
         return;
       }
-      // Store email locally (swap for real API call later)
-      const emails = JSON.parse(localStorage.getItem('volio_emails') || '[]');
-      emails.push({ email, date: new Date().toISOString() });
-      localStorage.setItem('volio_emails', JSON.stringify(emails));
 
-      // Show success
-      modalForm.classList.add('hide');
-      modalSuccess.classList.add('show');
-      setTimeout(closeModal, 3000);
+      // Loading state
+      modalSubmit.disabled = true;
+      modalSubmit.textContent = '...';
+
+      const result = await subscribeToBrevo(email);
+
+      if (result.ok) {
+        modalForm.classList.add('hide');
+        modalSuccess.classList.add('show');
+        setTimeout(closeModal, 3000);
+      } else {
+        modalSubmit.disabled = false;
+        modalSubmit.textContent = currentLang === 'it' ? 'Sono dentro' : 'Count me in';
+        modalEmail.style.borderColor = '#e74c3c';
+        modalEmail.focus();
+        setTimeout(() => modalEmail.style.borderColor = '', 2000);
+      }
     });
 
     // Allow Enter key to submit
@@ -1317,7 +1366,7 @@
       const phoneWrapper = document.querySelector('.phone-scale-wrapper');
       if (!heroLeft || !heroRight || !phoneWrapper || !heroWrapper) return;
 
-      const SCALE_START = 2.2;
+      const SCALE_START = 1.8;
       const GAP = 48;
 
       let phoneOffset = 0;
@@ -1371,7 +1420,7 @@
       heroLeft.style.willChange     = 'opacity, transform';
       heroRight.style.willChange    = 'transform';
       phoneWrapper.style.willChange = 'transform';
-      phoneWrapper.style.transform  = `scale(${SCALE_START})`;
+      phoneWrapper.style.transform  = `scale(${SCALE_START})`; // 1.8 — keeps phone visible in hero frame
 
       function init() {
         computeOffset();
