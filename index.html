@@ -1853,6 +1853,8 @@
       let ticking = false;
 
       function update() {
+        // No parallax on mobile — leave images centered and static
+        if (window.innerWidth <= 768) { ticking = false; return; }
         const vh = window.innerHeight;
         els.forEach(el => {
           const rect = el.getBoundingClientRect();
