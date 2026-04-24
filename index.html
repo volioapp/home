@@ -61,7 +61,7 @@
     }
 
     .btn-nav {
-      background: var(--blue);
+      background: var(--navy);
       color: var(--white);
       font-family: 'Inter', sans-serif;
       font-weight: 600;
@@ -78,7 +78,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 60px 60px 28px;
+      padding: 44px clamp(24px, 5vw, 60px) 20px;
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -96,17 +96,16 @@
       gap: 48px;
       flex: 1;
       min-height: 0;
-      overflow: hidden;   /* clips the zoomed phone — nothing escapes into the banner */
       position: relative;
       z-index: 1;
     }
 
-    .hero-left { flex: 1; padding-left: 48px; }
+    .hero-left { flex: 1; padding-left: clamp(16px, 4vw, 48px); }
 
     .hero-headline {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: 96px;
+      font-size: clamp(48px, 7.5vw, 96px);
       line-height: 1;
       text-transform: uppercase;
       color: var(--navy);
@@ -114,7 +113,7 @@
     }
 
     .hero-desc {
-      font-size: 17px;
+      font-size: clamp(14px, 1.4vw, 17px);
       line-height: 1.75;
       color: #444;
       max-width: 420px;
@@ -152,7 +151,7 @@
     .hero-card {
       background: var(--navy);
       border-radius: 20px;
-      padding: 40px 48px;
+      padding: 26px 48px;
       color: var(--white);
       display: flex;
       flex-direction: column;
@@ -189,7 +188,7 @@
 
     /* ── PHONE MOCKUP ── */
     .hero-right {
-      flex: 0 0 260px;
+      flex: 0 0 clamp(200px, 22vw, 300px);
       display: flex;
       justify-content: center;
       padding-top: 10px;
@@ -198,7 +197,7 @@
     }
 
     .phone-img {
-      width: 260px;
+      width: clamp(200px, 22vw, 300px);
       display: block;
       transform: scale(0.55) rotate(-6deg);
       transition: transform 0.8s cubic-bezier(0.34, 1.5, 0.64, 1), filter 0.8s ease;
@@ -696,6 +695,262 @@
       font-weight: 700;
     }
 
+    /* ── FEATURES SECTION ── */
+    .features-section {
+      background: #fff;
+      padding: 96px 60px;
+    }
+    .features-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .features-intro {
+      font-size: 17px;
+      color: #666;
+      margin-top: -28px;
+      margin-bottom: 64px;
+    }
+    .features-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      text-align: left;
+    }
+
+    /* ── APP CARD (faithful to screenshot) ── */
+    .app-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(5,14,30,0.13);
+      padding: 20px;
+      font-family: 'Inter', sans-serif;
+      max-width: 360px;
+      margin: 0 auto;
+      border: 1px solid #eee;
+    }
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .app-card-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #dde4f0;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .app-card-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .app-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .app-card-date {
+      font-size: 12px;
+      color: #888;
+    }
+    .app-card-badge {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue);
+      background: #eef2fb;
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+    .app-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+    .app-card-route {
+      font-size: 12px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .app-card-route svg {
+      width: 12px; height: 12px; flex-shrink: 0; opacity: 0.5;
+    }
+    .app-card-desc {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .app-card-map {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+      height: 180px;
+      background: #e8f0e0;
+      position: relative;
+    }
+    .app-card-map svg {
+      width: 100%;
+      height: 100%;
+    }
+    .app-card-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-bottom: 14px;
+      padding: 12px 0;
+      border-top: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .app-stat {
+      text-align: center;
+    }
+    .app-stat-val {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .app-stat-lbl {
+      font-size: 10px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+    .app-card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .app-action {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #888;
+      cursor: pointer;
+    }
+    .app-action svg { width: 18px; height: 18px; }
+
+    /* ── FEATURE LIST ── */
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .feature-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .feature-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #eef2fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .feature-icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--blue);
+    }
+    .feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--navy);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .feature-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .features-section { padding: 60px 24px; }
+      .features-layout { grid-template-columns: 1fr; gap: 48px; }
+      .app-card { max-width: 100%; }
+    }
+
+    /* ── INSTAGRAM SECTION ── */
+    .instagram-section {
+      background: #e8edf8;
+      padding: 80px 60px;
+      text-align: center;
+    }
+    .instagram-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .instagram-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .instagram-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid transparent;
+      background: linear-gradient(white, white) padding-box,
+                  linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7) border-box;
+      flex-shrink: 0;
+    }
+    .instagram-handle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+    }
+    .instagram-tagline {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.65;
+      max-width: 420px;
+    }
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-top: 4px;
+    }
+    .btn-instagram:hover { opacity: 0.82; }
+    .btn-instagram svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
+
     /* ── STICKY MOBILE CTA ── */
 
     /* ── MODAL ── */
@@ -828,6 +1083,30 @@
       justify-content: center;
     }
 
+    /* ── PARALLAX DIVIDERS ── */
+    .parallax {
+      height: 340px;
+      background-size: cover;
+      background-position: center 50%;
+      position: relative;
+      overflow: hidden;
+      will-change: background-position;
+    }
+    /* slight dark veil so sections on either side don't clash */
+    .parallax::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 14, 30, 0.22);
+    }
+    .parallax-1 { background-image: url('chat1.png'); }
+    .parallax-2 { background-image: url('chat2.png'); }
+    .parallax-3 { background-image: url('chat3.png'); }
+
+    @media (max-width: 768px) {
+      .parallax { height: 220px; }
+    }
+
     /* ── SCROLL ANIMATIONS ── */
     .reveal {
       opacity: 0;
@@ -893,9 +1172,12 @@
       .team { padding: 60px 24px; }
       .team-members { grid-template-columns: 1fr; }
       .mission { padding: 60px 24px; }
+      .instagram-section { padding: 60px 24px; }
       .newsletter { flex-direction: column; align-items: flex-start; padding: 36px 24px; }
       .newsletter-form { max-width: 100%; width: 100%; }
-      footer { padding: 20px 24px; }
+      footer { padding: 28px 24px; flex-direction: column; gap: 16px; align-items: center; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .footer-copy { order: 3; }
     }
   </style>
 </head>
@@ -960,6 +1242,74 @@
   </section>
   </div><!-- /heroWrapper -->
 
+  <!-- PARALLAX 1 -->
+  <div class="parallax parallax-1" aria-hidden="true"></div>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="features-inner">
+      <h2 class="section-title reveal-title" data-i18n="features-title">Built around your flight</h2>
+      <p class="features-intro" data-i18n="features-intro">One card captures everything — automatically.</p>
+
+      <div class="features-layout">
+
+        <!-- Left: App card image -->
+        <div class="reveal-left" style="display:flex;justify-content:center;">
+          <img src="card.png" alt="Volio flight card" style="max-width:340px;width:100%;border-radius:20px;box-shadow:0 8px 40px rgba(5,14,30,0.13);">
+        </div>
+
+        <!-- Right: Feature list -->
+        <div class="features-list reveal-right">
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <!-- Satellite / ADS-B icon -->
+              <svg viewBox="0 0 24 24"><path d="M4.93 4.93a10 10 0 0 0 0 14.14l1.41-1.41a8 8 0 0 1 0-11.31L4.93 4.93zm14.14 0l-1.41 1.41a8 8 0 0 1 0 11.31l1.41 1.41a10 10 0 0 0 0-14.13zM7.76 7.76a6 6 0 0 0 0 8.49l1.41-1.42a4 4 0 0 1 0-5.66L7.76 7.76zm8.48 0l-1.41 1.41a4 4 0 0 1 0 5.66l1.41 1.42a6 6 0 0 0 0-8.49zM12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+            </div>
+            <div>
+              <div class="feature-title" data-i18n="feat1-title">ADS-B Auto-import</div>
+              <div class="feature-desc" data-i18n="feat1-desc">Enter your registration and Volio pulls your route, speed, altitude and duration automatically — no manual logging ever.</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <!-- Map pin icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div>
+              <div class="feature-title" data-i18n="feat2-title">Route Map</div>
+              <div class="feature-desc" data-i18n="feat2-desc">Every flight plotted on a live map with departure and arrival pins and the exact track you flew.</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <!-- Edit / title icon -->
+              <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            </div>
+            <div>
+              <div class="feature-title" data-i18n="feat3-title">Your Story</div>
+              <div class="feature-desc" data-i18n="feat3-desc">Add a title and a personal note to every flight — give your adventure the context it deserves.</div>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon-wrap">
+              <!-- Heart / like icon -->
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div>
+              <div class="feature-title" data-i18n="feat4-title">Likes &amp; Sharing</div>
+              <div class="feature-desc" data-i18n="feat4-desc">Pilots react to each other's flights and share them with one tap — building a real aviation community.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="how-section">
     <img class="how-map-bg" src="map-bg.png" alt="" aria-hidden="true">
@@ -984,6 +1334,9 @@
       </div>
     </div>
   </section>
+
+  <!-- PARALLAX 2 -->
+  <div class="parallax parallax-2" aria-hidden="true"></div>
 
   <!-- TEAM -->
   <section class="team">
@@ -1039,6 +1392,24 @@
     </div>
   </section>
 
+  <!-- PARALLAX 3 -->
+  <div class="parallax parallax-3" aria-hidden="true"></div>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram-section">
+    <div class="instagram-inner reveal">
+      <div class="instagram-profile">
+        <img src="ig.jpeg" alt="@volioapp on Instagram" class="instagram-avatar">
+        <div class="instagram-handle">@volioapp</div>
+      </div>
+      <p class="instagram-tagline" data-i18n="instagram-tagline">Behind-the-scenes updates, flight stories, and the journey of building Volio — follow along on Instagram.</p>
+      <a class="btn-instagram" href="https://www.instagram.com/volioapp?igsh=Z293anZkdG1tNndh&utm_source=qr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        <span data-i18n="instagram-btn">Follow on Instagram</span>
+      </a>
+    </div>
+  </section>
+
   <!-- NEWSLETTER -->
   <section class="newsletter">
     <span class="newsletter-text" data-i18n="newsletter-text">Join the waitlist</span>
@@ -1083,6 +1454,10 @@
       <span class="footer-logo-text">volio</span>
     </div>
     <div class="footer-links">
+      <a href="https://www.instagram.com/volioapp?igsh=Z293anZkdG1tNndh&utm_source=qr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        @volioapp
+      </a>
       <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" data-i18n="footer-privacy">Privacy Policy</a>
       <a href="https://volioapp.github.io/termsandconditions/" target="_blank" rel="noopener" data-i18n="footer-terms">Terms &amp; Conditions</a>
     </div>
@@ -1148,6 +1523,18 @@
         'success-sub': "We'll be in touch as soon as Volio is ready for takeoff. 🛫",
         'sticky-btn': '✈️ Join Now',
         'modal-consent': 'I have read and agree to the <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> and <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Terms &amp; Conditions</a>.',
+        'features-title': 'Built around your flight',
+        'features-intro': 'One card captures everything — automatically.',
+        'feat1-title': 'ADS-B Auto-import',
+        'feat1-desc': 'Enter your registration and Volio pulls your route, speed, altitude and duration automatically — no manual logging ever.',
+        'feat2-title': 'Route Map',
+        'feat2-desc': 'Every flight plotted on a live map with departure and arrival pins and the exact track you flew.',
+        'feat3-title': 'Your Story',
+        'feat3-desc': 'Add a title and a personal note to every flight — give your adventure the context it deserves.',
+        'feat4-title': 'Likes &amp; Sharing',
+        'feat4-desc': 'Pilots react to each other\'s flights and share them with one tap — building a real aviation community.',
+        'instagram-tagline': 'Behind-the-scenes updates, flight stories, and the journey of building Volio — follow along on Instagram.',
+        'instagram-btn': 'Follow on Instagram',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Terms &amp; Conditions',
         'lang-btn': '🇮🇹 IT'
@@ -1184,6 +1571,18 @@
         'success-sub': 'Ti contatteremo non appena Volio sarà pronto al decollo. 🛫',
         'sticky-btn': '✈️ Unisciti Ora',
         'modal-consent': 'Ho letto e accetto la <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> e i <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Termini e Condizioni</a>.',
+        'features-title': 'Costruito intorno al tuo volo',
+        'features-intro': 'Una card raccoglie tutto — automaticamente.',
+        'feat1-title': 'Importazione ADS-B',
+        'feat1-desc': 'Inserisci il numero di registrazione e Volio recupera automaticamente rotta, velocità, quota e durata — nessun inserimento manuale.',
+        'feat2-title': 'Mappa del percorso',
+        'feat2-desc': 'Ogni volo tracciato su una mappa live con i pin di partenza e arrivo e la rotta esatta che hai volato.',
+        'feat3-title': 'La tua storia',
+        'feat3-desc': 'Aggiungi un titolo e una nota personale ad ogni volo — dai alla tua avventura il contesto che merita.',
+        'feat4-title': 'Mi piace e condivisione',
+        'feat4-desc': 'I piloti reagiscono ai voli degli altri e li condividono con un tocco — costruendo una vera comunità aeronautica.',
+        'instagram-tagline': 'Aggiornamenti dal dietro le quinte, storie di volo e il percorso di costruzione di Volio — seguici su Instagram.',
+        'instagram-btn': 'Seguici su Instagram',
         'footer-privacy': 'Privacy Policy',
         'footer-terms': 'Termini e Condizioni',
         'lang-btn': '🇬🇧 EN'
@@ -1218,6 +1617,11 @@
       const consentLabel = document.getElementById('modalConsentLabel');
       if (consentLabel) consentLabel.innerHTML = t['modal-consent'];
       document.getElementById('langToggle').textContent = t['lang-btn'];
+
+      // Italian headline is longer — override clamp with a tighter fluid value
+      const headline = document.querySelector('.hero-headline');
+      if (headline) headline.style.fontSize = lang === 'it' ? 'clamp(36px, 4.8vw, 62px)' : '';
+
     }
 
     // Apply saved language on load
@@ -1437,6 +1841,38 @@
       } else {
         requestAnimationFrame(init);
       }
+    })();
+
+    // ── SMOOTH PARALLAX ──
+    // Uses backgroundPositionY driven by rAF instead of background-attachment:fixed,
+    // which avoids the main-thread repaint that causes jitter.
+    (function () {
+      const els = Array.from(document.querySelectorAll('.parallax'));
+      if (!els.length) return;
+
+      let ticking = false;
+
+      function update() {
+        const vh = window.innerHeight;
+        els.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.bottom < 0 || rect.top > vh) return; // off-screen, skip
+          // How far the centre of the strip is from the centre of the viewport
+          const offset = (rect.top + rect.height / 2 - vh / 2) * 0.25;
+          el.style.backgroundPositionY = `calc(50% + ${offset}px)`;
+        });
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Initial position
+      requestAnimationFrame(update);
     })();
   </script>
 
