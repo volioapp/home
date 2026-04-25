@@ -35,7 +35,7 @@
     body {
       font-family: 'Inter', sans-serif;
       color: var(--navy);
-      background: #e8edf8;
+      background: #ffffff;
     }
 
     /* ── NAV ── */
@@ -967,8 +967,8 @@
       gap: 16px;
     }
     .instagram-avatar {
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid transparent;
@@ -979,15 +979,16 @@
     .instagram-handle {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
-      font-size: 32px;
+      font-size: 28px;
       color: var(--navy);
       letter-spacing: 0.5px;
     }
     .instagram-tagline {
-      font-size: 16px;
+      font-size: 14px;
       color: #555;
       line-height: 1.65;
-      max-width: 420px;
+      max-width: 380px;
+      text-align: center;
     }
     .btn-instagram {
       display: inline-flex;
@@ -998,11 +999,11 @@
       font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 14px;
-      padding: 14px 30px;
+      padding: 13px 28px;
       border-radius: 50px;
       text-decoration: none;
       transition: opacity 0.2s;
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .btn-instagram:hover { opacity: 0.82; }
     .btn-instagram svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
@@ -1266,7 +1267,7 @@
 
   <!-- HERO -->
   <div id="heroWrapper" style="height: 220vh; position: relative;">
-  <section style="position: sticky; top: 0; height: 100vh; background: #e8edf8; overflow: hidden;" id="heroSection">
+  <section style="position: sticky; top: 0; height: 100vh; background: #ffffff; overflow: hidden;" id="heroSection">
     <div class="hero">
 
       <!-- Top row: headline + phone -->
@@ -1447,6 +1448,9 @@
     </div>
   </section>
 
+  <!-- PARALLAX -->
+  <div class="parallax parallax-2" aria-hidden="true"></div>
+
   <!-- MISSION -->
   <section style="background: #fff;">
     <div class="mission">
@@ -1454,9 +1458,6 @@
       <p class="reveal" data-i18n="mission-desc">"Volio was born from a simple idea — every flight has a story worth sharing. Whether you're a student pilot on your first solo or a seasoned captain crossing the Atlantic, Volio gives you the tools to log, share, and inspire the aviation community around you."</p>
     </div>
   </section>
-
-  <!-- PARALLAX -->
-  <div class="parallax parallax-2" aria-hidden="true"></div>
 
   <!-- INSTAGRAM -->
   <section class="instagram-section">
