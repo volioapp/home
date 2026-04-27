@@ -608,7 +608,23 @@
       flex-direction: column;
       gap: 10px;
       flex: 1;
-      max-width: 480px;
+      max-width: 520px;
+    }
+
+    .newsletter-name-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter-name-input {
+      flex: 1;
+      padding: 13px 18px;
+      border-radius: 50px;
+      border: none;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      color: var(--navy);
     }
 
     .newsletter-consent-row {
@@ -1072,6 +1088,14 @@
       margin-bottom: 28px;
       line-height: 1.6;
     }
+    .modal-name-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .modal-name-row .modal-input {
+      margin-bottom: 0;
+    }
     .modal-input {
       width: 100%;
       padding: 14px 20px;
@@ -1478,6 +1502,10 @@
   <section class="newsletter">
     <span class="newsletter-text" data-i18n="newsletter-text">Join the waitlist</span>
     <div class="newsletter-body">
+      <div class="newsletter-name-row">
+        <input class="newsletter-name-input" id="newsletterFirstName" type="text" data-i18n-placeholder="newsletter-firstname" placeholder="First name" />
+        <input class="newsletter-name-input" id="newsletterLastName" type="text" data-i18n-placeholder="newsletter-lastname" placeholder="Last name" />
+      </div>
       <div class="newsletter-form">
         <input class="newsletter-input" type="email" data-i18n-placeholder="newsletter-placeholder" placeholder="email address" />
         <button class="btn-subscribe" id="newsletterBtn" data-i18n="newsletter-btn">Join</button>
@@ -1500,6 +1528,10 @@
         <div class="modal-icon">✈️</div>
         <div class="modal-title" id="modalTitle">Join the Release</div>
         <p class="modal-sub" id="modalSub">Be the first to know when Volio launches.<br>No spam, ever.</p>
+        <div class="modal-name-row">
+          <input class="modal-input" id="modalFirstName" type="text" placeholder="First name" />
+          <input class="modal-input" id="modalLastName" type="text" placeholder="Last name" />
+        </div>
         <input class="modal-input" id="modalEmail" type="email" placeholder="your@email.com" />
         <div class="modal-consent">
           <input type="checkbox" id="modalConsent">
@@ -1584,6 +1616,8 @@
         'mission-title': 'Mission',
         'mission-desc': '"Volio was born from a simple idea — every flight has a story worth sharing. Whether you\'re a student pilot on your first solo or a seasoned captain crossing the Atlantic, Volio gives you the tools to log, share, and inspire the aviation community around you."',
         'newsletter-text': 'Join the waitlist',
+        'newsletter-firstname': 'First name',
+        'newsletter-lastname': 'Last name',
         'newsletter-placeholder': 'email address',
         'newsletter-btn': 'Join',
         'newsletter-consent': 'I have read and agree to the <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> and <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Terms &amp; Conditions</a>.',
@@ -1633,6 +1667,8 @@
         'mission-title': 'Missione',
         'mission-desc': '"Volio è nato da un\'idea semplice — ogni volo ha una storia che vale la pena condividere. Che tu sia un pilota alle prime armi o un comandante esperto che attraversa l\'Atlantico, Volio ti dà gli strumenti per registrare, condividere e ispirare la comunità aeronautica intorno a te."',
         'newsletter-text': 'Unisciti alla lista d\'attesa',
+        'newsletter-firstname': 'Nome',
+        'newsletter-lastname': 'Cognome',
         'newsletter-placeholder': 'indirizzo email',
         'newsletter-btn': 'Iscriviti',
         'newsletter-consent': 'Ho letto e accetto la <a href="https://volioapp.github.io/privacypolicy/" target="_blank">Privacy Policy</a> e i <a href="https://volioapp.github.io/termsandconditions/" target="_blank">Termini e Condizioni</a>.',
@@ -1708,20 +1744,22 @@
     });
 
     // ── NEWSLETTER INLINE SUBMIT ──
-    const newsletterBtn = document.getElementById('newsletterBtn');
-    const newsletterInput = document.querySelector('.newsletter-input');
-    const newsletterForm = document.querySelector('.newsletter-form');
-    const newsletterSection = document.querySelector('.newsletter');
+    const newsletterBtn       = document.getElementById('newsletterBtn');
+    const newsletterInput     = document.querySelector('.newsletter-input');
+    const newsletterForm      = document.querySelector('.newsletter-form');
+    const newsletterSection   = document.querySelector('.newsletter');
+    const newsletterFirstName = document.getElementById('newsletterFirstName');
+    const newsletterLastName  = document.getElementById('newsletterLastName');
 
     // ── BREVO INTEGRATION via AWS Lambda ──
     const LAMBDA_URL = 'https://9ek2lcmtx8.execute-api.eu-west-1.amazonaws.com/prod/subscribe';
 
-    async function subscribeToBrevo(email) {
+    async function subscribeToBrevo(email, firstName = '', lastName = '') {
       try {
         const res = await fetch(LAMBDA_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email, firstName, lastName })
         });
         if (res.ok) return { ok: true };
         const data = await res.json().catch(() => ({}));
@@ -1753,7 +1791,9 @@
       newsletterBtn.disabled = true;
       newsletterBtn.style.opacity = '1';
       newsletterBtn.textContent = '...';
-      const result = await subscribeToBrevo(email);
+      const firstName = newsletterFirstName.value.trim();
+      const lastName  = newsletterLastName.value.trim();
+      const result = await subscribeToBrevo(email, firstName, lastName);
       if (result.ok) {
         newsletterForm.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;${currentLang === 'it' ? 'Sei in lista!' : "You're on the list!"}</span>`;
       } else {
@@ -1782,8 +1822,10 @@
       modalForm.classList.remove('hide');
       modalSuccess.classList.remove('show');
       modalEmail.value = '';
+      document.getElementById('modalFirstName').value = '';
+      document.getElementById('modalLastName').value = '';
       modal.classList.add('open');
-      setTimeout(() => modalEmail.focus(), 350);
+      setTimeout(() => document.getElementById('modalFirstName').focus(), 350);
     }
 
     function closeModal() {
@@ -1820,7 +1862,9 @@
       modalSubmit.disabled = true;
       modalSubmit.textContent = '...';
 
-      const result = await subscribeToBrevo(email);
+      const firstName = document.getElementById('modalFirstName').value.trim();
+      const lastName  = document.getElementById('modalLastName').value.trim();
+      const result = await subscribeToBrevo(email, firstName, lastName);
 
       if (result.ok) {
         modalForm.classList.add('hide');
