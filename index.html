@@ -1795,7 +1795,8 @@
       const lastName  = newsletterLastName.value.trim();
       const result = await subscribeToBrevo(email, firstName, lastName);
       if (result.ok) {
-        newsletterForm.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;${currentLang === 'it' ? 'Sei in lista!' : "You're on the list!"}</span>`;
+        const newsletterBody = document.querySelector('.newsletter-body');
+        newsletterBody.innerHTML = `<span style="color:#fff;font-size:15px;font-weight:600;">✓ &nbsp;${currentLang === 'it' ? 'Sei in lista!' : "You're on the list!"}</span>`;
       } else {
         newsletterBtn.disabled = false;
         newsletterBtn.textContent = currentLang === 'it' ? 'Riprova' : 'Try again';
