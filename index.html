@@ -2072,11 +2072,16 @@
 
     function closeModal() {
       modal.classList.remove('open');
+      sessionStorage.setItem('volio_popup_shown', '1');
     }
 
-    document.querySelectorAll('.open-modal').forEach(btn => {
-      btn.addEventListener('click', openModal);
-    });
+    // ── AUTO-POPUP after 15 seconds (once per session) ──
+    if (!sessionStorage.getItem('volio_popup_shown')) {
+      setTimeout(() => {
+        openModal();
+        sessionStorage.setItem('volio_popup_shown', '1');
+      }, 15000);
+    }
 
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
