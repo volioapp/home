@@ -188,12 +188,18 @@
 
     <div class="page-header">
       <h1 id="t-title">Account Deletion Request</h1>
-      <p class="subtitle" id="t-subtitle">Fill in the form below to request the deletion of your Volio account and all associated data.</p>
+      <p class="subtitle" id="t-subtitle">You can delete your Volio account at any time. Choose the method that works for you.</p>
     </div>
 
-    <!-- Form -->
+    <!-- Primary method: in-app -->
     <div class="card">
-      <h2 id="t-form-title">Request form</h2>
+      <h2 id="t-app-title">Delete directly from the app</h2>
+      <p id="t-app-body">The quickest way is directly in the Volio app: go to <strong>Profile → Delete Account</strong>. No email or support needed. If you signed in with Apple, your Apple credentials will also be revoked.</p>
+    </div>
+
+    <!-- Secondary method: form -->
+    <div class="card">
+      <h2 id="t-form-title">Don't have the app? Use this form</h2>
       <iframe class="form-embed"
         src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=7uW2i6UujE65Ar2ztUkK9Cab209CwRpAkr-F1DKKtjlUN1gyVjBUWFVWWVE0RkdVTE9FTDBBV0tFSS4u&embed=true"
         frameborder="0"
@@ -203,7 +209,7 @@
         msallowfullscreen>
       </iframe>
       <p class="fallback" id="t-fallback">
-        If the form doesn't load, you can open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:admin@volioapp.it?subject=Account%20deletion%20request">admin@volioapp.it</a>.
+        If the form doesn't load, open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:support@volioapp.it?subject=Account%20deletion%20request">support@volioapp.it</a>.
       </p>
     </div>
 
@@ -224,8 +230,8 @@
           <td id="t-row3-val">Posts, photos, comments, follower/following connections</td>
         </tr>
         <tr>
-          <td id="t-row4-label">Timeline</td>
-          <td id="t-row4-val">Deletion is processed within 30 days of the request</td>
+          <td id="t-row4-label">Apple Sign-in</td>
+          <td id="t-row4-val">If you signed in with Apple, the associated credentials are also revoked upon deletion</td>
         </tr>
       </table>
     </div>
@@ -233,13 +239,13 @@
     <!-- Note -->
     <div class="card note-card">
       <h2 id="t-note-title">⚠ Note</h2>
-      <p id="t-note-body">Some data may be retained for longer if required by legal or accounting obligations (e.g. invoicing), in accordance with our <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.</p>
+      <p id="t-note-body">Some data may be retained longer if required by legal, security, fraud prevention, or regulatory obligations, in accordance with our <a href="https://www.iubenda.com/privacy-policy/15315799" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.</p>
     </div>
 
     <footer>
       <a href="https://www.volioapp.it/">← <span id="t-back">Back to Volio</span></a><br><br>
       Volio App S.r.l. — Via Mazzini 10, 22077 Olgiate Comasco (CO), Italia<br>
-      P.IVA / C.F. 04312420138 — <a href="mailto:admin@volioapp.it">admin@volioapp.it</a>
+      P.IVA / C.F. 04312420138 — <a href="mailto:support@volioapp.it">support@volioapp.it</a>
     </footer>
 
   </div>
@@ -247,40 +253,44 @@
   <script>
     const strings = {
       en: {
-        'title':       'Account Deletion Request',
-        'subtitle':    'Fill in the form below to request the deletion of your Volio account and all associated data.',
-        'form-title':  'Request form',
-        'fallback':    'If the form doesn\'t load, you can open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:admin@volioapp.it?subject=Account%20deletion%20request">admin@volioapp.it</a>.',
-        'deleted-title': 'What gets deleted',
-        'row1-label':  'Account data',
-        'row1-val':    'Profile, email, username, settings',
-        'row2-label':  'Flight data',
-        'row2-val':    'Logged flights, GPS tracks, statistics linked to your account',
-        'row3-label':  'Social content',
-        'row3-val':    'Posts, photos, comments, follower/following connections',
-        'row4-label':  'Timeline',
-        'row4-val':    'Deletion is processed within 30 days of the request',
-        'note-title':  '⚠ Note',
-        'note-body':   'Some data may be retained for longer if required by legal or accounting obligations (e.g. invoicing), in accordance with our <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
-        'back':        'Back to Volio',
+        'title':        'Account Deletion Request',
+        'subtitle':     'You can delete your Volio account at any time. Choose the method that works for you.',
+        'app-title':    'Delete directly from the app',
+        'app-body':     'The quickest way is directly in the Volio app: go to <strong>Profile → Delete Account</strong>. No email or support needed. If you signed in with Apple, your Apple credentials will also be revoked.',
+        'form-title':   'Don\'t have the app? Use this form',
+        'fallback':     'If the form doesn\'t load, open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:support@volioapp.it?subject=Account%20deletion%20request">support@volioapp.it</a>.',
+        'deleted-title':'What gets deleted',
+        'row1-label':   'Account data',
+        'row1-val':     'Profile, email, username, settings',
+        'row2-label':   'Flight data',
+        'row2-val':     'Logged flights, GPS tracks, statistics linked to your account',
+        'row3-label':   'Social content',
+        'row3-val':     'Posts, photos, comments, follower/following connections',
+        'row4-label':   'Apple Sign-in',
+        'row4-val':     'If you signed in with Apple, the associated credentials are also revoked upon deletion',
+        'note-title':   '⚠ Note',
+        'note-body':    'Some data may be retained longer if required by legal, security, fraud prevention, or regulatory obligations, in accordance with our <a href="https://www.iubenda.com/privacy-policy/15315799" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
+        'back':         'Back to Volio',
       },
       it: {
-        'title':       'Richiesta di cancellazione account',
-        'subtitle':    'Compila il modulo qui sotto per richiedere la cancellazione del tuo account Volio e dei dati associati.',
-        'form-title':  'Modulo di richiesta',
-        'fallback':    'Se il modulo non si carica, puoi aprirlo direttamente <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">a questo link</a>, oppure scrivere a <a href="mailto:admin@volioapp.it?subject=Richiesta%20cancellazione%20account">admin@volioapp.it</a>.',
-        'deleted-title': 'Cosa viene cancellato',
-        'row1-label':  'Dati account',
-        'row1-val':    'Profilo, email, username, impostazioni',
-        'row2-label':  'Dati di volo',
-        'row2-val':    'Voli registrati, tracciati GPS, statistiche associate al tuo account',
-        'row3-label':  'Contenuti social',
-        'row3-val':    'Post, foto, commenti, collegamenti con altri utenti (follower/following)',
-        'row4-label':  'Tempistiche',
-        'row4-val':    'La cancellazione viene elaborata entro 30 giorni dalla richiesta',
-        'note-title':  '⚠ Nota',
-        'note-body':   'Alcuni dati potrebbero essere conservati più a lungo se richiesto da obblighi legali o contabili (es. fatturazione), in conformità con la nostra <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
-        'back':        'Torna a Volio',
+        'title':        'Richiesta di cancellazione account',
+        'subtitle':     'Puoi eliminare il tuo account Volio in qualsiasi momento. Scegli il metodo che preferisci.',
+        'app-title':    'Elimina direttamente dall\'app',
+        'app-body':     'Il modo più rapido è dall\'app Volio: vai su <strong>Profilo → Elimina account</strong>. Non è necessario contattare l\'assistenza. Se hai effettuato l\'accesso con Apple, le credenziali Apple associate verranno anch\'esse revocate.',
+        'form-title':   'Non hai l\'app? Usa questo modulo',
+        'fallback':     'Se il modulo non si carica, puoi aprirlo direttamente <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">a questo link</a>, oppure scrivere a <a href="mailto:support@volioapp.it?subject=Richiesta%20cancellazione%20account">support@volioapp.it</a>.',
+        'deleted-title':'Cosa viene cancellato',
+        'row1-label':   'Dati account',
+        'row1-val':     'Profilo, email, username, impostazioni',
+        'row2-label':   'Dati di volo',
+        'row2-val':     'Voli registrati, tracciati GPS, statistiche associate al tuo account',
+        'row3-label':   'Contenuti social',
+        'row3-val':     'Post, foto, commenti, collegamenti con altri utenti (follower/following)',
+        'row4-label':   'Accesso con Apple',
+        'row4-val':     'Se hai effettuato l\'accesso con Apple, le credenziali associate vengono revocate alla cancellazione',
+        'note-title':   '⚠ Nota',
+        'note-body':    'Alcuni dati potrebbero essere conservati più a lungo se richiesto da obblighi legali, di sicurezza, di prevenzione delle frodi o di conformità normativa, in conformità con la nostra <a href="https://www.iubenda.com/privacy-policy/15315799" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
+        'back':         'Torna a Volio',
       }
     };
 
