@@ -1,1 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Deletion — Volio</title>
+  <meta name="description" content="Request deletion of your Volio account and associated data.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.volioapp.it/account-deletion/">
+  <link rel="icon" type="image/png" href="../app-icon.png">
+  <style>
+    :root {
+      --volio-blue: #2447D9;
+      --navy: #060E1E;
+      --text-dark: #1a1a1a;
+      --text-muted: #5a5a68;
+      --bg: #f7f8fb;
+      --card-bg: #ffffff;
+      --border: #e4e6ef;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .topbar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--navy);
+    }
+    .lang-toggle {
+      display: flex;
+      gap: 4px;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s;
+    }
+    .lang-btn.active {
+      background: var(--volio-blue);
+      border-color: var(--volio-blue);
+      color: #fff;
+    }
+    .wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .page-header {
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--navy);
+    }
+    .card p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .meta-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-table tr:last-child {
+      border-bottom: none;
+    }
+    .meta-table td {
+      padding: 10px 0;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    .meta-table td:first-child {
+      color: var(--text-muted);
+      width: 180px;
+      font-weight: 500;
+      padding-right: 12px;
+    }
+    .form-embed {
+      width: 100%;
+      height: 860px;
+      border: none;
+      border-radius: 10px;
+      display: block;
+    }
+    .fallback {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .fallback a {
+      color: var(--volio-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .fallback a:hover { text-decoration: underline; }
+    .note-card {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    .note-card h2 { color: #92400e; }
+    .note-card p { color: #78350f; }
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-top: 48px;
+      line-height: 1.8;
+    }
+    footer a {
+      color: var(--volio-blue);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
+  <nav class="topbar">
+    <a class="logo-row" href="https://www.volioapp.it/" aria-label="Volio — Home">
+      <div class="logo-mark"><img src="../app-icon.png" alt="Volio"></div>
+      <div class="logo-text">volio</div>
+    </a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnIT" onclick="setLang('it')">IT</button>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+
+    <div class="page-header">
+      <h1 id="t-title">Account Deletion Request</h1>
+      <p class="subtitle" id="t-subtitle">Fill in the form below to request the deletion of your Volio account and all associated data.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="card">
+      <h2 id="t-form-title">Request form</h2>
+      <iframe class="form-embed"
+        src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=7uW2i6UujE65Ar2ztUkK9Cab209CwRpAkr-F1DKKtjlUN1gyVjBUWFVWWVE0RkdVTE9FTDBBV0tFSS4u&embed=true"
+        frameborder="0"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        msallowfullscreen>
+      </iframe>
+      <p class="fallback" id="t-fallback">
+        If the form doesn't load, you can open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:admin@volioapp.it?subject=Account%20deletion%20request">admin@volioapp.it</a>.
+      </p>
+    </div>
+
+    <!-- What gets deleted -->
+    <div class="card">
+      <h2 id="t-deleted-title">What gets deleted</h2>
+      <table class="meta-table">
+        <tr>
+          <td id="t-row1-label">Account data</td>
+          <td id="t-row1-val">Profile, email, username, settings</td>
+        </tr>
+        <tr>
+          <td id="t-row2-label">Flight data</td>
+          <td id="t-row2-val">Logged flights, GPS tracks, statistics linked to your account</td>
+        </tr>
+        <tr>
+          <td id="t-row3-label">Social content</td>
+          <td id="t-row3-val">Posts, photos, comments, follower/following connections</td>
+        </tr>
+        <tr>
+          <td id="t-row4-label">Timeline</td>
+          <td id="t-row4-val">Deletion is processed within 30 days of the request</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Note -->
+    <div class="card note-card">
+      <h2 id="t-note-title">⚠ Note</h2>
+      <p id="t-note-body">Some data may be retained for longer if required by legal or accounting obligations (e.g. invoicing), in accordance with our <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.</p>
+    </div>
+
+    <footer>
+      <a href="https://www.volioapp.it/">← <span id="t-back">Back to Volio</span></a><br><br>
+      Volio App S.r.l. — Via Mazzini 10, 22077 Olgiate Comasco (CO), Italia<br>
+      P.IVA / C.F. 04312420138 — <a href="mailto:admin@volioapp.it">admin@volioapp.it</a>
+    </footer>
+
+  </div>
+
+  <script>
+    const strings = {
+      en: {
+        'title':       'Account Deletion Request',
+        'subtitle':    'Fill in the form below to request the deletion of your Volio account and all associated data.',
+        'form-title':  'Request form',
+        'fallback':    'If the form doesn\'t load, you can open it directly <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">at this link</a>, or write to <a href="mailto:admin@volioapp.it?subject=Account%20deletion%20request">admin@volioapp.it</a>.',
+        'deleted-title': 'What gets deleted',
+        'row1-label':  'Account data',
+        'row1-val':    'Profile, email, username, settings',
+        'row2-label':  'Flight data',
+        'row2-val':    'Logged flights, GPS tracks, statistics linked to your account',
+        'row3-label':  'Social content',
+        'row3-val':    'Posts, photos, comments, follower/following connections',
+        'row4-label':  'Timeline',
+        'row4-val':    'Deletion is processed within 30 days of the request',
+        'note-title':  '⚠ Note',
+        'note-body':   'Some data may be retained for longer if required by legal or accounting obligations (e.g. invoicing), in accordance with our <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
+        'back':        'Back to Volio',
+      },
+      it: {
+        'title':       'Richiesta di cancellazione account',
+        'subtitle':    'Compila il modulo qui sotto per richiedere la cancellazione del tuo account Volio e dei dati associati.',
+        'form-title':  'Modulo di richiesta',
+        'fallback':    'Se il modulo non si carica, puoi aprirlo direttamente <a href="https://forms.cloud.microsoft/e/DJAyFbyxVP" target="_blank" rel="noopener">a questo link</a>, oppure scrivere a <a href="mailto:admin@volioapp.it?subject=Richiesta%20cancellazione%20account">admin@volioapp.it</a>.',
+        'deleted-title': 'Cosa viene cancellato',
+        'row1-label':  'Dati account',
+        'row1-val':    'Profilo, email, username, impostazioni',
+        'row2-label':  'Dati di volo',
+        'row2-val':    'Voli registrati, tracciati GPS, statistiche associate al tuo account',
+        'row3-label':  'Contenuti social',
+        'row3-val':    'Post, foto, commenti, collegamenti con altri utenti (follower/following)',
+        'row4-label':  'Tempistiche',
+        'row4-val':    'La cancellazione viene elaborata entro 30 giorni dalla richiesta',
+        'note-title':  '⚠ Nota',
+        'note-body':   'Alcuni dati potrebbero essere conservati più a lungo se richiesto da obblighi legali o contabili (es. fatturazione), in conformità con la nostra <a href="https://volioapp.github.io/privacypolicy/" target="_blank" rel="noopener" style="color:#92400e;font-weight:600;">Privacy Policy</a>.',
+        'back':        'Torna a Volio',
+      }
+    };
+
+    function setLang(lang) {
+      const s = strings[lang];
+      for (const [key, val] of Object.entries(s)) {
+        const el = document.getElementById('t-' + key);
+        if (el) el.innerHTML = val;
+      }
+      document.documentElement.lang = lang;
+      document.getElementById('btnEN').classList.toggle('active', lang === 'en');
+      document.getElementById('btnIT').classList.toggle('active', lang === 'it');
+      localStorage.setItem('volio_lang', lang);
+    }
+
+    // Match language with main site
+    const saved = localStorage.getItem('volio_lang') || 'en';
+    setLang(saved);
+  </script>
+
+</body>
+</html>
