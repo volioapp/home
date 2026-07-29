@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.littleendian.volare",
+      "sha256_cert_fingerprints": [
+        "REPLACE_ME: SHA-256 fingerprint of the Android release signing certificate — get from Google Play Console > Setup > App integrity > App signing key certificate, or `keytool -list -v -keystore <release.keystore> -alias <alias>`"
+      ]
+    }
+  }
+]
