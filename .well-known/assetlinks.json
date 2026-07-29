@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.littleendian.volare",
+      "sha256_cert_fingerprints": [
+        "CE:2C:46:34:AD:0B:02:0C:71:B9:37:82:4E:56:E1:23:39:31:A8:CF:09:66:F2:6A:82:13:9C:39:E8:0C:81:D0"
+      ]
+    }
+  }
+]
