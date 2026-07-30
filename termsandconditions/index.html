@@ -1,1 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Conditions / Termini e Condizioni — Volio App</title>
+<style>
 
+  :root {
+    --brand-dark: #1A1A2E;
+    --brand-accent: #2563EB;
+    --brand-light: #EFF6FF;
+    --border-color: #DBEAFE;
+    --text-primary: #1F2937;
+    --warn-bg: #FFF7ED;
+    --warn-border: #FED7AA;
+    --warn-text: #92400E;
+    --green-bg: #F0FDF4;
+    --green-border: #BBF7D0;
+    --green-text: #166534;
+    --beta-bg: #F5F3FF;
+    --beta-border: #C4B5FD;
+    --beta-text: #4C1D95;
+    --beta-accent: #7C3AED;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: var(--text-primary); line-height: 1.7; background: #F8FAFC; }
+  .cover { background: var(--brand-dark); color: white; padding: 56px 40px 48px; text-align: center; }
+  .cover .brand { font-size: 11px; letter-spacing: 4px; color: #93C5FD; margin-bottom: 16px; text-transform: uppercase; }
+  .cover h1 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+  .cover .subtitle { color: #BFDBFE; font-size: 15px; margin-bottom: 8px; }
+  .cover .meta { color: #93C5FD; font-size: 13px; }
+  .lang-switch { margin: 20px 0 4px; }
+  .lang-switch button { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.7); padding: 5px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; margin: 0 4px; letter-spacing: 1.5px; transition: all 0.2s; }
+  .lang-switch button.active { background: white; color: var(--brand-dark); border-color: white; }
+  .container { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+  .intro-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px; margin: 32px 0 8px; font-size: 13.5px; color: #1E40AF; line-height: 1.6; }
+  .section { margin-top: 36px; }
+  .section-title { font-size: 18px; font-weight: 700; color: var(--brand-accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border-color); }
+  .beta-section { margin-top: 36px; background: var(--beta-bg); border: 1.5px solid var(--beta-border); border-radius: 10px; padding: 24px 28px; }
+  .beta-section .section-title { color: var(--beta-accent); border-bottom-color: var(--beta-border); }
+  .beta-badge { display: inline-block; background: var(--beta-accent); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 2px 10px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; }
+  .beta-intro { font-size: 13.5px; color: var(--beta-text); background: white; border: 1px solid var(--beta-border); border-radius: 6px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.6; }
+  .sub-title { font-size: 14px; font-weight: 700; color: var(--brand-dark); margin: 16px 0 6px; }
+  .beta-section .sub-title { color: var(--beta-accent); }
+  p { margin-bottom: 10px; font-size: 14.5px; }
+  ul { margin: 6px 0 12px 0; padding: 0; list-style: none; }
+  ul li { padding: 4px 0 4px 20px; position: relative; font-size: 14px; }
+  ul li::before { content: "\2022"; position: absolute; left: 4px; color: var(--brand-accent); }
+  .beta-section ul li::before { color: var(--beta-accent); }
+  .def-list { margin: 10px 0 14px 0; }
+  .def-list dt { font-weight: 700; color: var(--brand-dark); font-size: 14px; margin-top: 10px; }
+  .def-list dd { margin-left: 0; font-size: 14px; color: var(--text-primary); padding-left: 16px; border-left: 3px solid var(--border-color); margin-top: 2px; }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--warn-text); line-height: 1.6; }
+  .contact-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 18px; text-align: center; margin-top: 12px; font-size: 14.5px; line-height: 2; }
+  .alpha-list { counter-reset: alpha-counter; list-style: none; }
+  .alpha-list li { counter-increment: alpha-counter; padding-left: 28px; position: relative; margin-bottom: 6px; font-size: 14px; }
+  .alpha-list li::before { content: counter(alpha-counter, lower-alpha) ")"; position: absolute; left: 4px; color: var(--brand-accent); font-weight: 600; }
+  hr { border: none; border-top: 1px solid var(--border-color); margin: 24px 0 4px; }
+  a { color: var(--brand-accent); }
+  @media (max-width: 600px) { .cover { padding: 36px 20px 32px; } .cover h1 { font-size: 26px; } .beta-section { padding: 16px; } }
+
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand">Volio App</div>
+  <div class="lang-switch">
+    <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+    <button onclick="setLang('it')" id="btn-it">IT</button>
+  </div>
+  <div id="cover-en">
+    <h1>Terms and Conditions</h1>
+    <div class="subtitle">Volio App S.r.l.</div>
+    <div class="meta">30 July 2026</div>
+  </div>
+  <div id="cover-it" style="display:none">
+    <h1>Termini e Condizioni</h1>
+    <div class="subtitle">Volio App S.r.l.</div>
+    <div class="meta">30 Luglio 2026</div>
+  </div>
+</div>
+
+<div id="body-en">
+<div class="container">
+
+  <div class="intro-box">These Terms and Conditions govern the contractual relationship between Volio App S.r.l. and each User in relation to access to and use of the Volio mobile application.</div>
+
+  <!-- ART. 1 -->
+  <div class="section">
+    <div class="section-title">1. Introduction</div>
+    <p>1.1 These Terms and Conditions (the &ldquo;Terms&rdquo;) govern the use of the Volio mobile application (the &ldquo;App&rdquo; or the &ldquo;Platform&rdquo;), which enables Users to share their own flight tracks and to access related aviation features. By creating an Account and using the App, the User confirms that they have read, understood and fully accepted these Terms.</p>
+    <p>1.2 Where the User takes part in the App&rsquo;s Beta Testing Programme, the additional terms set out in Art. 16 of these Terms shall also apply. Where the User has downloaded the App from the Apple App Store or the Google Play Store, the platform-specific terms set out in Art. 17 shall also apply.</p>
+    <p>1.3 By means of the FR24 API service provided by Flightradar24, the App acquires the data recorded by aircraft transponders, including ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilateration), FLARM and OGN (Open Glider Network) feeds, and associates them with the User&rsquo;s profile. Further aeronautical information displayed in the App may originate from Flightradar24 or from other third-party aeronautical data providers. The maps within the App are generated through the Mapbox platform.</p>
+    <p>1.4 The App is owned and operated by <strong>Volio App S.r.l.</strong>, a company incorporated under Italian law, with registered office at Via Mazzini 10, 22077 &ndash; Olgiate Comasco (CO), Italy, VAT No. 04312420138, REA No. CO &ndash; 435595 (&ldquo;Volio App&rdquo;, &ldquo;the Company&rdquo;, &ldquo;the Operator&rdquo; or &ldquo;we&rdquo;). By creating an Account and using the App, the User enters into a binding contract with Volio App.</p>
+    <p>1.5 The Aeronautical Data made available through the App is informational in nature, must never be used for operational purposes or for purposes critical to flight safety, and the aircraft search function must not be used to infringe the privacy of third parties.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 2 -->
+  <div class="section">
+    <div class="section-title">2. Definitions</div>
+    <p>For the purposes of these Terms, the following terms shall have the meanings set out below:</p>
+    <dl class="def-list">
+      <dt>Account</dt><dd>the personal profile created by the User upon completion of the registration procedure;</dd>
+      <dt>FR24 API</dt><dd>the application programming interface provided by Flightradar24 AB (&ldquo;Flightradar24&rdquo;), through which the App acquires the Flight Data;</dd>
+      <dt>App / Platform</dt><dd>the Volio mobile application, which is the subject matter of these Terms;</dd>
+      <dt>Activity</dt><dd>the content published by the User relating to a flight or to an aviation experience;</dd>
+      <dt>Beta Tester</dt><dd>the User invited to take part in the Beta Testing Programme referred to in Art. 16;</dd>
+      <dt>Terms</dt><dd>these Terms and Conditions, as updated from time to time;</dd>
+      <dt>Content</dt><dd>the comments, information and materials contained in the Account, as well as any other text, image, data or information that the User publishes, uploads, shares or transmits through the App;</dd>
+      <dt>Aeronautical Data</dt><dd>collectively, the Flight Data and any other information relating to flights, aircraft, airports, routes, flight numbers and registrations made available through the App, acquired from Flightradar24 or from other third-party aeronautical data providers;</dd>
+      <dt>Flight Data</dt><dd>collectively, the ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilateration), FLARM and OGN (Open Glider Network) data relating to aircraft, helicopters, gliders, ultralights and other flying objects, acquired through the FR24 API;</dd>
+      <dt>Third-Party Providers</dt><dd>collectively, the third parties, independent of the Operator, which supply services, infrastructure, data or functionalities integrated into or used within the App;</dd>
+      <dt>Operator / Company / Volio App</dt><dd>Volio App S.r.l., with registered office at Via Mazzini 10, 22077 &ndash; Olgiate Comasco (CO), Italy, VAT No. 04312420138;</dd>
+      <dt>Registration Number</dt><dd>the alphanumeric identification code (&ldquo;tail number&rdquo;) assigned to an aircraft by the competent aviation authority, which may be used to search for information relating to that aircraft through the App;</dd>
+      <dt>Beta Testing Programme</dt><dd>the optional pre-release testing programme governed by Art. 16;</dd>
+      <dt>Map Service</dt><dd>the cartographic display service provided by Mapbox Inc. (&ldquo;Mapbox&rdquo;);</dd>
+      <dt>User</dt><dd>in both the singular and the plural, the natural person who creates an Account and uses the App.</dd>
+    </dl>
+  </div>
+  <hr>
+
+  <!-- ART. 3 -->
+  <div class="section">
+    <div class="section-title">3. Subject matter and acceptance of the Terms</div>
+    <p>3.1 These Terms govern the contractual relationship between the Operator and each User in relation to access to and use of the App and of all features offered thereby.</p>
+    <p>3.2 The creation of an Account and/or the use of the App entail full and unreserved acceptance of these Terms. Users who do not intend to accept them must refrain from creating an Account and from using the App.</p>
+    <p>3.3 Where applicable considering the User&rsquo;s specific situation, the additional provisions relating to the Beta Testing Programme (Art. 16) and the Apple App Store / Google Play Store platform-specific terms (Art. 17) shall also apply as an integral part of these Terms.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 4 -->
+  <div class="section">
+    <div class="section-title">4. Eligibility requirements</div>
+    <p>4.1 Use of the App is reserved to Users who are at least <strong>16 years of age</strong>. By creating an account, the User declares that they meet this requirement. Volio App reserves the right to verify eligibility and to refuse or revoke access at any time.</p>
+    <p>4.2 Users aged between 16 and 17 may use the App solely with the prior authorisation of the person holding parental responsibility over them. By creating an Account, a User who is a minor aged between 16 and 17 declares that they have obtained such authorisation; The holder of parental responsibility may at any time request deletion of the Account by writing to <a href="mailto:support@volioapp.it">support@volioapp.it</a>; Volio App shall act upon such request without undue delay.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 5 -->
+  <div class="section">
+    <div class="section-title">5. Account registration and deletion</div>
+    <p>5.1 In order to use the App, an Account must be created. The App supports registration and log-in by e-mail address and password, <strong>Google sign-in</strong> (&ldquo;Sign in with Google&rdquo;) and <strong>Apple sign-in</strong> (&ldquo;Sign in with Apple&rdquo;). The User is solely responsible for the confidentiality of their access credentials and for all activity carried out through their Account.</p>
+    <p>5.2 The User may delete their account and the personal data associated with it at any time, directly from the App, through the section <strong>Profile &gt; Delete account</strong>. The procedure may be carried out independently and does not require contacting customer support, sending e-mails or completing any further support procedure, save for any identity verification steps required in order to protect the User&rsquo;s security.</p>
+    <p>Deletion of the Account entails the permanent removal of the User&rsquo;s personal data from the Operator&rsquo;s active systems, with the exception of data that the Operator is required or entitled to retain for legal, security, fraud prevention or regulatory compliance purposes, as described in the Privacy Policy.</p>
+    <p>5.3 Where the User has logged in through &ldquo;Sign in with Apple&rdquo;, deletion of the Account shall also entail revocation of the associated access credentials. The User may also request the deletion of their Account and of the associated data without installing the App, by means of the dedicated form available on the Operator&rsquo;s website: <a href="https://www.volioapp.it/account-deletion/" target="_blank"><strong>Volio App &mdash; Account deletion request</strong></a>.</p>
+    <p>5.4 By creating an Account, the User agrees to be fully responsible for any Activity carried out by means of their access credentials. Users must inform Volio App immediately and unambiguously, using the contact details indicated in this document, where they believe that their personal information &mdash; such as, for example, the User Account, the access credentials or personal data &mdash; has been breached, unlawfully disclosed or misappropriated.</p>
+    <p>5.5 The registration of a User Account on Volio App is subject to the conditions set out below. By registering an Account, the User confirms that they satisfy those conditions:</p>
+    <ul>
+      <li>The opening of Accounts by means of bots or other automated means is not permitted;</li>
+      <li>Unless otherwise specified, each User may create only one Account;</li>
+      <li>Unless expressly permitted, a User&rsquo;s Account may not be shared with other persons.</li>
+    </ul>
+    <p>5.6 Volio App reserves the right to suspend or delete a User&rsquo;s Account at any time, at its own discretion where it considers the Account to be inappropriate, offensive or contrary to these Terms, providing the User with a statement of reasons for the decision taken without undue delay. The suspension or deletion of the Account shall not give the User any right to compensation, refund or indemnity. The suspension or deletion of an Account for reasons attributable to the User shall not release the User from the payment of any applicable fees or prices.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 6 -->
+  <div class="section">
+    <div class="section-title">6. Early release &mdash; Status of the app</div>
+    <p>6.1 The App is currently at a development and preliminary release stage. Accordingly: (a) the App may contain bugs, errors or incomplete features; (b) features may be modified, added, removed or discontinued without notice; (c) the availability of the App is not guaranteed and may be suspended at any time.</p>
+    <p>6.2 All features of the App are, as at the date of these Terms, offered free of charge. The App does not currently provide for paid features, subscriptions or in-app purchases.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 7 -->
+  <div class="section">
+    <div class="section-title">7. Platform features and third-party aeronautical data providers</div>
+    <p>7.1 The App uses the FR24 API service provided by Flightradar24 in order to acquire the data recorded by the transponders of aircraft, helicopters, gliders, ultralights and other flying objects capable of generating equivalent signals. The categories of data acquired include ADS-B (Automatic Dependent Surveillance-Broadcast) signals, MLAT (Multilateration), FLARM (an anti-collision system widely used by gliders and light aircraft) and OGN (Open Glider Network) feeds (collectively, the &ldquo;Flight Data&rdquo;). Such data is supplied by Flightradar24 AB.</p>
+    <p>7.2 Maps are displayed through the Mapbox platform; by using the App, the User accepts that map tile requests are processed by Mapbox in accordance with its Privacy Policy.</p>
+    <p>7.3 The flight information displayed within the App may be obtained from third-party Aeronautical Data providers, including Flightradar24 and other data providers. The Operator does not own the Aeronautical Data and cannot guarantee its availability, completeness, accuracy, timeliness or uninterrupted supply. The availability of such information may vary at any time depending on the services offered by third-party providers.</p>
+    <p>7.4 Information relating to airports, aircraft, routes, flight numbers, registrations and other related aeronautical information is provided for informational purposes only. The Operator does not warrant the accuracy or completeness of such information and disclaims all liability for decisions taken by the User on the basis thereof.</p>
+    <p>By using the flight tracking function, the user expressly acknowledges and accepts the following:</p>
+    <ul>
+      <li>the App acquires the Flight Data through Flightradar24&rsquo;s FR24 API and associates it with the User&rsquo;s profile; data relating to the flight path, once associated with the profile, will be visible to and shared with the other registered users of the App;</li>
+      <li>the flight data displayed in the App may be subject to geographical and technical coverage limitations and may be inaccurate, incomplete or out of date;</li>
+      <li>Volio App is not responsible for the accuracy, completeness or availability of data originating from Flightradar24 or from other third-party providers;</li>
+      <li>the data must not be used for activities that endanger human life, for real-time navigation, for collision avoidance, for air traffic control or for any other aeronautical purpose critical to safety.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <!-- ART. 8 -->
+  <div class="section">
+    <div class="section-title">8. User&rsquo;s liability, representations and warranties</div>
+    <p>8.1 By associating flight data (ADS-B, MLAT, FLARM or OGN) with their profile, the User represents and warrants that they are the pilot, the operator or the owner of the relevant aircraft, helicopter, glider, ultralight or other flying object, OR that they have obtained the express and prior authorisation of the pilot or of the operator to associate its flight data with the User&rsquo;s profile and to share it within the App. The association of flight data relating to a flying object that the User has not piloted and in respect of which the User does not hold the operator&rsquo;s authorisation constitutes a breach of these Terms and may constitute an infringement of the applicable privacy legislation.</p>
+    <p>8.2 The App is not designed, certified or intended to support aviation operational activities and must not be used for: flight planning; navigation; flight operations; air traffic separation; operational decision-making; aeronautical activities critical to safety; compliance with aviation regulations. The User remains solely responsible for operational decisions taken on the basis of certified aeronautical information and official sources.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 9 -->
+  <div class="section">
+    <div class="section-title">9. Unlawful association of flight data: reporting, verification and removal</div>
+    <p>9.1 Any natural person identifiable through the search results who believes that a flight track or ADS-B data relating to an aeroplane, helicopter, glider, ultralight or other flying object has been wrongly associated with another User&rsquo;s profile without the relevant authorisation shall be entitled to request its immediate removal by contacting Volio App at <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+    <p>9.2 The Operator shall examine and act upon all reports within one month of receipt. That period may be extended by a further two months where necessary, taking into account the complexity and the number of the requests; in such case, Volio App shall inform the requesting person of the extension and of the reasons for it within one month of receipt.</p>
+    <p>9.3 Where a report is upheld, the Operator reserves the right to suspend or permanently revoke the Account of the User responsible for the improper association, providing that User with a statement of reasons for the decision taken.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 10 -->
+  <div class="section">
+    <div class="section-title">10. Visibility of Activities and of the Profile</div>
+    <p>10.1 The User may select the visibility level of each Activity published through the App from among: (a) Public; (b) visible to followers only; (c) Private (Activities set as Private are not visible to other Users).</p>
+    <p>10.2 The User may configure their profile as Public or Private. Profiles set as Private do not appear in search results and are not accessible to Users.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 11 -->
+  <div class="section">
+    <div class="section-title">11. Indemnification</div>
+    <p>11.1 The User undertakes to indemnify and hold harmless Volio App, as well as its directors, employees, collaborators, agents and successors in title, from and against any claim, damage, loss, cost or expense, including reasonable legal fees, arising out of or in connection with:</p>
+    <ul>
+      <li>the User&rsquo;s breach of the representation referred to in Art. 8 concerning the authorisation to associate Flight Data with their profile;</li>
+      <li>any third-party claim, including by other pilots, aircraft operators or owners of flying objects, alleging that the User has improperly associated the relevant Flight Data with their profile without authorisation;</li>
+      <li>any infringement of the privacy, image rights or data protection rights of third parties arising from the use of the App&rsquo;s flight tracking or aircraft search features;</li>
+      <li>any use of the App in breach of applicable law, including aviation regulations.</li>
+    </ul>
+    <p>11.2 The Operator shall not be liable for any unlawful associations of Flight Data carried out by Users in breach of these Terms. The User represents and warrants that they hold all rights, authorisations and titles necessary to use, upload, share and make available the Flight Data associated with their profile, assuming full responsibility for its lawful availability and use.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 12 -->
+  <div class="section">
+    <div class="section-title">12. Intellectual property</div>
+    <p>12.1 All intellectual and industrial property rights relating to the App &ndash; such as, for example, copyright, trademarks, patents, designs, code, name and functionalities &ndash; remain the exclusive property of Volio App and are protected under the legislation and international treaties applicable to intellectual property. The Flight Data originating from the FR24 API is owned by Flightradar24 AB. The images and cartographic data provided through the Map Service remain the property of Mapbox Inc. and of its data providers.</p>
+    <p>12.2 Volio App holds and expressly reserves all intellectual property rights in the Content available on the App. Users are not authorised to use the Content in any manner that is not necessary to, or implied in, the proper use of the App. In particular, but without limitation, Users are prohibited, without the Operator&rsquo;s prior written consent, from copying, downloading, sharing beyond the limits set out below, modifying, translating, processing, publishing, transmitting, selling, sublicensing, transforming, transferring or disposing of to third parties, or creating derivative works from, the content available on the App, as well as from allowing third parties to carry out such activities through their User Account or device, even without their knowledge. The limitations and exceptions provided for by copyright legislation remain unaffected.</p>
+    <p>12.3 Any intellectual or industrial property right, as well as any other exclusive right existing in the software or in the technology integrated into or relating to Volio App, is held by the Operator. Provided that the User complies with these Terms, and notwithstanding any diverging provision contained therein, the Operator grants Users a revocable, non-exclusive, non-transferable and non-sublicensable licence to use the software and/or the technology integrated into the App within the framework and for the purposes offered by Volio App. The licence does not include any right of access to, use of, or disclosure of the original source code to the User. The techniques, algorithms and procedures contained in the software and the related documentation are the exclusive property of Volio App. The rights and licences granted to the User under these Terms shall terminate automatically and with immediate effect upon the termination or cessation, on any ground, of the contractual relationship between the User and the Operator.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 13 -->
+  <div class="section">
+    <div class="section-title">13. Prohibited use</div>
+    <p>13.1 The User undertakes to use the App solely for the purpose set out in these Terms and in compliance with applicable law, including aviation regulations. It is the User&rsquo;s sole responsibility to ensure that their use of Volio App does not infringe the law, regulations or the rights of third parties. Accordingly, the Operator reserves the right to adopt any measure suitable to protect its legitimate interests and, in particular, to deny the User access to the App, to terminate contracts and to report to the competent authorities &ndash; e.g. the judicial or administrative authorities &ndash; any objectionable activity carried out through Volio App, whenever the User commits breaches of the law, of regulations, of third-party rights and/or of the Terms, in particular, but without limitation, by engaging in any of the following activities:</p>
+    <ul>
+      <li>pretending to satisfy any requirement for access to or use of Volio App;</li>
+      <li>concealing their own identity, using another person&rsquo;s identity or purporting to act on behalf of a third party without that third party&rsquo;s authorisation;</li>
+      <li>altering identifiers in order to conceal or disguise the origin of their messages or of the Content published;</li>
+      <li>defaming, threatening, abusing, using intimidatory practices, or otherwise threatening or infringing the rights of third parties;</li>
+      <li>promoting activities that may endanger their own life or the life of any other User, or cause physical harm;</li>
+      <li>probing, analysing or testing the vulnerability of, and the services and networks connected to, the site/app, as well as breaching the security or authentication procedures on Volio App;</li>
+      <li>installing, integrating, uploading or otherwise embedding malware into or through Volio App;</li>
+      <li>using Volio App or its technological infrastructure in an abusive, excessive or otherwise inappropriate manner (for example: for spamming purposes);</li>
+      <li>attempting to disrupt or tamper with the technological infrastructure in such a way as to cause damage or an excessive burden to Volio App;</li>
+      <li>implementing automated processes for the extraction, collection or capture of information, data and/or Content from Volio App (scraping) and from all its digital extensions, unless expressly authorised by the Operator;</li>
+    </ul>
+    <p>In particular, the User must not:</p>
+    <ul>
+      <li>associate ADS-B data or flight tracks with aircraft or other flying objects in the absence of the necessary authorisation or of a legitimate title to represent them;</li>
+      <li>use the Flight Data displayed in the App for decisions critical to aviation safety, for navigation or for air traffic control;</li>
+      <li>attempt to decompile, reverse engineer or extract the App&rsquo;s source code, Flightradar24&rsquo;s underlying data feed or Mapbox&rsquo;s cartographic data;</li>
+      <li>interfere with the App&rsquo;s infrastructure or with other Users&rsquo; access, or disrupt its operation;</li>
+      <li>share their Account credentials with third parties; use the App for unlawful purposes;</li>
+      <li>use the Aeronautical Data for mass surveillance purposes, for profiling or for any other purpose that infringes or encourages the infringement of the privacy or fundamental rights of third parties;</li>
+      <li>use bots, scrapers, crawlers or other automated tools to extract, copy or compile in bulk the Aeronautical Data made available through the App;</li>
+      <li>resell, sublicense or redistribute to third parties the Aeronautical Data obtained through the App;</li>
+      <li>open an Account or use Volio App to promote, sell or advertise products or services of any kind in any manner;</li>
+      <li>pretend or imply in any manner that they have a relationship with Volio App, that they enjoy Volio App&rsquo;s endorsement, or that Volio App endorses the products or services of the User or of a third party for any purpose.</li>
+    </ul>
+    <p>13.2 The Operator reserves the right to suspend or close the Account of any User who breaches these provisions.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 14 -->
+  <div class="section">
+    <div class="section-title">14. Free of charge use, paid features, subscriptions and in-app purchases</div>
+    <p>14.1 The App does not currently offer paid features, subscriptions or in-app purchases. All features are available free of charge.</p>
+    <p>14.2 Should paid features be introduced in the future, this section will be updated with the relevant terms and conditions, including prices, subscription duration, renewal conditions and cancellation procedures, prior to their launch.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 15 -->
+  <div class="section">
+    <div class="section-title">15. Disclaimer of warranties and limitation of liability</div>
+    <p>15.1 Unless otherwise specified and without prejudice to the applicable statutory provisions, any claim for damages against Volio App (or against any natural or legal person acting on its behalf) is excluded.</p>
+    <p>In particular, Volio App assumes no liability in respect of:</p>
+    <ul>
+      <li>damage or loss arising from interruptions or malfunctions of Volio App due to force majeure or to unforeseen and unforeseeable events and, in any event, beyond the Operator&rsquo;s will and outside its control, such as, by way of example only, failures or interruptions of telephone or power lines, of the Internet connection and/or of other means of transmission, inaccessibility of websites, strikes, natural disasters, viruses and cyber-attacks, interruptions in the supply of third-party products, services or applications;</li>
+      <li>any loss of profit or other losses, including indirect losses, that the User may have suffered (such as, by way of example only, business losses, loss of revenue, of profits or of anticipated savings, loss of contractual or commercial relationships, loss of goodwill or reputational damage, etc.);</li>
+      <li>any losses that are not a direct consequence of a breach of the Terms by the Operator;</li>
+      <li>damage arising from the Content published by Users or from the association of Flight Data carried out by Users.</li>
+    </ul>
+    <p>15.2 The App is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo;, without warranties of any kind, whether express or implied. Being a product at a preliminary release stage, the App is inherently subject to instability. The recorded flight data (ADS-B, MLAT, FLARM, OGN) originating from Flightradar24&rsquo;s FR24 API and the cartographic data provided through Mapbox are supplied by third parties without any warranty as to accuracy, quality or completeness. Do not rely on any data contained in this App for purposes critical to safety or for navigation.</p>
+    <p>To the maximum extent permitted by applicable law, Volio App shall not be liable for indirect, incidental or consequential damages arising from the use of the App, including reliance on ADS-B or cartographic data. It is understood that nothing in this article excludes or limits the rights and remedies that the User, where qualifying as a consumer, may assert against the Operator in the event of total or partial non-performance of contractual obligations, nor the mandatory rights afforded to the User by applicable law.</p>
+    <p>15.3 No provision of these Terms limits the Operator&rsquo;s liability for death, personal injury or fraud caused by gross negligence or wilful misconduct, nor does it prejudice any mandatory consumer protection rights to which the User may be entitled under the law of their country of residence, being rights that cannot be excluded or limited by contract.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 16 - BETA SECTION -->
+  <div class="beta-section">
+    <div class="beta-badge">Beta Testing Programme</div>
+    <div class="section-title">16. Additional terms for beta testers</div>
+    <div class="beta-intro">This Section applies solely to Users invited to take part in the App&rsquo;s Beta Testing Programme. Where the User has not received a specific invitation and has not completed the enrolment form, this section shall not apply to them.</div>
+
+    <div class="sub-title">16.2 Recruitment and enrolment</div>
+    <p>Volio App recruit&rsquo;s potential beta testers through LinkedIn, Instagram, other social media platforms or personal invitation. After expressing their interest, candidates are directed to a dedicated enrolment form on Microsoft Forms, through which the following information is collected:</p>
+    <ul>
+      <li>Name and surname;</li>
+      <li>E-mail address;</li>
+      <li>Telephone number (optional &ndash; only where the candidate consents to being contacted via WhatsApp for the coordination of the beta phase).</li>
+    </ul>
+    <p>The Microsoft Forms registration form includes mandatory tick boxes for: (a) acceptance of these Terms; (b) acceptance of the Privacy Policy; (c) optionally, consent to be contacted via WhatsApp where a telephone number is provided. Submission of the form constitutes the moment of formal consent and creates a time-stamped record stored in Volio App&rsquo;s Microsoft account.</p>
+
+    <div class="sub-title">16.3 App test link &mdash; Non-transferability</div>
+    <p>Beta testers who receive a link or an invitation to install the App through the <strong>Apple TestFlight</strong> (iOS) or <strong>Google Play Beta</strong> (Android) testing platforms are granted access for personal use only. It is not permitted to:</p>
+    <ul>
+      <li>share the TestFlight or Google Play beta link or invitation with any other person;</li>
+      <li>allow any other person to install or access the beta version by using their own invitation;</li>
+      <li>publish, post or distribute the beta access link on any platform, channel or group, including social media, messaging apps, forums or community groups.</li>
+    </ul>
+    <p>Sharing the beta access link constitutes a material breach of these Terms and shall result in the immediate and permanent revocation of access to the beta version. Volio App reserves the right to report any repeated or intentional abuse to Apple or Google, as applicable.</p>
+
+    <div class="sub-title">16.4 WhatsApp contact (optional)</div>
+    <p>Beta testers who optionally provide their telephone number consent to being added to a private WhatsApp group used exclusively for beta coordination, including announcements, issue reports and direct support. Participation in the WhatsApp group is entirely voluntary. Testers may leave the group at any time and may request the deletion of their telephone number by contacting <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+
+    <div class="sub-title">16.5 Nature of the beta test</div>
+    <p>Participation in the Beta Testing Programme takes place in the capacity of active tester, with the aim of providing structured feedback useful for the improvement of the product before its official release. Participation is voluntary, unpaid and revocable at any time.</p>
+
+    <div class="sub-title">16.6 Additional features during the beta testing phase</div>
+    <p>During the Beta Testing Programme, beta testers may be granted early access to features not yet available to the public, solely for pre-release testing purposes. Such access has no commercial purpose and does not create any contractual right to those features outside the testing period. Access shall cease automatically upon conclusion of the Beta Testing Programme or in the event that participation in the beta testing ceases for any reason, and may be revoked by Volio App at any time without any liability.</p>
+    <p>In the absence of specific provisions, the features made available within the Beta Testing Programme remain subject, in so far as compatible, to the general principles and to the provisions of general application set out in these Terms, including those relating to Content (Art. 21) and to prohibited use (Art. 13). The Beta Tester therefore undertakes to use those features in good faith and in accordance with fair dealing, in compliance with applicable law and with the rights of third parties. Before the official release of the feature, the Operator shall update these Terms to include specific provisions, in accordance with the procedure set out in Art. 23.</p>
+
+    <div class="sub-title">16.7 Confidentiality</div>
+    <p>Beta testers agree to keep all aspects of the beta experience strictly confidential. It is not permitted to:</p>
+    <ul>
+      <li>disclose, publish or publicly share screenshots, recordings or descriptions of the App&rsquo;s features, including on social media, forums, blogs or review platforms, without Volio App&rsquo;s prior written consent;</li>
+      <li>discuss unreleased features, user interface changes or other characteristics with persons outside the beta programme;</li>
+      <li>share beta access credentials or invite third parties to access the beta version.</li>
+    </ul>
+    <p>This confidentiality obligation shall survive the conclusion of your participation in the beta testing programme.</p>
+
+    <div class="sub-title">16.8 Feedback and intellectual property</div>
+    <p>During the course of the programme, the Beta Tester may be asked to provide feedback, bug reports, suggestions or ideas (&ldquo;Feedback&rdquo;). By submitting the Feedback, the Beta Tester grants the Operator a perpetual, irrevocable, royalty-free and worldwide licence to use, incorporate and develop such Feedback, without any obligation or compensation towards the Beta Tester, who acknowledges that the Feedback becomes the exclusive property of the Operator.</p>
+
+    <div class="sub-title">16.9 Data during beta testing</div>
+    <p>Data generated during beta testing, including flight tracks, interactions and usage patterns, may be used specifically for product development, debugging and improvement, in addition to the general purposes described elsewhere in these Terms such data may be retained beyond the standard retention periods for analytical purposes, provided that it is anonymised by means of techniques that irreversibly prevent the direct or indirect identification of the data subject.</p>
+
+    <div class="sub-title">16.10 Termination of access to the beta version</div>
+    <p>Volio App may terminate beta testing access at any time and for any reason, including, by way of example but not limitation: breach of the confidentiality obligations, misuse of the beta version or conclusion of the beta programme. Where access is revoked, Volio App shall provide the Beta Tester with a statement of reasons. In the event of termination, the confidentiality obligations set out in Section 16.7 and the assignment of intellectual property set out in Section 16.8 shall continue to apply.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 17 -->
+  <div class="section">
+    <div class="section-title">17. Apple App Store and Google Play: platform-specific terms</div>
+    <p>17.1 Where the App has been downloaded from the <strong>Apple App Store</strong>, the following additional terms between the User and Volio App shall also apply, forming an integral part of these Terms:</p>
+    <ul>
+      <li>this agreement is concluded solely between the User and Volio App and not with Apple Inc. (&ldquo;Apple&rdquo;); Apple is not a party to these Terms and is not responsible for the App or for its content;</li>
+      <li>the licence granted to the User is limited to a non-transferable licence to use the App on Apple-branded products owned or controlled by the User, as permitted by the usage rules set out in the Apple Media Services Terms and Conditions;</li>
+      <li>Apple has no obligation to provide maintenance or support services for the App; such services are provided exclusively by Volio App, as described in these Terms;</li>
+      <li>should the App fail to conform to an applicable warranty, the User may notify Apple, which shall refund any purchase price paid for the App; to the maximum extent permitted by law, Apple has no other warranty obligation in relation to the App;</li>
+      <li>Volio App, and not Apple, is responsible for handling any claim by the User or by third parties in relation to the App, including claims relating to product liability, to non-conformity with legal or regulatory requirements, or arising from consumer protection, personal data protection or similar legislation;</li>
+      <li>in the event that third parties claim that the App, or the User&rsquo;s possession and use thereof, infringes their intellectual property rights, Volio App, and not Apple, shall be solely responsible for the investigation, defence, settlement and discharge of such claim;</li>
+      <li>the User represents and warrants that they are not located in a country subject to a United States Government embargo or designated by that Government as a &ldquo;terrorist supporting&rdquo; country, and that they are not included on any United States Government list of prohibited or restricted parties;</li>
+      <li>the User is required to comply with all applicable third-party terms and conditions when using the App (for example, the agreement with their wireless data service provider);</li>
+      <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and, upon the User&rsquo;s acceptance thereof, Apple shall have the right to enforce them against the User as a third-party beneficiary.</li>
+    </ul>
+    <p>17.2 Where the App has been downloaded from <strong>Google Play</strong>, its use is also subject to the Google Play Terms of Service; any in-app purchases are further governed by the Google Play rules on billing, subscriptions and refunds, in addition to these Terms.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 18 -->
+  <div class="section">
+    <div class="section-title">18. Protection of personal data</div>
+    <p>18.1 The processing of Users&rsquo; personal data, including data relating to the Flight Data associated with their respective profiles, is governed by the personal data processing notice (the &ldquo;Privacy Policy&rdquo;), available at <a href="https://volioapp.github.io/privacypolicy/" target="_blank">https://volioapp.github.io/privacypolicy/</a>, which is incorporated herein by reference in its entirety. The Privacy Policy is drafted in compliance with the applicable personal data protection legislation.</p>
+    <p>18.2 The App&rsquo;s infrastructure is hosted on Amazon Web Services (Milan, Italy), ensuring that all User data remains within the European Union. The Operator, including through the Third-Party Providers on which it relies, may make use of services whose servers are located outside the European Economic Area. In such case, Volio App shall ensure that the transfer of data is carried out in full compliance with the standards and safeguards provided for at European level for the protection of personal data (an adequacy decision of the European Commission &mdash; including, for transfers to the United States, the EU-U.S. Data Privacy Framework &mdash; or the Standard Contractual Clauses adopted by the European Commission). Further details on the transfers outside the EEA carried out and on the relevant safeguards are available in the Privacy Policy.</p>
+    <p>18.3 The User is invited to read carefully the Privacy Policy, which forms an integral part of these Terms, before proceeding with registration;</p>
+  </div>
+  <hr>
+
+  <!-- ART. 19 -->
+  <div class="section">
+    <div class="section-title">19. Future communications</div>
+    <p>19.1 By creating an Account, the User consents to the use of their e-mail address in order to be contacted regarding relevant updates or changes to the App or to these Terms. E-mail communications are managed through <strong>Brevo</strong>, a platform established in the European Union (France).</p>
+  </div>
+  <hr>
+
+  <!-- ART. 20 -->
+  <div class="section">
+    <div class="section-title">20. Third-party providers and third-party services</div>
+    <p>20.1 The App integrates services provided by third parties independent of the Operator, including, by way of example and without limitation, Flightradar24 and other Aeronautical Data providers, Mapbox (maps), Amazon Web Services (infrastructure), Brevo (e-mail communications), MongoDB (database management), as well as Apple and Google (distribution of the App).</p>
+    <p>20.2 Such services are governed by their respective terms and conditions and privacy policies, which the User is invited to consult independently. The Operator exercises no control over such services and is not responsible for their content, operation or data processing, save for any liability directly attributable to it by law in its capacity as data controller in respect of the integration choices made.</p>
+    <p>20.3 Certain features of the App depend on services operated by independent third parties. The Operator is not liable for interruptions, inaccuracies, delays or unavailability of the service arising from such third-party providers. The suspension or discontinuation of third-party services may affect certain features of the App, without giving rise to any right to indemnity or compensation in favour of the User.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 21 -->
+  <div class="section">
+    <div class="section-title">21. Reports, complaints and notice-and-action system</div>
+    <p>21.1 Volio App does not carry out general and constant monitoring of all Content uploaded by Users. It nevertheless reserves the possibility of carrying out targeted checks on the Content published, whether on its own initiative or following reports, within the limits permitted and to the extent necessary to ensure the security of the App and the protection of the rights of Users and of third parties.</p>
+    <p>21.2 These provisions apply to all Content published, uploaded, shared, transmitted or otherwise made available on the App by Users or by other authorised persons.</p>
+    <p>21.3 The User is fully responsible for the use of the App, including the publication, consultation and management of Content and the interaction with other Users. The User is solely liable for the Content they upload, communicate, publish or transmit, as regards its correctness, completeness and lawfulness, as well as for their own conduct on the App.</p>
+    <p>21.4 The Content uploaded, published, shared or otherwise made available on the App must comply with standards of correctness and lawfulness and must be consistent with the purposes of the service. Any use of the App for purposes extraneous to those envisaged is to be regarded as not permitted.</p>
+    <p>21.5 When publishing Activities, comments or any other Content made available through the App, the User undertakes not to publish, upload, share or transmit Content falling, by way of example and without limitation, within one or more of the categories described below:</p>
+    <ul>
+      <li><strong>False or misleading information.</strong> In particular, untruthful or misleading statements concerning aviation licences, ratings, qualifications or titles not actually held by the User are prohibited;</li>
+      <li><strong>Discriminatory or offensive Content.</strong> Also prohibited are discriminatory or denigratory expressions based, by way of example, on age, gender, gender identity, sexual orientation, ethnic origin, nationality, religion, disability or health conditions; offensive, vulgar, aggressive, abusive or threatening language in comments or in any other Content shared through the App; as well as conduct amounting to harassment, repeated provocation or intimidating behaviour towards other Users or third parties;</li>
+      <li><strong>Unlawful Content.</strong> Finally, the publication of unlawful Content is prohibited, such as requests, offers or proposals concerning activities contrary to the law or otherwise not permitted; the communication, publication or dissemination, through Activities, comments or other Content, of third parties&rsquo; personal data in the absence of the relevant authorisation or of another appropriate lawful basis under the applicable personal data protection legislation; as well as the sharing, transmission or making available of documents, information or materials that are reserved, confidential or otherwise not intended for disclosure, without the Operator&rsquo;s authorisation or another appropriate legitimising basis.</li>
+    </ul>
+    <p>21.6 Users may report to the App any Content published, uploaded or otherwise disseminated through the service which they consider, in good faith, to be contrary to the provisions of the law and/or to these Terms. The report may be submitted by means of the e-mail address <a href="mailto:support@volioapp.it">support@volioapp.it</a>. That channel constitutes the ordinary mechanism for the receipt and handling of reports. Volio App shall consider and examine only reports submitted through the channels indicated above.</p>
+    <p>The report must contain, failing which it may be held inadmissible or dismissed for insufficiency of elements:</p>
+    <ol class="alpha-list">
+      <li>the most precise possible indication of the reported Content and of its electronic location, including, where available, the URL, the Content identifier, the profile name and, in any event, any other element useful for its identification;</li>
+      <li>a clear description of the reasons for the report, that is, the reasons why the Content is considered unlawful and/or contrary to the provisions of the law and/or to these Terms;</li>
+      <li>where possible, an indication of the statutory provisions or contractual terms alleged to have been infringed;</li>
+      <li>the name and e-mail address of the reporting person;</li>
+      <li>a statement by the reporting person confirming their good-faith belief that the information provided and the statements made in the report are accurate and complete.</li>
+    </ol>
+    <p>A report lacking one or more of those elements shall nonetheless be assessed on the basis of the information available, and Volio App may request clarifications. A report shall not be rejected solely on the ground that one of the elements indicated above is missing</p>
+    <p>21.7 Upon receipt of the report, Volio App shall confirm its receipt without undue delay and shall proceed to assess it in a diligent, timely, objective and non-arbitrary manner, reserving the right to request clarifications or additional elements where necessary.</p>
+    <p>Following the assessment, Volio App may adopt, within the limits permitted by the applicable legislation and in a manner proportionate to the nature and seriousness of the case, the measures deemed appropriate and/or expedient to ensure the security and the protection of the rights of the App, of Users and of third parties. Such measures may include, by way of example and without limitation: the closure of the report without action, the removal of the Content, the disabling of access to the Content, the restriction of visibility, the suspension or restriction of the Account, as well as any other measure reasonably necessary to protect the rights of Volio App, of Users or of third parties.</p>
+    <p>21.8 Volio App shall communicate, within the limits provided by the applicable legislation, the outcome of the report to the reporting person and, where required, to the person who posted the Content, indicating the essential reasons for the decision taken and any means of challenge and/or remedies available;</p>
+    <p>21.9 Where applicable under the legislation in force, the recipients of the moderation decision may challenge it by sending an e-mail to: <a href="mailto:support@volioapp.it">support@volioapp.it</a> within six months of notification of the decision. The complaint is handled free of charge, within a reasonable time and without the decision being taken solely by automated means.</p>
+    <p>21.10 Reports that are manifestly unfounded, abusive, instrumental, repetitive or submitted in bad faith may lead, following assessment by Volio App and within the limits permitted, to the adoption of the measures provided for in these Terms.</p>
+    <p>21.11 Volio App designates the address <a href="mailto:support@volioapp.it">support@volioapp.it</a> as its single point of contact for direct communication, by electronic means, with recipients of the service, and the address <a href="mailto:admin@volioapp.it">admin@volioapp.it</a> as its single point of contact for direct communication with the authorities of the Member States, the Commission and the European Board for Digital Services. Communications with the authorities may be conducted in Italian or in English.</p>
+    <p>21.12 For further information on the procedures for reporting and removing Content, the User may contact Volio App at: <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 22 -->
+  <div class="section">
+    <div class="section-title">22. Applicable law, competent court and dispute resolution</div>
+    <p>22.1 These Terms are governed by Italian law. Where the User is a consumer habitually resident in another Member State of the European Union, that choice shall not deprive the User of the protection afforded by those provisions of the law of that State which cannot be derogated from by agreement.</p>
+    <p>22.2 Where the User is a consumer, the court of the place of the User&rsquo;s residence or elected domicile shall have jurisdiction over disputes arising out of or in connection with these Terms. The User may also bring proceedings before the court of the place where Volio App is established. Volio App may bring proceedings against a User who is a consumer only before the court of the place of that User&rsquo;s domicile.</p>
+    <p>22.3 Users may submit any dispute to Volio App by writing to <a href="mailto:support@volioapp.it">support@volioapp.it</a>; Volio App shall endeavour to reach an amicable settlement and shall respond to the request without undue delay and in any event within thirty (30) days of its receipt. The User&rsquo;s right to bring legal proceedings at any time remains unaffected.</p>
+    <p>22.4 The European Commission&rsquo;s online dispute resolution (ODR) platform, previously available for alternative dispute resolution and facilitating the out-of-court settlement of disputes relating to, and arising from, online sales and service contracts, was officially discontinued as of 20 July 2025, following the adoption of Regulation (EU) 2024/3228. The consumer may nonetheless refer the matter to an out-of-court dispute resolution body.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 23 -->
+  <div class="section">
+    <div class="section-title">23. Amendments to these Terms</div>
+    <p>23.1 Volio App reserves the right to amend these Terms at any time. In such case, the Operator shall give due notice of the amendments to Users within a reasonable period. Unless otherwise provided for by the applicable legislation, the amendments shall take effect in relation to the User from the date of the relevant notice or, where provided, from their publication on the App or on the Site.</p>
+    <p>23.2 Continued use of the Service implies the User&rsquo;s acceptance of the updated Terms. If the User does not wish to accept the amendments, they must cease using the App.</p>
+    <p>23.3 The previous version shall continue to govern the relationship until the User accepts the amendments. That version may be requested from the Operator. Where required by law, the Operator shall notify Users in advance of the effective date of the amended Terms.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 24 -->
+  <div class="section">
+    <div class="section-title">24. Assignment of the contract</div>
+    <p>24.1 Volio App may transfer or assign these Terms, in whole or in part, to a third party in the context of a merger, demerger, transfer of a business or of a business unit or other corporate reorganisation, or to a company belonging to the same group, provided that the transfer does not result in any diminution of the protection of the rights afforded to the User under these Terms or under applicable law. Volio App shall give Users prior notice of the transfer in accordance with the arrangements set out in Art. 23.2, and the User may withdraw from the contract free of charge before the transfer takes effect.</p>
+    <p>24.2 The User is not authorised to assign or transfer their rights and obligations under these Terms without Volio App&rsquo;s prior written consent.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 25 -->
+  <div class="section">
+    <div class="section-title">25. Final Provisions</div>
+    <p>25.1 Should one or more provisions of these Terms be declared invalid or ineffective, this shall not affect the validity of the remaining provisions.</p>
+    <p>25.2 These Terms, together with the Privacy Policy, constitute the entire agreement between the parties in relation to their subject matter and supersede any prior agreement, understanding or communication, whether written or oral, relating to the same matter.</p>
+    <p>25.3 Any failure or delay by the Operator in enforcing any provision of these Terms shall not constitute a waiver thereof.</p>
+    <p>25.4 These Terms are drafted in the Italian and English languages. Any translations into other languages are provided for information purposes only; Where the User is habitually resident in Italy, in the event of any discrepancy between the two versions, the Italian language version shall prevail. In all other cases, the English language version shall prevail.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 26 -->
+  <div class="section">
+    <div class="section-title">26. Contacts</div>
+    <div class="contact-box">
+      <strong>Volio App S.r.l.</strong><br>
+      Via Mazzini, 10 &ndash; 22077 - Olgiate Comasco (CO), Italy<br>
+      VAT No. 04312420138 &mdash; REA: CO &ndash; 435595<br>
+      <a href="mailto:support@volioapp.it">support@volioapp.it</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="body-it" style="display:none">
+<div class="container">
+
+  <div class="intro-box">I presenti Termini e Condizioni disciplinano il rapporto contrattuale tra Volio App S.r.l. e ciascun Utente in relazione all&#39;accesso e all&#39;utilizzo dell&#39;applicazione mobile Volio.</div>
+
+  <!-- ART. 1 -->
+  <div class="section">
+    <div class="section-title">1. Introduzione</div>
+    <p>1.1 I presenti Termini e Condizioni (le &ldquo;Condizioni&rdquo;) disciplinano l&rsquo;utilizzo dell&rsquo;applicazione mobile Volio (l&rsquo;&ldquo;App&rdquo; o la &ldquo;Piattaforma&rdquo;), che consente agli Utenti di condividere le proprie tracce di volo e di fruire di funzionalit&agrave; correlate al mondo dell&rsquo;aviazione. Creando un Account e utilizzando l&rsquo;App, l&rsquo;Utente conferma di aver letto, compreso e accettato integralmente le presenti Condizioni.</p>
+    <p>1.2 Qualora l&rsquo;Utente partecipi al Programma di Beta Testing dell&rsquo;App, si applicano altresi le condizioni aggiuntive di cui all&rsquo;Art. 16 delle presenti Condizioni. Qualora l&rsquo;Utente abbia scaricato l&rsquo;App dall&rsquo;Apple App Store o da Google Play Store, si applicano altresi le condizioni specifiche di cui all&rsquo;Art. 17.</p>
+    <p>1.3 Utilizzando il servizio API FR24 fornito da Flightradar24, l&rsquo;App acquisisce i dati registrati dai transponder degli aeromobili, inclusi i feed ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilaterazione), FLARM e OGN (Open Glider Network), associandoli al profilo dell&rsquo;Utente. Ulteriori informazioni aeronautiche visualizzate nell&rsquo;App possono provenire da Flightradar24 o da altri fornitori terzi di dati aeronautici. Le mappe all&rsquo;interno dell&rsquo;App sono generate mediante la piattaforma Mapbox.</p>
+    <p>1.4 L&rsquo;App &egrave; di propriet&agrave; e gestione di <strong>Volio App S.r.l.</strong>, societ&agrave; di diritto italiano, con sede legale in Via Mazzini 10, 22077 - Olgiate Comasco (CO), Italia, P. IVA 04312420138, numero REA CO - 435595 (&ldquo;Volio App&rdquo;, &ldquo;la Societ&agrave;&rdquo;, &ldquo;il Gestore&rdquo; o &ldquo;noi&rdquo;). Creando un Account e utilizzando l&rsquo;App, l&rsquo;Utente stipula un contratto vincolante con Volio App.</p>
+    <p>1.5 I Dati Aeronautici resi disponibili tramite l&rsquo;App hanno natura informativa, non devono mai essere utilizzati per finalit&agrave; operative o critiche per la sicurezza del volo, e la funzionalit&agrave; di ricerca aeromobili non deve essere utilizzata per violare la privacy di terzi.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 2 -->
+  <div class="section">
+    <div class="section-title">2. Definizioni</div>
+    <p>Ai fini delle presenti Condizioni, i seguenti termini hanno il significato di seguito indicato:</p>
+    <dl class="def-list">
+      <dt>Account</dt><dd>il profilo personale creato dall&rsquo;Utente all&rsquo;esito della procedura di registrazione;</dd>
+      <dt>API FR24</dt><dd>l&rsquo;interfaccia di programmazione fornita da Flightradar24 AB (&ldquo;Flightradar24&rdquo;), tramite la quale l&rsquo;App acquisisce i Dati di Volo;</dd>
+      <dt>App / Piattaforma</dt><dd>l&rsquo;applicazione mobile Volio, oggetto delle presenti Condizioni;</dd>
+      <dt>Attivit&agrave;</dt><dd>il contenuto pubblicato dall&rsquo;Utente relativo a un volo o a un&rsquo;esperienza aeronautica;</dd>
+      <dt>Beta Tester</dt><dd>l&rsquo;Utente invitato a partecipare al Programma di Beta Testing di cui all&rsquo;Art. 16;</dd>
+      <dt>Condizioni</dt><dd>i presenti Termini e Condizioni, come di volta in volta aggiornati;</dd>
+      <dt>Contenuti</dt><dd>i commenti, le informazioni e i materiali presenti nell&rsquo;Account, nonch&eacute; qualsiasi altro testo, immagine, dato o informazione che l&rsquo;Utente pubblichi, carichi, condivida o trasmetta tramite l&rsquo;App;</dd>
+      <dt>Dati Aeronautici</dt><dd>collettivamente, i Dati di Volo e ogni altra informazione relativa a voli, aeromobili, aeroporti, rotte, numeri di volo e registrazioni resa disponibile tramite l&rsquo;App, acquisita da Flightradar24 o da altri fornitori terzi di dati aeronautici;</dd>
+      <dt>Dati di Volo</dt><dd>collettivamente, i dati ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilaterazione), FLARM e OGN (Open Glider Network) relativi ad aeromobili, elicotteri, alianti, ultraleggeri e altri oggetti volanti, acquisiti tramite l&rsquo;API FR24;</dd>
+      <dt>Fornitori Terzi</dt><dd>collettivamente, i soggetti terzi, indipendenti dal Gestore, che forniscono servizi, infrastrutture, dati o funzionalit&agrave; integrati o utilizzati nell&rsquo;ambito dell&rsquo;App;</dd>
+      <dt>Gestore / Societ&agrave; / Volio App</dt><dd>Volio App S.r.l., con sede legale in Via Mazzini 10, 22077 - Olgiate Comasco (CO), Italia, P. IVA 04312420138;</dd>
+      <dt>Numero di Registrazione</dt><dd>il codice identificativo alfanumerico (&ldquo;tail number&rdquo;) assegnato a un aeromobile dalla competente autorit&agrave; aeronautica, utilizzabile per la ricerca di informazioni relative all&rsquo;aeromobile tramite l&rsquo;App;</dd>
+      <dt>Programma di Beta Testing</dt><dd>il programma facoltativo di test pre-rilascio disciplinato dall&rsquo;Art. 16;</dd>
+      <dt>Servizio di Mappe</dt><dd>il servizio di visualizzazione cartografica fornito da Mapbox Inc. (&ldquo;Mapbox&rdquo;);</dd>
+      <dt>Utente</dt><dd>sia al singolare che al plurale, la persona fisica che crea un Account e utilizza l&rsquo;App.</dd>
+    </dl>
+  </div>
+  <hr>
+
+  <!-- ART. 3 -->
+  <div class="section">
+    <div class="section-title">3. Oggetto e accettazione delle Condizioni</div>
+    <p>3.1 Le presenti Condizioni disciplinano il rapporto contrattuale tra il Gestore e ciascun Utente in relazione all&rsquo;accesso e all&rsquo;utilizzo dell&rsquo;App e di tutte le funzionalit&agrave; da essa offerte.</p>
+    <p>3.2 La creazione di un Account e/o l&rsquo;utilizzo dell&rsquo;App comportano l&rsquo;accettazione integrale e senza riserve delle presenti Condizioni. L&rsquo;Utente che non intenda accettarle &egrave; tenuto a non creare un Account e a non utilizzare l&rsquo;App.</p>
+    <p>3.3 Ove applicabili in ragione della situazione specifica dell&rsquo;Utente, si applicano altresi, quali parte integrante delle presenti Condizioni, le disposizioni aggiuntive relative al Programma di Beta Testing (Art. 16) e le condizioni specifiche di piattaforma Apple App Store / Google Play Store (Art. 17).</p>
+  </div>
+  <hr>
+
+  <!-- ART. 4 -->
+  <div class="section">
+    <div class="section-title">4. Requisiti di ammissibilit&agrave;</div>
+    <p>4.1 L&rsquo;utilizzo dell&rsquo;App &egrave; riservato a Utenti di et&agrave; pari o superiore a <strong>16 anni</strong>. Creando un account, l&rsquo;Utente dichiara di soddisfare tale requisito. Volio App si riserva il diritto di verificare l&rsquo;idoneit&agrave; e di rifiutare o revocare l&rsquo;accesso in qualsiasi momento.</p>
+    <p>4.2 Gli Utenti di et&agrave; compresa tra 16 e 17 anni possono utilizzare l&rsquo;App esclusivamente previa autorizzazione di chi esercita su di essi la responsabilit&agrave; genitoriale. Creando un Account, l&rsquo;Utente minorenne di et&agrave; compresa tra 16 e 17 anni dichiara di avere ottenuto tale autorizzazione; chi esercita la responsabilit&agrave; genitoriale pu&ograve; in qualsiasi momento richiedere la cancellazione dell&rsquo;Account scrivendo a <a href="mailto:support@volioapp.it">support@volioapp.it</a>; Volio App dar&agrave; seguito alla richiesta senza ingiustificato ritardo.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 5 -->
+  <div class="section">
+    <div class="section-title">5. Registrazione e cancellazione dell&#39;account</div>
+    <p>5.1 Per utilizzare l&rsquo;App, &egrave; necessario creare un Account. L&rsquo;App supporta la registrazione e l&rsquo;accesso tramite indirizzo e-mail e password, <strong>l&rsquo;accesso con Google</strong> (&ldquo;Accedi con Google&rdquo;) e <strong>l&rsquo;accesso con Apple</strong> (&ldquo;Accedi con Apple&rdquo;). L&rsquo;Utente &egrave; l&rsquo;unico responsabile della riservatezza delle proprie credenziali di accesso e di ogni attivit&agrave; svolta tramite il proprio Account.</p>
+    <p>5.2 L&rsquo;Utente pu&ograve; eliminare il suo account e i relativi dati personali ad esso associati in qualsiasi momento direttamente dall&rsquo;App tramite la sezione <strong>Profilo &gt; Elimina account</strong>. La procedura pu&ograve; essere effettuata in autonomia e non richiede il contatto con l&rsquo;assistenza clienti, l&rsquo;invio di e-mail o il completamento di ulteriori procedure di supporto, fatti salvi gli eventuali passaggi di verifica dell&rsquo;identit&agrave; richiesti a tutela della sicurezza dell&rsquo;Utente.</p>
+    <p>La cancellazione dell&rsquo;Account comporta la rimozione definitiva dei dati personali dell&rsquo;Utente dai sistemi attivi del Gestore, ad eccezione dei dati che il Gestore sia tenuto o autorizzato a conservare per finalit&agrave; legali, di sicurezza, di prevenzione delle frodi o di conformit&agrave; normativa, secondo quanto descritto nella Privacy Policy.</p>
+    <p>5.3 Qualora l&rsquo;Utente abbia effettuato l&rsquo;accesso tramite &ldquo;Accedi con Apple&rdquo;, la cancellazione dell&rsquo;Account comporta altresi la revoca delle credenziali di accesso associate. L&rsquo;Utente pu&ograve; altresi richiedere la cancellazione del proprio Account e dei dati associati senza installare l&rsquo;App, tramite l&rsquo;apposito modulo disponibile sul sito web del Gestore: <a href="https://www.volioapp.it/account-deletion/" target="_blank"><strong>Volio App &mdash; Richiesta di eliminazione account</strong></a>.</p>
+    <p>5.4 Creando un Account l&rsquo;Utente accetta di essere pienamente responsabile di ogni Attivit&agrave; posta in atto con le sue credenziali d&rsquo;accesso. Gli Utenti sono tenuti a informare Volio App immediatamente e univocamente tramite i recapiti indicati in questo documento qualora ritengano che le proprie informazioni personali, quali ad esempio l&rsquo;Account Utente, le credenziali d&rsquo;accesso o dati personali, siano state violate, illecitamente diffuse o sottratte.</p>
+    <p>5.5 La registrazione di un Account Utente su Volio App &egrave; soggetta alle condizioni sotto specificate. Registrando un Account, l&rsquo;Utente conferma di soddisfare tali condizioni:</p>
+    <ul>
+      <li>L&rsquo;apertura di Account tramite bot o altri mezzi automatizzati non &egrave; ammessa;</li>
+      <li>Salvo ove diversamente specificato, ciascun Utente pu&ograve; creare un solo Account;</li>
+      <li>Salvo ove espressamente consentito, l&rsquo;Account di un Utente non pu&ograve; essere condiviso con altre persone.</li>
+    </ul>
+    <p>5.6 Volio App si riserva il diritto di sospendere o cancellare l&rsquo;Account di un Utente in qualsiasi momento a propria discrezione, qualora lo ritenga inopportuno, offensivo o contrario a queste Condizioni fornendo all&rsquo;Utente una motivazione della decisione adottata entro un congruo termine. La sospensione o cancellazione dell&rsquo;Account non d&agrave; all&rsquo;Utente alcun diritto di risarcimento, rimborso o indennizzo. La sospensione o cancellazione di un Account per cause addebitabili all&rsquo;Utente non esonera l&rsquo;Utente dal pagamento dei compensi o prezzi eventualmente applicabili.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 6 -->
+  <div class="section">
+    <div class="section-title">6. Rilascio anticipato &mdash; Stato dell&#39;app</div>
+    <p>6.1 L&rsquo;App si trova attualmente in fase di sviluppo e di rilascio preliminare. Di conseguenza: (a) l&rsquo;App potrebbe contenere bug, errori o funzionalit&agrave; incomplete; (b) le funzionalit&agrave; possono essere modificate, aggiunte, rimosse o interrotte senza preavviso; (c) la disponibilit&agrave; dell&rsquo;App non &egrave; garantita e pu&ograve; essere sospesa in qualsiasi momento.</p>
+    <p>6.2 Tutte le funzionalit&agrave; dell&rsquo;App sono, alla data delle presenti Condizioni, offerte gratuitamente. L&rsquo;App non prevede, allo stato, funzionalit&agrave; a pagamento, abbonamenti o acquisti in-app.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 7 -->
+  <div class="section">
+    <div class="section-title">7. Funzionalit&agrave; della Piattaforma e fornitori terzi di dati aeronautici</div>
+    <p>7.1 L&rsquo;App utilizza il servizio API FR24 fornito da Flightradar24 per acquisire i dati registrati dai transponder di aeromobili, elicotteri, alianti, ultraleggeri e altri oggetti volanti in grado di generare segnali equivalenti. Le tipologie di dati acquisite includono segnali ADS-B (Automatic Dependent Surveillance-Broadcast), MLAT (Multilaterazione), FLARM (sistema anticollisione ampiamente utilizzato da alianti e aerei leggeri) e feed OGN (Open Glider Network) (collettivamente, i &ldquo;Dati di Volo&rdquo;). Tali dati sono forniti da Flightradar24 AB.</p>
+    <p>7.2 Le mappe vengono visualizzate tramite la piattaforma Mapbox; utilizzando l&rsquo;App, l&rsquo;Utente accetta che le richieste di tessere di mappa vengano elaborate da Mapbox in conformit&agrave; con la sua Informativa sulla privacy.</p>
+    <p>7.3 Le informazioni sui voli visualizzate all&rsquo;interno dell&rsquo;App possono essere ottenute da fornitori di Dati Aeronautici terzi, tra cui Flightradar24 e altri fornitori di dati. Il Gestore non detiene la propriet&agrave; dei Dati Aeronautici e non pu&ograve; garantirne la disponibilit&agrave;, la completezza, l&rsquo;accuratezza, la tempestivit&agrave; o la fornitura ininterrotta. La disponibilit&agrave; di tali informazioni pu&ograve; variare in qualsiasi momento in funzione dei servizi offerti dai fornitori terzi.</p>
+    <p>7.4 Le informazioni relative ad aeroporti, aeromobili, rotte, numeri di volo, registrazioni e altre informazioni aeronautiche affini sono fornite esclusivamente a scopo informativo. Il Gestore non garantisce l&rsquo;accuratezza o la completezza di tali informazioni e declina ogni responsabilit&agrave; per le decisioni assunte dall&rsquo;Utente sulla base delle stesse.</p>
+    <p>Utilizzando la funzione di tracciamento del volo, l&rsquo;utente riconosce e accetta espressamente quanto segue:</p>
+    <ul>
+      <li>l&rsquo;App acquisisce i Dati di Volo tramite l&rsquo;API FR24 di Flightradar24 e li associa al profilo dell&rsquo;Utente;</li>
+      <li>i dati relativi alla traiettoria di volo, una volta associati al profilo, saranno visibili e condivisi con gli altri utenti registrati dell&rsquo;App;</li>
+      <li>i dati di volo visualizzati nell&rsquo;App potrebbero essere soggetti a limitazioni di copertura geografica e tecnica e potrebbero essere imprecisi, incompleti o non aggiornati;</li>
+      <li>Volio App non &egrave; responsabile dell&rsquo;accuratezza, della completezza o della disponibilit&agrave; dei dati provenienti da Flightradar24 o da altri fornitori terzi;</li>
+      <li>i dati non devono essere utilizzati per attivit&agrave; che mettono a rischio la vita umana, per la navigazione in tempo reale, per la prevenzione delle collisioni, per il controllo del traffico aereo o per qualsiasi altro scopo aeronautico critico per la sicurezza.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <!-- ART. 8 -->
+  <div class="section">
+    <div class="section-title">8. Responsabilit&agrave;, dichiarazioni e garanzie dell&#39;Utente</div>
+    <p>8.1 Associando dati di volo (ADS-B, MLAT, FLARM o OGN) al profilo, l&rsquo;Utente dichiara e garantisce di essere il pilota, l&rsquo;operatore o il proprietario del relativo aeromobile, elicottero, aliante, ultraleggero o altro oggetto volante, OPPURE di aver ottenuto l&rsquo;autorizzazione esplicita e preventiva del pilota o dell&rsquo;operatore per associare i suoi dati di volo al profilo dell&rsquo;Utente e condividerli all&rsquo;interno dell&rsquo;App. L&rsquo;associazione di dati di volo relativi a un oggetto volante che l&rsquo;Utente non ha pilotato e per il quale non ha l&rsquo;autorizzazione dell&rsquo;operatore costituisce una violazione delle presenti Condizioni e potrebbe costituire una violazione della normativa applicabile in materia di privacy.</p>
+    <p>8.2 L&rsquo;App non &egrave; progettata, certificata o destinata a supportare attivit&agrave; operative di aviazione e non deve essere utilizzata per: pianificazione del volo; navigazione; operazioni aeree; separazione del traffico aereo; processo decisionale operativo; attivit&agrave; aeronautiche critiche per la sicurezza; conformit&agrave; alle normative aeronautiche. L&rsquo;Utente resta l&rsquo;unico responsabile delle decisioni operative assunte sulla base di informazioni aeronautiche certificate e di fonti ufficiali.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 9 -->
+  <div class="section">
+    <div class="section-title">9. Associazione illecita dei dati di volo: segnalazione, verifica e rimozione</div>
+    <p>9.1 Qualsiasi persona fisica identificabile tramite i risultati della ricerca, che ritenga che una traccia di volo o dati ADS-B relativi a un aereo, elicottero, aliante, ultraleggero o altro oggetto volante siano stati erroneamente associati al profilo di un altro Utente senza la relativa autorizzazione, ha diritto di richiederne l&rsquo;immediata rimozione contattando Volio App all&rsquo;indirizzo <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+    <p>9.2 Il Gestore esaminer&agrave; e dar&agrave; seguito a tutte le segnalazioni entro un mese dal ricevimento. Tale termine pu&ograve; essere prorogato di ulteriori due mesi, ove necessario, tenuto conto della complessit&agrave; e del numero delle richieste; in tal caso Volio App informa il richiedente della proroga e dei relativi motivi entro un mese dal ricevimento.</p>
+    <p>9.3 Qualora una segnalazione venga accolta, il Gestore si riserva il diritto di sospendere o revocare permanentemente l&rsquo;Account dell&rsquo;Utente responsabile dell&rsquo;associazione impropria, fornendo a quest&rsquo;ultimo una motivazione della decisione adottata.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 10 -->
+  <div class="section">
+    <div class="section-title">10. Visibilit&agrave; delle Attivit&agrave; e del Profilo</div>
+    <p>10.1 L&rsquo;Utente pu&ograve; selezionare il livello di visibilit&agrave; di ciascuna Attivit&agrave; pubblicata tramite l&rsquo;App, tra: (a) Pubblico; (b) visibile esclusivamente ai follower; (c) Privato (le Attivit&agrave; impostate come Private non sono visibili agli altri Utenti).</p>
+    <p>10.2 L&rsquo;Utente pu&ograve; configurare il proprio profilo come Pubblico o Privato. I profili impostati come Privati non compaiono nei risultati di ricerca e non sono accessibili agli Utenti.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 11 -->
+  <div class="section">
+    <div class="section-title">11. Indennizzo</div>
+    <p>11.1 L&rsquo;Utente si impegna a manlevare e tenere indenne Volio App, nonch&eacute; i suoi amministratori, dipendenti, collaboratori, agenti e aventi causa, da qualsiasi pretesa, danno, perdita, costo o spesa, comprese le ragionevoli spese legali, derivanti da o connessi a:</p>
+    <ul>
+      <li>la violazione, da parte dell&rsquo;Utente, della dichiarazione di cui all&rsquo;Art. 9 relativa all&rsquo;autorizzazione ad associare Dati di Volo al proprio profilo;</li>
+      <li>qualsiasi rivendicazione di terzi, inclusi altri piloti, operatori di aeromobili o proprietari di oggetti volanti, secondo cui l&rsquo;Utente avrebbe associato indebitamente i relativi Dati di Volo al proprio profilo senza autorizzazione;</li>
+      <li>qualsiasi violazione della privacy, dei diritti di immagine o dei diritti di protezione dei dati di terzi derivante dall&rsquo;uso delle funzionalit&agrave; di tracciamento voli o di ricerca aeromobili dell&rsquo;App;</li>
+      <li>qualsiasi utilizzo dell&rsquo;App in violazione della legge applicabile, incluse le normative aeronautiche.</li>
+    </ul>
+    <p>11.2 Il Gestore non &egrave; responsabile per eventuali associazioni illecite di Dati di Volo effettuate dagli Utenti in violazione delle presenti Condizioni. L&rsquo;Utente dichiara e garantisce di disporre di tutti i diritti, le autorizzazioni e i titoli necessari per utilizzare, caricare, condividere e rendere disponibili i Dati di Volo associati al proprio profilo, assumendosi ogni responsabilit&agrave; in merito alla loro legittima disponibilit&agrave; e al loro utilizzo.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 12 -->
+  <div class="section">
+    <div class="section-title">12. Propriet&agrave; intellettuale</div>
+    <p>12.1 Tutti i diritti di propriet&agrave; intellettuale ed industriale relativi all&rsquo;App, quali ad esempio diritti d&rsquo;autore, marchi, brevetti, design, codice, denominazione e funzionalit&agrave;, rimangono di propriet&agrave; esclusiva di Volio App e sono tutelati ai sensi della normativa e dei trattati internazionali applicabili alla propriet&agrave; intellettuale. I Dati di Volo provenienti dall&rsquo;API FR24 sono di propriet&agrave; di Flightradar24 AB. Le immagini e i dati cartografici forniti tramite il Servizio di Mappe rimangono di propriet&agrave; di Mapbox Inc. e dei relativi fornitori di dati.</p>
+    <p>12.2 Volio App detiene e si riserva espressamente ogni diritto di propriet&agrave; intellettuale sui Contenuti disponibili sull&rsquo;App. Gli Utenti non sono autorizzati ad usare i Contenuti in alcun modo che non sia necessario od implicito nel corretto utilizzo dell&rsquo;App. In particolare, ma senza esclusioni, &egrave; fatto divieto agli Utenti, senza previo consenso scritto del Gestore, di copiare, scaricare, condividere oltre i limiti sotto specificati, modificare, tradurre, elaborare, pubblicare, trasmettere, vendere, concedere sottolicenze, trasformare, trasferire/alienare a terze parti o creare opere derivate a partire dal contenuto disponibile sull&rsquo;App, nonch&eacute; di permettere a terze parti di intraprendere tali attivit&agrave; tramite il proprio Account Utente o dispositivo, anche a propria insaputa. Restano ferme le limitazioni ed esclusioni previste dalla normativa sul diritto d&rsquo;autore.</p>
+    <p>12.3 Qualsiasi diritto di propriet&agrave; intellettuale o industriale, cos&igrave; come ogni altro diritto esclusivo esistente sul software o sulla tecnologia integrata in o relativa a Volio App &egrave; detenuto dal Gestore. A condizione che l&rsquo;Utente rispetti queste Condizioni e nonostante qualsiasi disposizione divergente in essi contenuta, il Gestore concede agli Utenti una licenza revocabile, non esclusiva, non cedibile n&eacute; concedibile di usare il software e/o la tecnologia integrata nell&rsquo;App nel quadro e per gli scopi offerti da Volio App. La licenza non comprende alcun diritto di accesso a, utilizzo o rivelazione del codice sorgente originale all&rsquo;Utente. Le tecniche, gli algoritmi e le procedure contenute nel software e la relativa documentazione sono di propriet&agrave; esclusiva di Volio App. I diritti e le licenze concessi all&rsquo;Utente ai sensi delle presenti Condizioni cesseranno automaticamente e con effetto immediato in caso di risoluzione o cessazione, a qualsiasi titolo, del rapporto contrattuale tra l&rsquo;Utente e il Gestore.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 13 -->
+  <div class="section">
+    <div class="section-title">13. Uso proibito</div>
+    <p>13.1 L&rsquo;Utente si impegna a utilizzare l&rsquo;App esclusivamente per lo scopo previsto dalle presenti Condizioni e in conformit&agrave; alla legge applicabile, incluse le normative aeronautiche. &Egrave; responsabilit&agrave; esclusiva dell&rsquo;Utente di far s&igrave; che l&rsquo;uso di Volio App non violi la legge, i regolamenti o i diritti di terzi. Pertanto, il Gestore si riserva il diritto di adottare ogni misura idonea a proteggere i propri interessi legittimi, ed in particolare di negare all&rsquo;Utente l&rsquo;accesso all&rsquo;App, risolvere contratti, denunciare ogni attivit&agrave; censurabile svolta tramite Volio App alle autorit&agrave; competenti &ndash; es. l&rsquo;autorit&agrave; giudiziaria o amministrativa &ndash; ogniqualvolta l&rsquo;Utente ponga in essere violazioni di legge, regolamenti, diritti di terzi e/o delle presenti Condizioni, in particolare, ma senza esclusioni, mettendo in atto una delle seguenti attivit&agrave;:</p>
+    <ul>
+      <li>fingere di soddisfare un qualsiasi requisito di accesso o di utilizzo a Volio App;</li>
+      <li>nascondere la propria identit&agrave;, utilizzare l&rsquo;identit&agrave; altrui o fingere di agire in nome di un terzo, se non autorizzati da tale terzo;</li>
+      <li>alterare identificativi per nascondere o camuffare l&rsquo;origine dei propri messaggi o dei Contenuti pubblicati;</li>
+      <li>diffamare, minacciare, abusare, usare pratiche intimidatorie, minacciare o violare i diritti di terzi in qualsiasi altro modo;</li>
+      <li>promuovere attivit&agrave; che possono mettere a rischio la vita propria o di qualsiasi altro Utente o causare danni fisici;</li>
+      <li>mettere alla prova, analizzare o testare la vulnerabilit&agrave;, i servizi e le reti collegate al sito/app, nonch&eacute; violare la sicurezza o le procedure di autenticazione su Volio App;</li>
+      <li>installare, integrare, caricare o altrimenti incorporare malware in o tramite Volio App;</li>
+      <li>usare Volio App o la relativa infrastruttura tecnologica in maniera abusiva, eccessiva o altrimenti inappropriata (ad esempio: a scopo di spam);</li>
+      <li>tentare di disgregare o manomettere l&rsquo;infrastruttura tecnologica in modo tale da causare un danno o un onere eccessivo a Volio App;</li>
+      <li>implementare processi automatizzati di estrazione, raccolta o captazione di informazioni, dati e/o Contenuti da Volio App (scraping) e da tutte le relative estensioni digitali, se non espressamente autorizzati dal Gestore.</li>
+    </ul>
+    <p>In particolare, l&rsquo;Utente non deve:</p>
+    <ul>
+      <li>associare dati ADS-B o tracce di volo ad aeromobili o ad altri oggetti volanti in assenza della necessaria autorizzazione o di un legittimo titolo a rappresentarli; utilizzare i Dati di Volo visualizzati nell&rsquo;App per decisioni critiche per la sicurezza aerea, per la navigazione o per il controllo del traffico aereo;</li>
+      <li>tentare di decompilare, decodificare o estrarre il codice sorgente dell&rsquo;App, il flusso di dati sottostante di Flightradar24 o i dati cartografici di Mapbox;</li>
+      <li>interferire con l&rsquo;infrastruttura dell&rsquo;App o con l&rsquo;accesso di altri Utenti, o interromperne il funzionamento;</li>
+      <li>condividere le proprie credenziali di Account con terzi;</li>
+      <li>utilizzare l&rsquo;App per scopi illegali;</li>
+      <li>utilizzare i Dati Aeronautici per finalit&agrave; di sorveglianza di massa, profilazione o qualsiasi altro scopo che violi o incoraggi la violazione della privacy o dei diritti fondamentali di terzi;</li>
+      <li>utilizzare bot, scraper, crawler o altri strumenti automatizzati per estrarre, copiare o compilare in blocco i Dati Aeronautici resi disponibili tramite l&rsquo;App;</li>
+      <li>rivendere, concedere in sublicenza o ridistribuire a terzi i Dati Aeronautici ottenuti tramite l&rsquo;App;</li>
+      <li>aprire un Account o usare Volio App per promuovere, vendere o pubblicizzare prodotti o servizi di qualsiasi tipo in qualsiasi modo;</li>
+      <li>fingere o implicare in qualsiasi maniera di avere un rapporto con Volio App, di godere del sostegno di Volio App o che Volio App sostenga i prodotti o servizi dell&rsquo;Utente o di un terzo per qualsiasi scopo.</li>
+    </ul>
+    <p>13.2 Il Gestore si riserva il diritto di sospendere o chiudere l&rsquo;Account di qualsiasi Utente che violi le presenti disposizioni.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 14 -->
+  <div class="section">
+    <div class="section-title">14. Gratuit&agrave;, funzionalit&agrave; a pagamento, abbonamenti e acquisti in-app</div>
+    <p>14.1 Attualmente l&rsquo;App non offre funzionalit&agrave; a pagamento, abbonamenti o acquisti in-app. Tutte le funzionalit&agrave; sono disponibili gratuitamente.</p>
+    <p>14.2 Qualora in futuro vengano introdotte funzionalit&agrave; a pagamento, questa sezione verr&agrave; aggiornata con i relativi termini e condizioni, inclusi prezzi, durata dell&rsquo;abbonamento, condizioni di rinnovo e procedure di cancellazione, prima del loro lancio.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 15 -->
+  <div class="section">
+    <div class="section-title">15. Esclusione di garanzie e limitazione di responsabilit&agrave;</div>
+    <p>15.1 Salvo ove diversamente specificato e fatte salve le disposizioni di legge applicabili, &egrave; esclusa ogni pretesa risarcitoria nei confronti di Volio App (o di qualsiasi persona fisica o giuridica che agisca per suo conto).</p>
+    <p>In particolare, Volio App non si assume alcuna responsabilit&agrave; per quanto riguarda:</p>
+    <ul>
+      <li>danni o perdite derivanti da interruzioni o malfunzionamenti di Volio App dovuti a cause di forza maggiore o eventi imprevisti ed imprevedibili e, in ogni caso, indipendenti dalla volont&agrave; e fuori dal controllo del Gestore, quali, a mero titolo esemplificativo, guasti o interruzioni delle linee telefoniche o elettriche, della connessione Internet e/o di altri mezzi di trasmissione, inaccessibilit&agrave; di siti web, scioperi, calamit&agrave; naturali, virus e attacchi informatici, interruzioni di fornitura dei prodotti, servizi o applicazioni di terzi;</li>
+      <li>eventuali mancati guadagni o altre perdite, anche indirette, che l&rsquo;Utente potrebbe aver subito (quali, a mero titolo esemplificativo, perdite commerciali, perdita di ricavi, di profitti o risparmi preventivati, perdita di rapporti contrattuali o commerciali, perdita di avviamento o danni alla reputazione, etc.);</li>
+      <li>eventuali perdite che non siano conseguenza diretta di una violazione delle Condizioni da parte del Gestore;</li>
+      <li>danni derivanti dai Contenuti pubblicati dagli Utenti n&eacute; dall&rsquo;associazione di Dati di Volo effettuata dagli Utenti.</li>
+    </ul>
+    <p>15.2 L&rsquo;App viene fornita &ldquo;cos&igrave; com&rsquo;&egrave;&rdquo; e &ldquo;secondo disponibilit&agrave;&rdquo;, senza garanzie di alcun tipo, esplicite o implicite. Essendo un prodotto in fase di rilascio preliminare, l&rsquo;App &egrave; intrinsecamente soggetta a instabilit&agrave;. I dati di volo registrati (ADS-B, MLAT, FLARM, OGN) provenienti dall&rsquo;API FR24 di Flightradar24 e i dati cartografici tramite Mapbox sono forniti da terze parti senza alcuna garanzia in merito ad accuratezza, qualit&agrave; o completezza. Non fare affidamento su alcun dato presente in questa App per scopi critici per la sicurezza o per la navigazione.</p>
+    <p>Nella misura massima consentita dalla legge applicabile, Volio App non sar&agrave; responsabile per danni indiretti, incidentali o consequenziali derivanti dall&rsquo;utilizzo dell&rsquo;App, incluso l&rsquo;affidamento su dati ADS-B o cartografici. Resta fermo che nessuna disposizione del presente articolo esclude o limita i diritti e le azioni che l&rsquo;Utente, ove rivesta la qualifica di consumatore, pu&ograve; far valere nei confronti del Gestore in caso di inadempimento totale o parziale delle obbligazioni contrattuali, n&eacute; i diritti inderogabili riconosciuti allo stesso dalla legge applicabile.</p>
+    <p>15.3 Nessuna clausola delle presenti Condizioni limita la responsabilit&agrave; del Gestore per morte, lesioni personali o frode causate da colpa grave o dolo, n&eacute; pregiudica i diritti inderogabili di tutela dei consumatori eventualmente spettanti all&rsquo;Utente ai sensi della legge del proprio paese di residenza, diritti che non possono essere esclusi o limitati per contratto.</p>
+  </div>
+  <hr>
+
+  <!-- BETA SECTION -->
+  <div class="beta-section">
+    <div class="beta-badge">Programma di Test Beta</div>
+    <div class="section-title">16. Condizioni aggiuntive per i beta tester</div>
+    <div class="beta-intro">La presente Sezione si applica esclusivamente agli Utenti invitati a partecipare al Programma di Beta Testing dell&rsquo;App. Qualora l&rsquo;Utente non abbia ricevuto un invito specifico e non abbia compilato il modulo di iscrizione, la presente sezione non trova applicazione nei suoi confronti.</div>
+
+    <div class="sub-title">16.2 Reclutamento e iscrizione</div>
+    <p>Volio App recluta potenziali beta tester tramite LinkedIn, Instagram, altre piattaforme di social media o invito personale. Dopo aver manifestato interesse, i candidati vengono indirizzati a un modulo di iscrizione dedicato in Microsoft Forms, attraverso il quale vengono raccolte le seguenti informazioni:</p>
+    <ul>
+      <li>Nome e cognome;</li>
+      <li>Indirizzo e-mail;</li>
+      <li>Numero di telefono (facoltativo &mdash; solo se il candidato acconsente a essere contattato tramite WhatsApp per il coordinamento della fase beta).</li>
+    </ul>
+    <p>Il modulo di registrazione di Microsoft Forms include caselle di spunta obbligatorie per: (a) l&rsquo;accettazione delle presenti Condizioni; (b) l&rsquo;accettazione dell&rsquo;Informativa sulla privacy; (c) facoltativamente, il consenso a essere contattati tramite WhatsApp qualora venga fornito un numero di telefono. L&rsquo;invio del modulo costituisce il momento del consenso formale e crea una registrazione con data e ora memorizzata nell&rsquo;account Microsoft di Volio App.</p>
+
+    <div class="sub-title">16.3 Collegamento al test dell&rsquo;app &mdash; Non trasferibilit&agrave;</div>
+    <p>Ai beta tester che ricevono un link o un invito a installare l&rsquo;App tramite le piattaforme di test <strong>Apple TestFlight</strong> (iOS) o <strong>Google Play Beta</strong> (Android) viene concesso l&rsquo;accesso esclusivamente per uso personale. Non &egrave; consentito:</p>
+    <ul>
+      <li>condividere il link o l&rsquo;invito alla versione beta di TestFlight o Google Play con qualsiasi altra persona;</li>
+      <li>consentire a qualsiasi altra persona di installare o accedere alla versione beta utilizzando il proprio invito;</li>
+      <li>pubblicare, postare o distribuire il link di accesso alla versione beta su qualsiasi piattaforma, canale o gruppo, inclusi social media, app di messaggistica, forum o gruppi della community.</li>
+    </ul>
+    <p>La condivisione del link di accesso alla versione beta costituisce una violazione sostanziale delle presenti Condizioni e comporter&agrave; la revoca immediata e permanente dell&rsquo;accesso alla versione beta. Volio App si riserva il diritto di segnalare ad Apple o Google, a seconda dei casi, eventuali abusi ripetuti o intenzionali.</p>
+
+    <div class="sub-title">16.4 Contatto WhatsApp (facoltativo)</div>
+    <p>I beta tester che forniscono facoltativamente il proprio numero di telefono acconsentono ad essere aggiunti a un gruppo WhatsApp privato utilizzato esclusivamente per il coordinamento della beta, inclusi annunci, segnalazioni di problemi e supporto diretto. La partecipazione al gruppo WhatsApp &egrave; del tutto volontaria. I tester possono abbandonare il gruppo in qualsiasi momento e possono richiedere la cancellazione del proprio numero di telefono contattando <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+
+    <div class="sub-title">16.5 Natura del test beta</div>
+    <p>La partecipazione al Programma di Beta Testing avviene in qualit&agrave; di tester attivo, con l&rsquo;obiettivo di fornire un riscontro strutturato utile al miglioramento del prodotto prima del rilascio ufficiale. La partecipazione &egrave; volontaria, non retribuita e revocabile in qualsiasi momento.</p>
+
+    <div class="sub-title">16.6 Funzionalit&agrave; aggiuntive durante la fase di beta testing</div>
+    <p>Durante il Programma di Beta Testing, ai beta tester potrebbe essere concesso un accesso anticipato a funzionalit&agrave; non ancora disponibili al pubblico, esclusivamente a scopo di test pre-release. Tale accesso non ha finalit&agrave; commerciali e non costituisce alcun diritto contrattuale a tali funzionalit&agrave; al di fuori del periodo di test. L&rsquo;accesso cesser&agrave; automaticamente al termine del Programma di Beta Testing o in caso di interruzione della partecipazione al beta testing per qualsiasi motivo, e potr&agrave; essere revocato da Volio App in qualsiasi momento senza alcuna responsabilit&agrave;.</p>
+    <p>In assenza di una specifica disciplina, le funzionalit&agrave; rese disponibili nell&rsquo;ambito del Programma di Beta Testing restano soggette, in quanto compatibili, ai principi generali e alle disposizioni di carattere generale previste dalle presenti Condizioni, incluse quelle relative ai Contenuti (Art. 21) e agli usi proibiti (Art. 13). Il Beta Tester si impegna, pertanto, a utilizzare tali funzionalit&agrave; secondo buona fede e correttezza, nel rispetto della legge applicabile e dei diritti di terzi. Prima del rilascio ufficiale della funzionalit&agrave;, il Gestore provveder&agrave; ad aggiornare le presenti Condizioni con una disciplina specifica, secondo la procedura di cui all&rsquo;Art. 23.</p>
+
+    <div class="sub-title">16.7 Riservatezza</div>
+    <p>I beta tester accettano di mantenere strettamente riservati tutti gli aspetti dell&rsquo;esperienza beta. Non &egrave; consentito:</p>
+    <ul>
+      <li>divulgare, pubblicare o condividere pubblicamente screenshot, registrazioni o descrizioni delle funzionalit&agrave; dell&rsquo;App, inclusi social media, forum, blog o piattaforme di recensioni, senza il previo consenso scritto di Volio App;</li>
+      <li>discutere di funzionalit&agrave; non ancora rilasciate, modifiche all&rsquo;interfaccia utente o altre caratteristiche con persone esterne al programma beta;</li>
+      <li>condividere le credenziali di accesso alla versione beta o invitare terzi ad accedere alla versione beta.</li>
+    </ul>
+    <p>Questo obbligo di riservatezza permane anche dopo la conclusione della partecipazione al programma di beta testing.</p>
+
+    <div class="sub-title">16.8 Feedback e propriet&agrave; intellettuale</div>
+    <p>Nel corso del programma, al Beta Tester pu&ograve; essere richiesto di fornire feedback, segnalazioni di bug, suggerimenti o idee (&ldquo;Feedback&rdquo;). Con l&rsquo;invio del Feedback, il Beta Tester concede al Gestore una licenza perpetua, irrevocabile, esente da royalty e valida a livello mondiale per utilizzare, incorporare e sviluppare tale Feedback, senza alcun obbligo o compenso nei confronti del Beta Tester, il quale riconosce che il Feedback diviene di propriet&agrave; esclusiva del Gestore.</p>
+
+    <div class="sub-title">16.9 Dati durante i test beta</div>
+    <p>I dati generati durante i test beta, incluse tracce di volo, interazioni e modelli di utilizzo, possono essere impiegati specificamente per lo sviluppo, il debug e il miglioramento del prodotto, in aggiunta alle finalit&agrave; generali descritte altrove nelle presenti Condizioni. Tali dati possono essere conservati oltre i periodi di conservazione standard per finalit&agrave; di analisi, a condizione che siano resi anonimi mediante tecniche che impediscano in modo irreversibile l&rsquo;identificazione, diretta o indiretta, dell&rsquo;interessato.</p>
+
+    <div class="sub-title">16.10 Cessazione dell&rsquo;accesso alla versione beta</div>
+    <p>Volio App pu&ograve; interrompere l&rsquo;accesso al beta testing in qualsiasi momento e per qualsiasi motivo, inclusi, a titolo esemplificativo ma non esaustivo: violazione degli obblighi di riservatezza, uso improprio della versione beta o conclusione del programma beta. Ove l&rsquo;accesso sia revocato Volio App fornisce una motivazione al Beta Tester. In caso di interruzione, gli obblighi di riservatezza di cui alla Sezione 16.7 e la cessione della propriet&agrave; intellettuale di cui alla Sezione 16.8 continuano ad essere applicabili.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 17 -->
+  <div class="section">
+    <div class="section-title">17. Apple App Store e Google Play: termini specifici della piattaforma</div>
+    <p>17.1 Qualora l&rsquo;App sia stata scaricata dall&rsquo;<strong>Apple App Store</strong>, si applicano altresi i seguenti termini aggiuntivi tra l&rsquo;Utente e Volio App, che costituiscono parte integrante delle presenti Condizioni:</p>
+    <ul>
+      <li>il presente accordo &egrave; concluso esclusivamente tra l&rsquo;Utente e Volio App e non con Apple Inc. (&ldquo;Apple&rdquo;); Apple non &egrave; parte delle presenti Condizioni e non &egrave; responsabile dell&rsquo;App n&eacute; del relativo contenuto;</li>
+      <li>la licenza concessa all&rsquo;Utente &egrave; limitata a una licenza non trasferibile per l&rsquo;utilizzo dell&rsquo;App su prodotti a marchio Apple di propriet&agrave; o sotto il controllo dell&rsquo;Utente, come consentito dalle regole d&rsquo;uso stabilite nei Termini e Condizioni dei Servizi Multimediali di Apple;</li>
+      <li>Apple non ha alcun obbligo di fornire servizi di manutenzione o supporto per l&rsquo;App; tali servizi sono forniti esclusivamente da Volio App, come descritto nelle presenti Condizioni;</li>
+      <li>qualora l&rsquo;App non risulti conforme a una garanzia applicabile, l&rsquo;Utente pu&ograve; informarne Apple, la quale provveder&agrave; a rimborsare l&rsquo;eventuale prezzo di acquisto dell&rsquo;App; nella misura massima consentita dalla legge, Apple non ha alcun altro obbligo di garanzia in relazione all&rsquo;App;</li>
+      <li>Volio App, e non Apple, &egrave; responsabile della gestione di qualsiasi reclamo dell&rsquo;Utente o di terzi in relazione all&rsquo;App, inclusi i reclami relativi alla responsabilit&agrave; del prodotto, alla non conformit&agrave; a requisiti legali o normativi, ovvero derivanti dalla normativa in materia di tutela dei consumatori, di protezione dei dati personali o normative affini;</li>
+      <li>nel caso in cui terzi rivendichino che l&rsquo;App, ovvero il possesso e l&rsquo;utilizzo della stessa da parte dell&rsquo;Utente, violino diritti di propriet&agrave; intellettuale di tali terzi, Volio App, e non Apple, sar&agrave; l&rsquo;unica responsabile per l&rsquo;indagine, la difesa, la transazione e l&rsquo;estinzione di tale rivendicazione;</li>
+      <li>l&rsquo;Utente dichiara e garantisce di non trovarsi in un paese soggetto a embargo da parte del Governo degli Stati Uniti o designato dal medesimo Governo come paese &ldquo;che sostiene il terrorismo&rdquo;, e di non essere incluso in alcun elenco governativo statunitense di soggetti proibiti o soggetti a restrizioni;</li>
+      <li>l&rsquo;Utente &egrave; tenuto al rispetto di tutti i termini e condizioni di terze parti applicabili nell&rsquo;utilizzo dell&rsquo;App (ad esempio, il contratto con il proprio fornitore di servizi dati wireless);</li>
+      <li>Apple e le sue consociate sono beneficiarie terze delle presenti Condizioni e, con l&rsquo;accettazione delle stesse, Apple avr&agrave; il diritto di farle valere nei confronti dell&rsquo;Utente in qualit&agrave; di beneficiaria terza.</li>
+    </ul>
+    <p>17.2 Qualora l&rsquo;App sia stata scaricata da <strong>Google Play</strong>, l&rsquo;utilizzo della stessa &egrave; soggetto altresi ai Termini di servizio di Google Play; gli eventuali acquisti in-app sono inoltre regolati dalle norme di Google Play in materia di fatturazione, abbonamenti e rimborsi, in aggiunta alle presenti Condizioni.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 18 -->
+  <div class="section">
+    <div class="section-title">18. Protezione dei dati personali</div>
+    <p>18.1 Il trattamento dei dati personali degli Utenti, ivi compresi i dati relativi ai Dati di Volo associati ai rispettivi profili, &egrave; disciplinato dall&rsquo;Informativa sul trattamento dei dati personali (la &ldquo;Privacy Policy&rdquo;), disponibile all&rsquo;indirizzo <a href="https://volioapp.github.io/privacypolicy/" target="_blank">https://volioapp.github.io/privacypolicy/</a>, che si intende qui integralmente richiamata. La Privacy Policy &egrave; redatta nel rispetto della normativa applicabile in materia di protezione dei dati personali.</p>
+    <p>18.2 L&rsquo;infrastruttura dell&rsquo;App &egrave; ospitata su Amazon Web Services (Milano, Italia), garantendo che tutti i dati degli Utenti rimangano all&rsquo;interno dell&rsquo;Unione Europea. Il Gestore, anche per il tramite dei Fornitori Terzi di cui si avvale, potrebbe fare ricorso a servizi i cui server risultino ubicati al di fuori dello Spazio Economico Europeo. In tal caso, Volio App garantir&agrave; che il trasferimento dei dati sia effettuato in piena conformit&agrave; con gli standard e le tutele previste in ambito europeo per la protezione dei dati personali (decisione di adeguatezza della Commissione europea &mdash; ivi compreso, per i trasferimenti verso gli Stati Uniti, l&rsquo;EU-U.S. Data Privacy Framework &mdash; ovvero delle Clausole contrattuali tipo adottate dalla Commissione europea). Ulteriori dettagli sui trasferimenti extra-SEE effettuati e sulle relative garanzie sono disponibili nella Privacy Policy.</p>
+    <p>18.3 L&rsquo;Utente &egrave; invitato a leggere attentamente la Privacy Policy che forma parte integrante delle presenti Condizioni prima di procedere alla registrazione.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 19 -->
+  <div class="section">
+    <div class="section-title">19. Comunicazioni future</div>
+    <p>19.1 Creando un Account, l&rsquo;Utente acconsente all&rsquo;utilizzo del proprio indirizzo e-mail per essere contattato in merito ad aggiornamenti o modifiche rilevanti dell&rsquo;App o delle presenti Condizioni. Le comunicazioni via e-mail sono gestite tramite <strong>Brevo</strong>, piattaforma con sede nell&rsquo;Unione Europea (Francia).</p>
+  </div>
+  <hr>
+
+  <!-- ART. 20 -->
+  <div class="section">
+    <div class="section-title">20. Fornitori terzi e servizi di terze parti</div>
+    <p>20.1 L&rsquo;App integra servizi forniti da soggetti terzi indipendenti dal Gestore, tra cui a titolo esemplificativo e non esaustivo, Flightradar24 e altri fornitori di Dati Aeronautici, Mapbox (mappe), Amazon Web Services (infrastruttura), Brevo (comunicazioni e-mail), MongoDB (gestione database), nonch&eacute; Apple e Google (distribuzione dell&rsquo;App).</p>
+    <p>20.2 Tali servizi sono regolati dai rispettivi termini e condizioni e dalle rispettive informative privacy, che l&rsquo;Utente &egrave; invitato a consultare autonomamente. Il Gestore non esercita controllo su tali servizi e non &egrave; responsabile del relativo contenuto, funzionamento o trattamento dei dati, salva la responsabilit&agrave; che gli sia direttamente imputabile ai sensi di legge in qualit&agrave; di titolare del trattamento per le scelte di integrazione operate.</p>
+    <p>20.3 Talune funzionalit&agrave; dell&rsquo;App dipendono da servizi gestiti da soggetti terzi indipendenti. Il Gestore non &egrave; responsabile per interruzioni, inesattezze, ritardi o indisponibilit&agrave; del servizio derivanti da tali fornitori terzi. La sospensione o la cessazione di servizi di terze parti pu&ograve; incidere su alcune funzionalit&agrave; dell&rsquo;App, senza che ci&ograve; dia luogo ad alcun diritto di indennizzo o risarcimento in favore dell&rsquo;Utente.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 21 -->
+  <div class="section">
+    <div class="section-title">21. Segnalazioni, reclami e sistema di notice-and-action</div>
+    <p>21.1 Volio App non svolge un controllo generale e costante su tutti i Contenuti caricati dagli Utenti. Tuttavia, si riserva la possibilit&agrave; di effettuare verifiche mirate sui Contenuti pubblicati, sia di propria iniziativa sia a seguito di segnalazioni, nei limiti consentiti e nella misura necessaria a garantire la sicurezza dell&rsquo;App e la tutela dei diritti degli Utenti e di terzi.</p>
+    <p>21.2 Le presenti previsioni si applicano a tutti i Contenuti pubblicati, caricati, condivisi, trasmessi o comunque resi disponibili sull&rsquo;App dagli Utenti o altri soggetti autorizzati.</p>
+    <p>21.3 L&rsquo;Utente &egrave; pienamente responsabile dell&rsquo;utilizzo dell&rsquo;App, comprese le attivit&agrave; di pubblicazione, consultazione, gestione dei Contenuti e interazione con altri Utenti. L&rsquo;Utente risponde in via esclusiva dei Contenuti che carica, comunica, pubblica o trasmette, sotto il profilo della loro correttezza, completezza e liceità, nonch&eacute; del proprio comportamento sull&rsquo;App.</p>
+    <p>21.4 I Contenuti caricati, pubblicati, condivisi o comunque resi disponibili sull&rsquo;App devono rispettare standard di correttezza, liceità ed essere coerenti con le finalit&agrave; del servizio. Qualsiasi utilizzo dell&rsquo;App per finalit&agrave; estranee a quelle previste &egrave; da considerarsi non consentito.</p>
+    <p>21.5 Nella pubblicazione di Attivit&agrave;, commenti o di qualsiasi altro Contenuto reso disponibile tramite l&rsquo;App, l&rsquo;Utente si impegna a non pubblicare, caricare, condividere o trasmettere Contenuti che rientrino, a titolo esemplificativo e non esaustivo, in una o pi&ugrave; delle categorie di seguito descritte:</p>
+    <ul>
+      <li><strong>Informazioni false o fuorvianti.</strong> Sono in particolare vietate le dichiarazioni non veritiere o fuorvianti relative a licenze, abilitazioni, qualifiche o titoli aeronautici non effettivamente posseduti dall&rsquo;Utente;</li>
+      <li><strong>Contenuti discriminatori o offensivi.</strong> Sono altresi vietate le espressioni discriminatorie o denigratorie fondate, a titolo esemplificativo, su et&agrave;, genere, identit&agrave; di genere, orientamento sessuale, origine etnica, nazionalit&agrave;, religione, disabilit&agrave; o condizioni di salute; il linguaggio offensivo, volgare, aggressivo, ingiurioso o minaccioso nei commenti o in qualsiasi altro Contenuto condiviso tramite l&rsquo;App; nonch&eacute; le condotte che integrino molestie, provocazioni reiterate o comportamenti intimidatori nei confronti di altri Utenti o di terzi;</li>
+      <li><strong>Contenuti illeciti.</strong> &Egrave; infine vietata la pubblicazione di Contenuti illeciti, quali richieste, offerte o proposte aventi a oggetto attivit&agrave; contrarie alla legge o comunque non consentite; la comunicazione, pubblicazione o diffusione, tramite Attivit&agrave;, commenti o altri Contenuti, di dati personali di terzi in assenza della relativa autorizzazione o di altro idoneo presupposto di liceit&agrave; ai sensi della normativa applicabile in materia di protezione dei dati personali; nonch&eacute; la condivisione, trasmissione o messa a disposizione di documenti, informazioni o materiali riservati, confidenziali o comunque non destinati alla divulgazione, senza l&rsquo;autorizzazione del Gestore o altro idoneo presupposto legittimante.</li>
+    </ul>
+    <p>21.6 Gli Utenti possono segnalare all&rsquo;App i Contenuti pubblicati, caricati o comunque diffusi tramite il servizio che ritengano, in buona fede, contrari alle disposizioni di legge e/o alle presenti Condizioni. La segnalazione pu&ograve; essere trasmessa mediante l&rsquo;indirizzo e-mail <a href="mailto:support@volioapp.it">support@volioapp.it</a>. Tale canale costituisce il meccanismo ordinario di ricezione e gestione delle segnalazioni. Volio App prende in considerazione ed esamina esclusivamente le segnalazioni inviate tramite i canali sopraindicati.</p>
+    <p>La segnalazione deve contenere, a pena di possibili irricevibilit&agrave; o archiviazione per insufficienza di elementi:</p>
+    <ol class="alpha-list">
+      <li>l&rsquo;indicazione quanto pi&ugrave; precisa possibile del Contenuto segnalato e della sua ubicazione elettronica, inclusi, ove disponibili, URL, identificativo del Contenuto, nome del profilo, e comunque di ogni altro elemento utile alla sua individuazione;</li>
+      <li>una descrizione chiara dei motivi della segnalazione, ossia delle ragioni per cui il Contenuto si ritiene illecito e/o contrario alle disposizioni di legge e/o alle presenti Condizioni;</li>
+      <li>ove possibile, l&rsquo;indicazione delle disposizioni normative o delle previsioni contrattuali che si assumono violate;</li>
+      <li>il nome e l&rsquo;indirizzo e-mail del segnalante;</li>
+      <li>una dichiarazione del segnalante con la quale egli conferma di ritenere, in buona fede, che le informazioni fornite e le dichiarazioni rese nella segnalazione siano esatte e complete.</li>
+    </ol>
+    <p>La segnalazione priva di uno o pi&ugrave; di tali elementi &egrave; comunque valutata sulla base delle informazioni disponibili e Volio App pu&ograve; richiedere chiarimenti. La segnalazione non &egrave; respinta per il solo fatto che uno degli elementi sopra indicati sia assente.</p>
+    <p>21.7 Ricevuta la segnalazione, Volio App ne conferma la ricezione senza ingiustificato ritardo e procede alla sua valutazione in modo diligente, tempestivo, obiettivo e non arbitrario, riservandosi di richiedere chiarimenti o integrazioni qualora necessari.</p>
+    <p>All&rsquo;esito della valutazione, Volio App potr&agrave; adottare, nei limiti consentiti dalla normativa applicabile e in misura proporzionata rispetto alla natura e alla gravit&agrave; del caso, le misure ritenute appropriate e/o opportune per garantire la sicurezza e la tutela dei diritti dell&rsquo;App, degli Utenti e dei terzi. Tali misure possono includere, a titolo esemplificativo e non esaustivo: la chiusura della segnalazione senza interventi, la rimozione del Contenuto, la disabilitazione dell&rsquo;accesso al Contenuto, limitazione della visibilit&agrave;, sospensione o limitazione dell&rsquo;Account, nonch&eacute; ogni altra misura ragionevolmente necessaria alla tutela dei diritti di Volio App, degli Utenti o di terzi.</p>
+    <p>21.8 Volio App comunica, nei limiti previsti dalla normativa applicabile, l&rsquo;esito della segnalazione al segnalante e, ove previsto, al soggetto che ha inserito il Contenuto, indicando le ragioni essenziali della decisione adottata e gli eventuali strumenti di contestazione e/o i rimedi disponibili.</p>
+    <p>21.9 Ove applicabile, ai sensi della normativa vigente, i soggetti destinatari della decisione di moderazione potranno contestarla inviando una e-mail all&rsquo;indirizzo <a href="mailto:support@volioapp.it">support@volioapp.it</a> entro il termine di sei mesi dalla comunicazione della decisione. Il reclamo &egrave; trattato gratuitamente, in tempi ragionevoli e senza che la decisione sia assunta esclusivamente con strumenti automatizzati.</p>
+    <p>21.10 Le segnalazioni palesemente infondate, abusive, strumentali, ripetitive o inviate in mala fede potranno comportare, a seguito di valutazione da parte di Volio App e nei limiti consentiti, l&rsquo;adozione delle misure previste dalle presenti Condizioni.</p>
+    <p>21.11 Volio App individua l&rsquo;indirizzo <a href="mailto:support@volioapp.it">support@volioapp.it</a> quale punto di contatto unico per le comunicazioni dirette, per via elettronica, con i destinatari del servizio, e l&rsquo;indirizzo <a href="mailto:admin@volioapp.it">admin@volioapp.it</a> quale punto di contatto unico per le comunicazioni dirette con le autorit&agrave; degli Stati membri, la Commissione e il Comitato europeo per i servizi digitali. Le comunicazioni con le autorit&agrave; possono svolgersi in lingua italiana o in lingua inglese.</p>
+    <p>21.12 Per ulteriori informazioni in merito alle modalit&agrave; di segnalazione e rimozione dei Contenuti, l&rsquo;Utente pu&ograve; contattare Volio App all&rsquo;indirizzo: <a href="mailto:support@volioapp.it">support@volioapp.it</a>.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 22 -->
+  <div class="section">
+    <div class="section-title">22. Legge applicabile, foro competente e risoluzione delle controversie</div>
+    <p>22.1 Le presenti Condizioni sono disciplinate dalla legge italiana. Ove l&rsquo;Utente sia un consumatore abitualmente residente in un altro Stato membro dell&rsquo;Unione europea, tale scelta non vale a privarlo della protezione assicuratagli dalle disposizioni della legge di tale Stato alle quali non &egrave; permesso derogare convenzionalmente.</p>
+    <p>22.2 Ove l&rsquo;Utente sia un consumatore, per le controversie derivanti dalle presenti Condizioni o ad esse connesse &egrave; competente il giudice del luogo di residenza o di domicilio elettivo dell&rsquo;Utente. L&rsquo;Utente pu&ograve; altresi adire il giudice del luogo in cui Volio App &egrave; stabilita. Volio App pu&ograve; convenire in giudizio l&rsquo;Utente che sia consumatore esclusivamente dinanzi al giudice del luogo del domicilio di quest&rsquo;ultimo.</p>
+    <p>22.3 Gli Utenti possono sottoporre a Volio App qualsiasi controversia scrivendo a <a href="mailto:support@volioapp.it">support@volioapp.it</a>; Volio App si adopera per una composizione amichevole e riscontra la richiesta senza indebito ritardo e comunque entro trenta (30) giorni dal ricevimento. Resta impregiudicato il diritto dell&rsquo;Utente di agire in giudizio in qualsiasi momento.</p>
+    <p>22.4 La piattaforma online per la risoluzione delle controversie (ODR) della Commissione europea, precedentemente disponibile per la risoluzione alternativa delle controversie e che favoriva la composizione extragiudiziale di dispute relative a, e derivanti da vendite e contratti di servizio online, &egrave; stata ufficialmente interrotta a partire dal 20 luglio 2025, a seguito dell&rsquo;adozione del Regolamento UE 2024/3228. Il consumatore pu&ograve; comunque rivolgersi a un organismo di risoluzione extragiudiziale delle controversie.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 23 -->
+  <div class="section">
+    <div class="section-title">23. Modifiche alle presenti Condizioni</div>
+    <p>23.1 Volio App si riserva il diritto di modificare le presenti Condizioni in ogni momento. In tal caso, il Gestore dar&agrave; opportuna notizia delle modifiche agli Utenti entro un congruo termine. Salvo quanto diversamente previsto dalla normativa applicabile, le modifiche avranno efficacia nei confronti dell&rsquo;Utente a decorrere dalla data della relativa comunicazione o, ove prevista, dalla loro pubblicazione sull&rsquo;App o sul Sito.</p>
+    <p>23.2 L&rsquo;utilizzo continuato del Servizio implica l&rsquo;accettazione dell&rsquo;Utente delle Condizioni aggiornate. Se l&rsquo;Utente non desidera accettare le modifiche, deve cessare l&rsquo;utilizzo dell&rsquo;App.</p>
+    <p>23.3 La versione precedente continua a disciplinare il rapporto fino all&rsquo;accettazione delle modifiche da parte dell&rsquo;Utente. Tale versione pu&ograve; essere richiesta al Gestore. Se richiesto dalla legge, il Gestore comunicher&agrave; in anticipo agli Utenti la data di entrata in vigore delle Condizioni modificate.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 24 -->
+  <div class="section">
+    <div class="section-title">24. Cessione del contratto</div>
+    <p>24.1 Volio App pu&ograve; trasferire o cedere le presenti Condizioni, in tutto o in parte, a un terzo nell&rsquo;ambito di operazioni di fusione, scissione, cessione d&rsquo;azienda o di ramo d&rsquo;azienda ovvero di altra riorganizzazione societaria, o a una societ&agrave; appartenente al medesimo gruppo, a condizione che il trasferimento non determini una diminuzione della tutela dei diritti riconosciuti all&rsquo;Utente dalle presenti Condizioni o dalla legge applicabile. Volio App informa preventivamente gli Utenti del trasferimento con le modalit&agrave; di cui all&rsquo;Art. 23.2 e l&rsquo;Utente pu&ograve; recedere dal contratto senza costi prima che il trasferimento abbia effetto.</p>
+    <p>24.2 L&rsquo;Utente non pu&ograve; cedere n&eacute; trasferire i propri diritti e le proprie obbligazioni derivanti dalle presenti Condizioni senza il previo consenso scritto di Volio App.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 25 -->
+  <div class="section">
+    <div class="section-title">25. Disposizioni Finali</div>
+    <p>25.1 Qualora una o pi&ugrave; disposizioni delle presenti Condizioni fossero dichiarate invalide o inefficaci, ci&ograve; non pregiudica la validit&agrave; delle restanti disposizioni.</p>
+    <p>25.2 Le presenti Condizioni, unitamente alla Privacy Policy, costituiscono l&rsquo;intero accordo tra le parti in relazione al relativo oggetto e sostituiscono ogni precedente accordo, intesa o comunicazione, scritta o orale, relativa alla medesima materia.</p>
+    <p>25.3 La mancata o ritardata applicazione, da parte del Gestore, di una qualsiasi disposizione delle presenti Condizioni non costituisce rinuncia alla medesima.</p>
+    <p>25.4 Le presenti Condizioni sono redatte in lingua italiana e in lingua inglese. Ove l&rsquo;Utente sia abitualmente residente in Italia, in caso di discordanza tra le due versioni prevale la versione in lingua italiana. In ogni altro caso prevale la versione in lingua inglese.</p>
+  </div>
+  <hr>
+
+  <!-- ART. 26 -->
+  <div class="section">
+    <div class="section-title">26. Contatti</div>
+    <div class="contact-box">
+      <strong>Volio App S.r.l.</strong><br>
+      Via Mazzini, 10 &ndash; 22077 - Olgiate Comasco (CO), Italia<br>
+      P.IVA 04312420138 &mdash; REA CO - 435595<br>
+      <a href="mailto:support@volioapp.it">support@volioapp.it</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+
+function setLang(lang) {
+  document.getElementById('body-en').style.display = lang === 'en' ? '' : 'none';
+  document.getElementById('body-it').style.display = lang === 'it' ? '' : 'none';
+  document.getElementById('cover-en').style.display = lang === 'en' ? '' : 'none';
+  document.getElementById('cover-it').style.display = lang === 'it' ? '' : 'none';
+  document.getElementById('btn-en').className = lang === 'en' ? 'active' : '';
+  document.getElementById('btn-it').className = lang === 'it' ? 'active' : '';
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('volio-tc-lang', lang); } catch(e) {}
+}
+(function() {
+  try { var l = localStorage.getItem('volio-tc-lang'); if (l === 'it') setLang('it'); } catch(e) {}
+})();
+
+</script>
+</body>
+</html>
