@@ -330,6 +330,15 @@ section[id],header[id]{scroll-margin-top:76px}
 .follow-btn.li{background:#0A66C2}
 @media(max-width:760px){.follow-grid{grid-template-columns:1fr}}
 
+/* ============ PRESS / PODCAST ============ */
+#press .sec-head{max-width:none}
+#press .sec-head h2{white-space:nowrap;font-size:clamp(21px,5.2vw,58px)}
+.video-wrap{position:relative;width:100%;max-width:860px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;background:var(--navy);box-shadow:0 26px 60px rgba(6,14,30,.20)}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-note{max-width:860px;margin:16px auto 0;text-align:center;font-size:13.5px;color:var(--muted)}
+.video-note a{color:var(--cobalt);font-weight:500;text-decoration:none}
+.video-note a:hover{text-decoration:underline}
+
 /* ============ NEWSLETTER ============ */
 .newsletter{background:var(--cobalt);padding:clamp(34px,5vw,48px) 0}
 .newsletter-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
@@ -505,7 +514,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
     <div class="why-stats reveal rd1">
       <!-- [A4] data-count spans for count-up -->
       <div class="why-stat"><div class="n"><span data-count="100">0</span><em>+</em></div><div class="c"><b>Beta testers</b> already flying with Volio and sharing their routes.</div></div>
-      <div class="why-stat"><div class="n"><span data-count="2">0</span></div><div class="c"><b>Launch partners</b>, Aelo Swiss Academy and ItalFly, with more coming.</div></div>
+      <div class="why-stat"><div class="n"><span data-count="5">0</span></div><div class="c"><b>Launch partners</b>, from Aelo Swiss Academy to Flight Horizon, with more coming.</div></div>
       <div class="why-stat"><div class="n">∞</div><div class="c"><b>Flights</b> waiting to be shared with the aviation community.</div></div>
     </div>
   </div>
@@ -557,6 +566,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
       <a class="plogo" href="https://www.italfly.com/" target="_blank" rel="noopener"><img src="italfly.png" alt="ItalFly" onerror="this.parentNode.classList.add('ghost');this.remove();"></a>
       <a class="plogo" href="https://www.skydealseurope.com/" target="_blank" rel="noopener"><img src="skydeals.png" alt="SkyDeals Europe"></a>
       <a class="plogo" href="https://atmosoar.io/" target="_blank" rel="noopener"><img src="atmosoar.png" alt="Atmosoar"></a>
+      <a class="plogo" href="https://www.flighthorizon.ovh/" target="_blank" rel="noopener"><img src="flighthorizon.PNG" alt="Flight Horizon"></a>
       <a class="plogo plogo-cta" href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener"><span class="t">Become a partner</span><span class="g">Get in touch →</span></a>
     </div>
   </div>
@@ -622,6 +632,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
         <p class="follow-desc">Building the social layer for aviation, one flight at a time. Follow our company page for product milestones, team updates, and the vision behind Volio.</p>
         <a class="follow-btn li" href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.75-2C20.5 8.7 22 11 22 14.3V21h-4v-5.8c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V21H9z"/></svg> Connect on LinkedIn</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEY TALK ABOUT US -->
+<section class="sec" id="press">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="kicker">09 · They talk about us</span>
+      <h2>Interview with the founder</h2>
+    </div>
+    <div class="reveal">
+      <div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/uy31t_89ocA" title="Volio on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="video-note" id="videoNote">Can't see the player? <a href="https://www.youtube.com/watch?v=uy31t_89ocA" target="_blank" rel="noopener">Watch on YouTube →</a></p>
     </div>
   </div>
 </section>
@@ -887,7 +913,7 @@ whyH2:`Fatto per connettere il mondo dell'aviazione`,
 whyP:`Volio è una piattaforma per connettere amici, colleghi, istruttori ed equipaggi: tutta la community dell'aviazione. Ogni volo che condividi è un nuovo modo per unire le persone.`,
 whyStats:[
 `<b>Beta tester</b> che già volano con Volio e condividono le loro rotte.`,
-`<b>Partner di lancio</b>, Aelo Swiss Academy e ItalFly, con altri in arrivo.`,
+`<b>Partner di lancio</b>, da Aelo Swiss Academy a Flight Horizon, con altri in arrivo.`,
 `<b>Voli</b> pronti per essere condivisi con la community dell'aviazione.`],
 voicesKicker:`04 · Dalla community`,
 voicesH2:`Testimonianze`,
@@ -930,6 +956,9 @@ footProductLinks:[`Funzioni`,`Come funziona`,`FAQ`,`Seguici`],
 footCompanyLinks:[`Team`,`Partner`],
 footLegal:[`Privacy Policy`,`Termini e Condizioni`,`Cancellazione account`,`Contatti`],
 footCopy:`© 2026 VOLIO · Volio App S.r.l. · Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia`,
+pressKicker:`09 · Parlano di noi`,
+pressH2:`Intervista al founder`,
+pressNote:`Non vedi il player? <a href="https://www.youtube.com/watch?v=uy31t_89ocA" target="_blank" rel="noopener">Guarda su YouTube →</a>`,
 nlText:`Tienimi aggiornato`,
 nlBtn:`Iscriviti`,
 nlConsent:`Ho letto e accetto la <a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a> e i <a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Termini e Condizioni</a>.`,
@@ -957,6 +986,7 @@ const T=[
 ['#team .kicker',IT.teamKicker],['#team h2',IT.teamH2],['#team .member .rl',IT.memberRl],['#team .member .bio',IT.memberBio],
 ['.mission p',IT.missionP],['.mission .by',IT.missionBy],
 ['#follow .kicker',IT.followKicker],['#follow h2',IT.followH2],['#follow .follow-desc',IT.followDesc],['#follow .follow-btn',IT.followBtn,'icon'],
+['#press .kicker',IT.pressKicker],['#press h2',IT.pressH2],['#videoNote',IT.pressNote],
 ['.newsletter-text',IT.nlText],['#newsletterBtn',IT.nlBtn],['#newsletterConsentLabel',IT.nlConsent],
 ['#modalTitle',IT.mdTitle],['#modalSub',IT.mdSub],['#modalSubmit',IT.mdSubmit],['#modalConsentLabel',IT.mdConsent],['#modalSuccessTitle',IT.mdSuccessT],['#modalSuccessSub',IT.mdSuccessS],
 ['.foot-brand p',IT.footBrand],['.foot-col h4',IT.footCols],['.foot-col:nth-of-type(1) a',IT.footProductLinks],['.foot-col:nth-of-type(2) a',IT.footCompanyLinks],['.foot-col:nth-of-type(4) a',IT.footLegal],['.foot-legal a',IT.footLegal],['.foot-bottom span:first-child',IT.footCopy]
