@@ -73,6 +73,21 @@ img{max-width:100%;display:block}
 .store-btn.light svg{fill:var(--ink)}
 .store-btn.light:hover{border-color:var(--ink);background:transparent}
 
+/* ============ PRELOADER ============ */
+html.preloading{overflow:hidden}
+#preloader{position:fixed;inset:0;z-index:99999999;background:var(--navy);display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .6s ease}
+#preloader.done{opacity:0;pointer-events:none}
+#preloader svg{width:clamp(72px,10vw,112px);height:auto;overflow:visible}
+#preloader path{fill:#fff;fill-opacity:0;stroke:#fff;stroke-width:11;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:4000;stroke-dashoffset:4000;animation:drawStroke 1.15s cubic-bezier(.65,0,.35,1) forwards,fillIn .45s ease .95s forwards}
+/* il banner cookie resta nascosto finché il loading non è finito */
+#iubenda-cs-banner,.iubenda-cs-container{transition:opacity .45s ease}
+html.preloading #iubenda-cs-banner,html.preloading .iubenda-cs-container{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
+@keyframes drawStroke{to{stroke-dashoffset:0}}
+@keyframes fillIn{to{fill-opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  #preloader path{animation:none;stroke:none;fill-opacity:1;stroke-dashoffset:0}
+}
+
 /* ============ NAV ============ */
 nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
@@ -421,6 +436,30 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
   <meta name="theme-color" content="#1D419F">
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader" aria-hidden="true">
+  <svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg>
+</div>
+<script>
+(function(){
+  var p=document.getElementById('preloader');if(!p)return;
+  var path=p.querySelector('path');
+  try{var L=path.getTotalLength();path.style.strokeDasharray=L;path.style.strokeDashoffset=L;}catch(e){}
+  document.documentElement.classList.add('preloading');
+  var t0=Date.now(),MIN=1500,done=false;
+  function hide(){
+    if(done)return;done=true;
+    setTimeout(function(){
+      p.classList.add('done');
+      document.documentElement.classList.remove('preloading');
+      setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},700);
+    },Math.max(0,MIN-(Date.now()-t0)));
+  }
+  if(document.readyState==='complete')hide();else window.addEventListener('load',hide);
+  setTimeout(hide,6000);
+})();
+</script>
 
 <!-- NAV -->
 <nav>
