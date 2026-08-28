@@ -101,6 +101,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-f
 .nav-cta{background:var(--navy);color:#fff;font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 20px;border-radius:var(--r);text-decoration:none;transition:background .2s}
 .nav-cta:hover{background:var(--navy-3)}
 .nav-right{display:flex;align-items:center;gap:12px}
+.nav-org{background:transparent;border:1px solid var(--hair);color:var(--ink);font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
+.nav-org:hover{border-color:var(--navy);color:var(--navy)}
+@media(max-width:620px){.nav-right{gap:8px}.nav-org,.nav-cta{padding:9px 12px;font-size:11px;letter-spacing:.04em}}
+@media(max-width:430px){.nav-cta{display:none}}
 .lang-toggle{background:none;border:1px solid var(--hair);color:var(--muted);font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.06em;padding:8px 12px;border-radius:var(--r);cursor:pointer;transition:border-color .2s,color .2s}
 .lang-toggle:hover{border-color:var(--ink);color:var(--ink)}
 @media(max-width:860px){.nav-links{display:none}}
@@ -478,6 +482,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
     </div>
     <div class="nav-right">
       <button id="langToggle" class="lang-toggle" aria-label="Switch language">IT</button>
+      <a class="nav-org" href="https://forms.cloud.microsoft/e/S8HHcKQFM6" target="_blank" rel="noopener">Organisation</a>
       <a class="nav-cta" href="#top">Download now</a>
     </div>
   </div>
@@ -930,6 +935,7 @@ if(modal){
 const IT={
 navLinks:[`Funzioni`,`Come funziona`,`Perché Volio`,`FAQ`,`Team`],
 navCta:`Scarica ora`,
+navOrg:`Organizzazioni`,
 heroH1:`Condividi il tuo<br><span class="ln2">prossimo volo</span>`,
 heroDesc:`Il social network dell'aviazione. Piloti, personale di cabina e professionisti del volo: inserisci la tua immatricolazione e Volio disegna il volo per te. Poi condividilo con la community.`,
 featKicker:`01 · Costruito attorno al tuo volo`,
@@ -1015,7 +1021,7 @@ mdFirstName:`Nome`,
 mdEmail:`latua@email.com`
 };
 const T=[
-['.nav-links a',IT.navLinks],['.nav-cta',IT.navCta],
+['.nav-links a',IT.navLinks],['.nav-cta',IT.navCta],['.nav-org',IT.navOrg],
 ['#top h1',IT.heroH1],['#top .hero-desc',IT.heroDesc],
 ['#features .kicker',IT.featKicker],['#features h2',IT.featH2],['#features .sec-head p',IT.featP],
 ['#features .feat-item h3',IT.featTitles],['#features .feat-item p',IT.featDescs],
