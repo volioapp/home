@@ -53,8 +53,22 @@
   ul.check li::before { content: "✓"; color: var(--ok-text); font-weight: 700; }
   ul.cross li::before { content: "✕"; color: var(--no-text); font-weight: 700; }
   .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--warn-text); line-height: 1.6; }
+  .tip-box { background: #FEFCE8; border: 1px solid #FDE68A; border-left: 4px solid #F59E0B; border-radius: 8px; padding: 12px 16px 12px 44px; margin: 12px 0; font-size: 13.5px; color: #854D0E; line-height: 1.6; position: relative; }
+  .tip-box::before { content: "💡"; position: absolute; left: 15px; top: 11px; font-size: 16px; line-height: 1.4; }
   .ok-box { background: var(--ok-bg); border: 1px solid var(--ok-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--ok-text); line-height: 1.6; }
-  .no-box { background: var(--no-bg); border: 1px solid var(--no-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--no-text); line-height: 1.6; }
+
+  /* Example galleries */
+  .examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 16px 0 6px; }
+  .ex { border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: white; }
+  .ex img { width: 100%; display: block; aspect-ratio: 3 / 2; object-fit: cover; background: #E5E7EB; }
+  .ex .tag { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 8px 12px 2px; }
+  .ex .cap { font-size: 12.5px; color: #6B7280; padding: 0 12px 12px; line-height: 1.5; }
+  .ex.ok { border-color: var(--ok-border); }
+  .ex.ok .tag { color: var(--ok-text); }
+  .ex.no { border-color: var(--no-border); }
+  .ex.no .tag { color: var(--no-text); }
+  .ex-note { font-size: 12.5px; color: #6B7280; margin: 4px 0 0; font-style: italic; }
+
   .steps { counter-reset: step; margin: 8px 0 4px; }
   .steps .step { position: relative; padding: 8px 0 8px 40px; font-size: 14px; }
   .steps .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 8px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-accent); color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
@@ -106,6 +120,11 @@
       <li>Avoid images that are too dark or too bright.</li>
       <li>Important details should not be lost in shadows or highlights.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodexposure.jpeg" alt="Correctly exposed photo"><div class="tag">✓ Accepted</div><div class="cap">Correct exposure: the livery, the markings and the details of the aircraft are all clearly readable.</div></div>
+      <div class="ex no"><img src="underexposure.jpeg" alt="Underexposed photo"><div class="tag">✕ Rejected</div><div class="cap">Underexposed: the image is too dark and the details fall into the shadows.</div></div>
+      <div class="ex no"><img src="overexposure.jpeg" alt="Overexposed photo"><div class="tag">✕ Rejected</div><div class="cap">Overexposed: the highlights are burnt out and the detail on the fuselage is lost.</div></div>
+    </div>
   </div>
   <div class="section lang-it">
     <div class="section-title">1. Esposizione</div>
@@ -114,47 +133,96 @@
       <li>Evita immagini troppo scure o troppo chiare.</li>
       <li>I dettagli importanti non devono andare persi nelle ombre o nelle alte luci.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodexposure.jpeg" alt="Foto correttamente esposta"><div class="tag">✓ Accettata</div><div class="cap">Esposizione corretta: livrea, scritte e dettagli dell'aeromobile sono tutti chiaramente leggibili.</div></div>
+      <div class="ex no"><img src="underexposure.jpeg" alt="Foto sottoesposta"><div class="tag">✕ Rifiutata</div><div class="cap">Sottoesposta: l'immagine è troppo scura e i dettagli si perdono nelle ombre.</div></div>
+      <div class="ex no"><img src="overexposure.jpeg" alt="Foto sovraesposta"><div class="tag">✕ Rifiutata</div><div class="cap">Sovraesposta: le alte luci sono bruciate e il dettaglio sulla fusoliera è perso.</div></div>
+    </div>
   </div>
   <hr>
 
   <div class="section lang-en">
-    <div class="section-title">2. Centering &amp; Composition</div>
+    <div class="section-title">2. Backlighting</div>
+    <p>The photo must not be shot against the light in a way that compromises the subject.</p>
+    <ul>
+      <li>Avoid strong backlighting that turns the aircraft into a silhouette.</li>
+      <li>Livery, registration and the main details of the aircraft must remain visible.</li>
+      <li>Avoid heavy lens flare, haze or glare across the subject.</li>
+    </ul>
+    <div class="tip-box"><strong>Tip:</strong> whenever possible, keep the sun behind you or to your side. Soft backlighting is acceptable as long as the aircraft is still correctly readable.</div>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">2. Controluce</div>
+    <p>La foto non deve essere scattata in controluce in modo tale da compromettere il soggetto.</p>
+    <ul>
+      <li>Evita controluce marcati che riducono l'aeromobile a una silhouette.</li>
+      <li>Livrea, immatricolazione e dettagli principali dell'aeromobile devono restare visibili.</li>
+      <li>Evita flare, foschia o riflessi eccessivi sul soggetto.</li>
+    </ul>
+    <div class="tip-box"><strong>Consiglio:</strong> quando possibile, tieni il sole alle tue spalle o di lato. Un controluce leggero è accettabile purché l'aeromobile resti correttamente leggibile.</div>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">3. Centering &amp; Composition</div>
     <p>The main subject should be properly centered and well composed.</p>
     <ul>
       <li>Avoid excessive empty space.</li>
       <li>The subject should be clearly visible and intentionally framed.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodcenter.jpeg" alt="Well centered photo"><div class="tag">✓ Accepted</div><div class="cap">The aircraft sits on the centre of the frame, with balanced space on all four sides.</div></div>
+      <div class="ex no"><img src="badcenter.jpeg" alt="Subject too high in the frame"><div class="tag">✕ Rejected</div><div class="cap">The subject is too high in the frame and the nose is cut short of the edge, leaving a large empty foreground.</div></div>
+      <div class="ex no"><img src="badcenter2.jpeg" alt="Subject off-centre to the left"><div class="tag">✕ Rejected</div><div class="cap">The subject is pushed to the left and upwards: too much empty ground at the bottom, too little space in front of the nose.</div></div>
+    </div>
+    <p class="ex-note">The red lines mark the centre of the frame — they are shown here for reference only and must not appear in the photo you submit.</p>
   </div>
   <div class="section lang-it">
-    <div class="section-title">2. Centratura e composizione</div>
+    <div class="section-title">3. Centratura e composizione</div>
     <p>Il soggetto principale deve essere correttamente centrato e ben composto.</p>
     <ul>
       <li>Evita spazi vuoti eccessivi.</li>
       <li>Il soggetto deve essere chiaramente visibile e inquadrato in modo intenzionale.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodcenter.jpeg" alt="Foto ben centrata"><div class="tag">✓ Accettata</div><div class="cap">L'aeromobile è al centro dell'inquadratura, con spazio equilibrato su tutti e quattro i lati.</div></div>
+      <div class="ex no"><img src="badcenter.jpeg" alt="Soggetto troppo in alto nell'inquadratura"><div class="tag">✕ Rifiutata</div><div class="cap">Il soggetto è troppo in alto e il muso è tagliato vicino al bordo, lasciando un ampio primo piano vuoto.</div></div>
+      <div class="ex no"><img src="badcenter2.jpeg" alt="Soggetto decentrato a sinistra"><div class="tag">✕ Rifiutata</div><div class="cap">Il soggetto è spostato a sinistra e verso l'alto: troppo terreno vuoto in basso, troppo poco spazio davanti al muso.</div></div>
+    </div>
+    <p class="ex-note">Le linee rosse indicano il centro dell'inquadratura: sono mostrate solo come riferimento e non devono comparire nella foto che invii.</p>
   </div>
   <hr>
 
   <div class="section lang-en">
-    <div class="section-title">3. Horizon</div>
+    <div class="section-title">4. Horizon</div>
     <p>The horizon must be straight and level.</p>
     <ul>
       <li>Avoid noticeably tilted horizons.</li>
       <li>If the horizon is not naturally visible, the image should still have a balanced and level composition.</li>
     </ul>
+    <div class="tip-box"><strong>Tip:</strong> take the horizon from the sea, buildings or poles in the background — not from the aircraft itself, which is often banking or in a nose-up attitude. If the background is sky only, keep a realistic angle for the aircraft.</div>
+    <div class="examples">
+      <div class="ex ok"><img src="goodhorizon.jpeg" alt="Level horizon"><div class="tag">✓ Accepted</div><div class="cap">The horizon is level and parallel to the edges of the frame.</div></div>
+      <div class="ex no"><img src="badhorizon.jpeg" alt="Tilted horizon"><div class="tag">✕ Rejected</div><div class="cap">The horizon is noticeably tilted, and the whole scene looks as if it were sloping.</div></div>
+    </div>
   </div>
   <div class="section lang-it">
-    <div class="section-title">3. Orizzonte</div>
+    <div class="section-title">4. Orizzonte</div>
     <p>L'orizzonte deve essere dritto e livellato.</p>
     <ul>
       <li>Evita orizzonti visibilmente inclinati.</li>
       <li>Se l'orizzonte non è naturalmente visibile, l'immagine deve comunque avere una composizione equilibrata e livellata.</li>
     </ul>
+    <div class="tip-box"><strong>Consiglio:</strong> prendi come riferimento per l'orizzonte il mare, gli edifici o i pali sullo sfondo, non l'aeromobile, che spesso è in virata o a muso alto. Se lo sfondo è solo cielo, mantieni un'inclinazione realistica dell'aeromobile.</div>
+    <div class="examples">
+      <div class="ex ok"><img src="goodhorizon.jpeg" alt="Orizzonte livellato"><div class="tag">✓ Accettata</div><div class="cap">L'orizzonte è livellato e parallelo ai bordi dell'inquadratura.</div></div>
+      <div class="ex no"><img src="badhorizon.jpeg" alt="Orizzonte inclinato"><div class="tag">✕ Rifiutata</div><div class="cap">L'orizzonte è visibilmente inclinato e l'intera scena sembra in pendenza.</div></div>
+    </div>
   </div>
   <hr>
 
   <div class="section lang-en">
-    <div class="section-title">4. Editing</div>
+    <div class="section-title">5. Editing</div>
     <p>Photos should have a natural and realistic appearance.</p>
     <ul class="cross">
       <li>Avoid excessive filters, saturation, contrast, sharpening, or other heavy editing.</li>
@@ -162,9 +230,14 @@
     <ul class="check">
       <li>Minor adjustments to exposure, colour, or cropping are allowed.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodedit.jpeg" alt="Naturally edited photo"><div class="tag">✓ Accepted</div><div class="cap">Natural editing: realistic colours and contrast, no visible filters or halos.</div></div>
+      <div class="ex no"><img src="underedit.jpeg" alt="Flat, unedited photo"><div class="tag">✕ Rejected</div><div class="cap">Flat and washed out: the image lacks contrast and colour, and the subject does not stand out.</div></div>
+      <div class="ex no"><img src="overedit.jpeg" alt="Over-edited photo"><div class="tag">✕ Rejected</div><div class="cap">Over-edited: excessive saturation, contrast and sharpening give the image an unrealistic look.</div></div>
+    </div>
   </div>
   <div class="section lang-it">
-    <div class="section-title">4. Post-produzione</div>
+    <div class="section-title">5. Post-produzione</div>
     <p>Le foto devono avere un aspetto naturale e realistico.</p>
     <ul class="cross">
       <li>Evita filtri eccessivi, saturazione, contrasto, nitidezza o altre modifiche pesanti.</li>
@@ -172,11 +245,16 @@
     <ul class="check">
       <li>Sono ammesse piccole regolazioni di esposizione, colore o ritaglio.</li>
     </ul>
+    <div class="examples">
+      <div class="ex ok"><img src="goodedit.jpeg" alt="Foto con post-produzione naturale"><div class="tag">✓ Accettata</div><div class="cap">Post-produzione naturale: colori e contrasto realistici, nessun filtro o alone visibile.</div></div>
+      <div class="ex no"><img src="underedit.jpeg" alt="Foto piatta e slavata"><div class="tag">✕ Rifiutata</div><div class="cap">Piatta e slavata: all'immagine mancano contrasto e colore e il soggetto non risalta.</div></div>
+      <div class="ex no"><img src="overedit.jpeg" alt="Foto con post-produzione eccessiva"><div class="tag">✕ Rifiutata</div><div class="cap">Post-produzione eccessiva: saturazione, contrasto e nitidezza esagerati rendono l'immagine irrealistica.</div></div>
+    </div>
   </div>
   <hr>
 
   <div class="section lang-en">
-    <div class="section-title">5. No AI-Generated Content</div>
+    <div class="section-title">6. No AI-Generated Content</div>
     <p>Photos must be original photographs and must not be AI-generated or AI-manipulated.</p>
     <ul>
       <li>Do not submit fully AI-generated images.</li>
@@ -185,7 +263,7 @@
     <div class="warn-box"><strong>Important:</strong> submissions found to be AI-generated or AI-manipulated will be rejected.</div>
   </div>
   <div class="section lang-it">
-    <div class="section-title">5. Nessun contenuto generato con IA</div>
+    <div class="section-title">6. Nessun contenuto generato con IA</div>
     <p>Le foto devono essere fotografie originali e non devono essere generate o manipolate con l'intelligenza artificiale.</p>
     <ul>
       <li>Non inviare immagini interamente generate con IA.</li>
@@ -196,7 +274,7 @@
   <hr>
 
   <div class="section lang-en">
-    <div class="section-title">6. Aspect Ratio</div>
+    <div class="section-title">7. Aspect Ratio</div>
     <p>All photos must be submitted in a 3:2 aspect ratio.</p>
     <div class="ratio-visual">
       <div class="ratio-item"><div class="ratio-box ok"></div>3:2 — accepted</div>
@@ -209,7 +287,7 @@
     </ul>
   </div>
   <div class="section lang-it">
-    <div class="section-title">6. Formato (rapporto d'aspetto)</div>
+    <div class="section-title">7. Formato (rapporto d'aspetto)</div>
     <p>Tutte le foto devono essere inviate in formato 3:2.</p>
     <div class="ratio-visual">
       <div class="ratio-item"><div class="ratio-box ok"></div>3:2 — accettato</div>
@@ -249,6 +327,7 @@
     <div class="section-title">Quick checklist before uploading</div>
     <ul class="check">
       <li>The photo is correctly exposed and clearly visible.</li>
+      <li>The photo is not shot against the light in a way that hides the subject.</li>
       <li>The subject is centred, well framed and clearly recognisable.</li>
       <li>The horizon is straight, or the composition is level and balanced.</li>
       <li>The editing is natural, with no heavy filters or effects.</li>
@@ -260,6 +339,7 @@
     <div class="section-title">Checklist rapida prima di caricare</div>
     <ul class="check">
       <li>La foto è correttamente esposta e chiaramente visibile.</li>
+      <li>La foto non è in controluce al punto da nascondere il soggetto.</li>
       <li>Il soggetto è centrato, ben inquadrato e chiaramente riconoscibile.</li>
       <li>L'orizzonte è dritto, oppure la composizione è livellata ed equilibrata.</li>
       <li>La post-produzione è naturale, senza filtri o effetti pesanti.</li>
