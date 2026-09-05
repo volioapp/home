@@ -1,1 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Submission Guidelines / Linee Guida per l'Invio delle Foto — Volio App</title>
+<style>
+  :root {
+    --brand-dark: #1A1A2E;
+    --brand-accent: #2563EB;
+    --brand-light: #EFF6FF;
+    --border-color: #DBEAFE;
+    --text-primary: #1F2937;
+    --warn-bg: #FFF7ED;
+    --warn-border: #FED7AA;
+    --warn-text: #92400E;
+    --ok-bg: #F0FDF4;
+    --ok-border: #BBF7D0;
+    --ok-text: #166534;
+    --no-bg: #FEF2F2;
+    --no-border: #FECACA;
+    --no-text: #991B1B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 15px; color: var(--text-primary); line-height: 1.7; background: #F8FAFC; }
 
+  /* Hidden radio inputs power the CSS-only toggle — no JavaScript needed */
+  #r-en, #r-it { display: none; }
+
+  .cover { background: var(--brand-dark); color: white; padding: 56px 40px 48px; text-align: center; }
+  .cover .brand { font-size: 11px; letter-spacing: 4px; color: #93C5FD; margin-bottom: 16px; text-transform: uppercase; }
+  .cover h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+  .cover .subtitle { color: #BFDBFE; font-size: 15px; margin-bottom: 8px; }
+  .cover .meta { color: #93C5FD; font-size: 13px; }
+  .container { max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+  .intro-box { background: var(--brand-light); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px; margin: 32px 0 8px; font-size: 13.5px; color: #1E40AF; line-height: 1.6; }
+  .lang-note { text-align: center; font-size: 12.5px; color: #6B7280; margin: 10px 0 24px; line-height: 1.6; }
+  .lang-toggle { display: flex; justify-content: center; gap: 8px; margin: 0 0 8px; }
+  .lang-btn { border: 1px solid var(--border-color); background: white; color: var(--brand-accent); font-size: 13px; font-weight: 600; padding: 6px 16px; border-radius: 999px; cursor: pointer; display: inline-block; user-select: none; }
+
+  /* Default active state: EN button */
+  label.lang-btn[for="r-en"] { background: var(--brand-accent); color: white; border-color: var(--brand-accent); }
+  /* When IT is selected: swap active state */
+  #r-it:checked ~ .container label.lang-btn[for="r-en"] { background: white; color: var(--brand-accent); border-color: var(--border-color); }
+  #r-it:checked ~ .container label.lang-btn[for="r-it"] { background: var(--brand-accent); color: white; border-color: var(--brand-accent); }
+
+  .section { margin-top: 36px; }
+  .section-title { font-size: 18px; font-weight: 700; color: var(--brand-accent); margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--border-color); }
+  p { margin-bottom: 10px; font-size: 14.5px; }
+  ul { margin: 6px 0 10px 0; padding: 0; list-style: none; }
+  ul li { padding: 3px 0 3px 18px; position: relative; font-size: 14px; }
+  ul li::before { content: "•"; position: absolute; left: 4px; color: var(--brand-accent); }
+  ul.check li::before { content: "✓"; color: var(--ok-text); font-weight: 700; }
+  ul.cross li::before { content: "✕"; color: var(--no-text); font-weight: 700; }
+  .warn-box { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--warn-text); line-height: 1.6; }
+  .ok-box { background: var(--ok-bg); border: 1px solid var(--ok-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--ok-text); line-height: 1.6; }
+  .no-box { background: var(--no-bg); border: 1px solid var(--no-border); border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 13.5px; color: var(--no-text); line-height: 1.6; }
+  .steps { counter-reset: step; margin: 8px 0 4px; }
+  .steps .step { position: relative; padding: 8px 0 8px 40px; font-size: 14px; }
+  .steps .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 8px; width: 26px; height: 26px; border-radius: 50%; background: var(--brand-accent); color: white; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .ratio-visual { display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin: 14px 0 6px; }
+  .ratio-item { text-align: center; font-size: 12px; color: #6B7280; }
+  .ratio-box { border-radius: 6px; margin-bottom: 6px; }
+  .ratio-box.ok { width: 150px; height: 100px; background: var(--ok-bg); border: 2px solid var(--ok-border); }
+  .ratio-box.no { width: 133px; height: 100px; background: var(--no-bg); border: 2px dashed var(--no-border); }
+  .ratio-box.no2 { width: 100px; height: 100px; background: var(--no-bg); border: 2px dashed var(--no-border); }
+  hr { border: none; border-top: 1px solid var(--border-color); margin: 24px 0 4px; }
+  a { color: var(--brand-accent); }
+
+  /* Language visibility — default: show EN, hide IT */
+  .lang-it { display: none; }
+  /* When IT radio is checked: hide EN, show IT */
+  #r-it:checked ~ .container .lang-en { display: none; }
+  #r-it:checked ~ .container .lang-it { display: block; }
+
+  @media (max-width: 600px) { .cover { padding: 36px 20px 32px; } .cover h1 { font-size: 21px; } }
+</style>
+</head>
+<body>
+
+<!-- Radio inputs must be first children of <body> so CSS sibling selectors can reach .container -->
+<input type="radio" id="r-en" name="lang" checked>
+<input type="radio" id="r-it" name="lang">
+
+<div class="cover">
+  <div class="brand">Volio App</div>
+  <h1>Photo Submission Guidelines<br>Linee Guida per l'Invio delle Foto</h1>
+  <div class="subtitle">Volio Spotter — Volio App S.r.l.</div>
+  <div class="meta">Last updated / Ultimo aggiornamento: 5 September 2026 / 5 settembre 2026</div>
+</div>
+
+<div class="container">
+  <div class="lang-toggle">
+    <label for="r-en" class="lang-btn">English</label>
+    <label for="r-it" class="lang-btn">Italiano</label>
+  </div>
+  <div class="lang-note">This page is available in English and Italian. In case of any discrepancy between the two versions, the English version shall prevail.<br>Questa pagina è disponibile in inglese e in italiano. In caso di discrepanza tra le due versioni, prevale la versione in inglese.</div>
+
+  <div class="intro-box lang-en">Every photo uploaded to Volio Spotter is submitted for review. A Volio Spotter Moderator checks that these guidelines are respected before the photo is published. To be accepted, a photo must meet all of the requirements below.</div>
+  <div class="intro-box lang-it">Ogni foto caricata su Volio Spotter viene inviata per revisione. Un Moderatore Spotter di Volio verifica che queste linee guida siano rispettate prima che la foto venga pubblicata. Per essere accettata, una foto deve soddisfare tutti i requisiti indicati di seguito.</div>
+
+  <div class="section lang-en">
+    <div class="section-title">1. Exposure</div>
+    <p>The photo must be properly exposed and clearly visible.</p>
+    <ul>
+      <li>Avoid images that are too dark or too bright.</li>
+      <li>Important details should not be lost in shadows or highlights.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">1. Esposizione</div>
+    <p>La foto deve essere correttamente esposta e chiaramente visibile.</p>
+    <ul>
+      <li>Evita immagini troppo scure o troppo chiare.</li>
+      <li>I dettagli importanti non devono andare persi nelle ombre o nelle alte luci.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">2. Centering &amp; Composition</div>
+    <p>The main subject should be properly centered and well composed.</p>
+    <ul>
+      <li>Avoid excessive empty space.</li>
+      <li>The subject should be clearly visible and intentionally framed.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">2. Centratura e composizione</div>
+    <p>Il soggetto principale deve essere correttamente centrato e ben composto.</p>
+    <ul>
+      <li>Evita spazi vuoti eccessivi.</li>
+      <li>Il soggetto deve essere chiaramente visibile e inquadrato in modo intenzionale.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">3. Horizon</div>
+    <p>The horizon must be straight and level.</p>
+    <ul>
+      <li>Avoid noticeably tilted horizons.</li>
+      <li>If the horizon is not naturally visible, the image should still have a balanced and level composition.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">3. Orizzonte</div>
+    <p>L'orizzonte deve essere dritto e livellato.</p>
+    <ul>
+      <li>Evita orizzonti visibilmente inclinati.</li>
+      <li>Se l'orizzonte non è naturalmente visibile, l'immagine deve comunque avere una composizione equilibrata e livellata.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">4. Editing</div>
+    <p>Photos should have a natural and realistic appearance.</p>
+    <ul class="cross">
+      <li>Avoid excessive filters, saturation, contrast, sharpening, or other heavy editing.</li>
+    </ul>
+    <ul class="check">
+      <li>Minor adjustments to exposure, colour, or cropping are allowed.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">4. Post-produzione</div>
+    <p>Le foto devono avere un aspetto naturale e realistico.</p>
+    <ul class="cross">
+      <li>Evita filtri eccessivi, saturazione, contrasto, nitidezza o altre modifiche pesanti.</li>
+    </ul>
+    <ul class="check">
+      <li>Sono ammesse piccole regolazioni di esposizione, colore o ritaglio.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">5. No AI-Generated Content</div>
+    <p>Photos must be original photographs and must not be AI-generated or AI-manipulated.</p>
+    <ul>
+      <li>Do not submit fully AI-generated images.</li>
+      <li>Do not use AI to add, remove, or significantly alter elements of the photograph.</li>
+    </ul>
+    <div class="warn-box"><strong>Important:</strong> submissions found to be AI-generated or AI-manipulated will be rejected.</div>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">5. Nessun contenuto generato con IA</div>
+    <p>Le foto devono essere fotografie originali e non devono essere generate o manipolate con l'intelligenza artificiale.</p>
+    <ul>
+      <li>Non inviare immagini interamente generate con IA.</li>
+      <li>Non utilizzare l'IA per aggiungere, rimuovere o alterare in modo significativo elementi della fotografia.</li>
+    </ul>
+    <div class="warn-box"><strong>Importante:</strong> gli invii che risultino generati o manipolati con IA verranno rifiutati.</div>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">6. Aspect Ratio</div>
+    <p>All photos must be submitted in a 3:2 aspect ratio.</p>
+    <div class="ratio-visual">
+      <div class="ratio-item"><div class="ratio-box ok"></div>3:2 — accepted</div>
+      <div class="ratio-item"><div class="ratio-box no"></div>4:3 — rejected</div>
+      <div class="ratio-item"><div class="ratio-box no2"></div>1:1 — rejected</div>
+    </div>
+    <ul>
+      <li>Accepted: 3:2 (e.g. 3000 × 2000 px, horizontal or vertical).</li>
+      <li>Photos with other aspect ratios may be rejected.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">6. Formato (rapporto d'aspetto)</div>
+    <p>Tutte le foto devono essere inviate in formato 3:2.</p>
+    <div class="ratio-visual">
+      <div class="ratio-item"><div class="ratio-box ok"></div>3:2 — accettato</div>
+      <div class="ratio-item"><div class="ratio-box no"></div>4:3 — rifiutato</div>
+      <div class="ratio-item"><div class="ratio-box no2"></div>1:1 — rifiutato</div>
+    </div>
+    <ul>
+      <li>Accettato: 3:2 (es. 3000 × 2000 px, orizzontale o verticale).</li>
+      <li>Le foto con altri rapporti d'aspetto possono essere rifiutate.</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">How the review works</div>
+    <div class="steps">
+      <div class="step">You upload your photo through the Application.</div>
+      <div class="step">The photo enters the review queue and is not yet visible to other users.</div>
+      <div class="step">A Volio Spotter Moderator checks the photo against these guidelines.</div>
+      <div class="step">If the guidelines are respected, the photo is published. If not, it is rejected and you can submit a corrected version.</div>
+    </div>
+    <div class="ok-box">Review times may vary depending on the number of submissions. Rejection is never a judgement of your work as a photographer — it only means that a specific requirement above was not met.</div>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">Come funziona la revisione</div>
+    <div class="steps">
+      <div class="step">Carichi la tua foto tramite l'Applicazione.</div>
+      <div class="step">La foto entra nella coda di revisione e non è ancora visibile agli altri utenti.</div>
+      <div class="step">Un Moderatore Spotter di Volio verifica la foto rispetto a queste linee guida.</div>
+      <div class="step">Se le linee guida sono rispettate, la foto viene pubblicata. In caso contrario viene rifiutata e puoi inviare una versione corretta.</div>
+    </div>
+    <div class="ok-box">I tempi di revisione possono variare in base al numero di invii. Il rifiuto non è mai un giudizio sul tuo lavoro come fotografo: significa soltanto che uno dei requisiti sopra indicati non è stato soddisfatto.</div>
+  </div>
+  <hr>
+
+  <div class="section lang-en">
+    <div class="section-title">Quick checklist before uploading</div>
+    <ul class="check">
+      <li>The photo is correctly exposed and clearly visible.</li>
+      <li>The subject is centred, well framed and clearly recognisable.</li>
+      <li>The horizon is straight, or the composition is level and balanced.</li>
+      <li>The editing is natural, with no heavy filters or effects.</li>
+      <li>The photo is an original photograph, not AI-generated or AI-manipulated.</li>
+      <li>The photo is in a 3:2 aspect ratio.</li>
+    </ul>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">Checklist rapida prima di caricare</div>
+    <ul class="check">
+      <li>La foto è correttamente esposta e chiaramente visibile.</li>
+      <li>Il soggetto è centrato, ben inquadrato e chiaramente riconoscibile.</li>
+      <li>L'orizzonte è dritto, oppure la composizione è livellata ed equilibrata.</li>
+      <li>La post-produzione è naturale, senza filtri o effetti pesanti.</li>
+      <li>La foto è una fotografia originale, non generata né manipolata con IA.</li>
+      <li>La foto è in formato 3:2.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
