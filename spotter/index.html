@@ -67,6 +67,10 @@
   .ex.ok .tag { color: var(--ok-text); }
   .ex.no { border-color: var(--no-border); }
   .ex.no .tag { color: var(--no-text); }
+  .spec { display: grid; grid-template-columns: 150px 1fr; gap: 4px 14px; margin: 10px 0 4px; font-size: 14px; }
+  .spec dt { font-weight: 700; color: var(--brand-accent); }
+  .spec dd { color: var(--text-primary); }
+  @media (max-width: 520px) { .spec { grid-template-columns: 1fr; } .spec dd { margin-bottom: 6px; } }
   .ex-note { font-size: 12.5px; color: #6B7280; margin: 4px 0 0; font-style: italic; }
 
   .steps { counter-reset: step; margin: 8px 0 4px; }
@@ -100,7 +104,7 @@
   <div class="brand">Volio App</div>
   <h1>Photo Submission Guidelines<br>Linee Guida per l'Invio delle Foto</h1>
   <div class="subtitle">Volio Spotter — Volio App S.r.l.</div>
-  <div class="meta">Last updated / Ultimo aggiornamento: 5 September 2026 / 5 settembre 2026</div>
+  <div class="meta">Last updated / Ultimo aggiornamento: 9 September 2026 / 9 settembre 2026</div>
 </div>
 
 <div class="container">
@@ -112,6 +116,32 @@
 
   <div class="intro-box lang-en">Every photo uploaded to Volio Spotter is submitted for review. A Volio Spotter Moderator checks that these guidelines are respected before the photo is published. To be accepted, a photo must meet all of the requirements below.</div>
   <div class="intro-box lang-it">Ogni foto caricata su Volio Spotter viene inviata per revisione. Un Moderatore Spotter di Volio verifica che queste linee guida siano rispettate prima che la foto venga pubblicata. Per essere accettata, una foto deve soddisfare tutti i requisiti indicati di seguito.</div>
+
+  <div class="section lang-en">
+    <div class="section-title">Before you upload</div>
+    <p>These are recommended export settings. They keep the file light while preserving enough detail for the review.</p>
+    <dl class="spec">
+      <dt>Lightroom</dt>
+      <dd>JPG — 1920 px (minimum 1280 px) — quality 40%.</dd>
+      <dt>Photoshop</dt>
+      <dd>JPG — 1920 px (minimum 1280 px) — quality up to 7. When resizing, use <em>Bicubic Sharper</em>.</dd>
+    </dl>
+    <div class="tip-box"><strong>Tip:</strong> these values are a suggestion, not a requirement — what matters is that the photo is sharp, clean and meets the guidelines below.</div>
+    <div class="warn-box"><strong>Watermark:</strong> all photos uploaded are visible to all users and cannot be protected against misuse. Feel free to add your watermark in a free area of the picture, as long as it does not cover the subject and still allows the guidelines below to be respected.</div>
+  </div>
+  <div class="section lang-it">
+    <div class="section-title">Prima di caricare</div>
+    <p>Queste sono le impostazioni di esportazione consigliate: mantengono il file leggero conservando dettaglio sufficiente per la revisione.</p>
+    <dl class="spec">
+      <dt>Lightroom</dt>
+      <dd>JPG — 1920 px (minimo 1280 px) — qualità 40%.</dd>
+      <dt>Photoshop</dt>
+      <dd>JPG — 1920 px (minimo 1280 px) — qualità fino a 7. Per il ridimensionamento usa <em>Bicubico più nitido</em> (<em>Bicubic Sharper</em>).</dd>
+    </dl>
+    <div class="tip-box"><strong>Consiglio:</strong> questi valori sono un suggerimento, non un obbligo: ciò che conta è che la foto sia nitida, pulita e rispetti le linee guida qui sotto.</div>
+    <div class="warn-box"><strong>Watermark:</strong> tutte le foto caricate sono visibili a tutti gli utenti e non possono essere protette da un uso improprio. Se vuoi, aggiungi il tuo watermark in un'area libera dell'immagine, purché non copra il soggetto e permetta comunque di rispettare le linee guida qui sotto.</div>
+  </div>
+  <hr>
 
   <div class="section lang-en">
     <div class="section-title">1. Exposure</div>
