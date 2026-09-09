@@ -229,6 +229,18 @@ section[id],header[id]{scroll-margin-top:76px}
 .steps.stagger.in .step:nth-child(2){animation-delay:.14s}
 .steps.stagger.in .step:nth-child(3){animation-delay:.28s}
 
+/* ============ SPOTTERS ============ */
+.spot-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,6vw,78px);align-items:center}
+.spot-copy .kicker{margin-bottom:18px}
+.spot-copy h2{font-weight:800;font-size:clamp(32px,4.6vw,54px);color:var(--navy)}
+.spot-copy p{margin-top:18px;font-size:16px;line-height:1.7;color:var(--muted);max-width:480px}
+.spot-copy .btn{margin-top:28px}
+.spot-visual{position:relative;height:clamp(300px,38vw,430px);overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
+.spot-phone{display:flex;justify-content:center;will-change:transform}
+.spot-phone img{width:100%;max-width:330px;display:block;filter:drop-shadow(0 28px 62px rgba(5,14,30,.22))}
+@media(max-width:840px){.spot-layout{grid-template-columns:1fr;gap:42px}.spot-visual{order:-1;height:clamp(260px,64vw,340px)}.spot-phone img{max-width:280px}}
+@media(prefers-reduced-motion:reduce){.spot-phone{transform:none!important}}
+
 /* ============ WHY (editorial stat row) ============ */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,90px);align-items:center}
 .why-stats{display:flex;flex-direction:column}
@@ -548,11 +560,28 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
   </div>
 </section>
 
+<!-- SPOTTERS -->
+<section class="sec" id="spotters">
+  <div class="wrap spot-layout">
+    <div class="spot-copy reveal">
+      <span class="kicker">03 · Spotters</span>
+      <h2 id="spotH2">Aviation spotters are welcome!</h2>
+      <p id="spotP">With the new update, spotters can now share their pictures in the app alongside the flights. Show your work in the feed and connect with the pilots.</p>
+      <a class="btn btn-primary" id="spotBtn" href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">Read the spotter guidelines</a>
+    </div>
+    <div class="spot-visual reveal rd1">
+      <div class="spot-phone" id="spotPhone">
+        <img src="spotter.png" alt="Volio app, spotter photo shared in the feed" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="sec bg-navy" id="why">
   <div class="wrap why-grid">
     <div class="sec-head reveal" style="margin-bottom:0">
-      <span class="kicker on-dark">03 · Community</span>
+      <span class="kicker on-dark">04 · Community</span>
       <h2>Made to connect the aviation world</h2>
       <p>Volio is a platform to connect friends, colleagues, instructors and crew, everyone in the aviation community. Every flight you share is a new way to bring people together.</p>
     </div>
@@ -569,7 +598,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="voices">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">04 · From the community</span>
+      <span class="kicker">05 · From the community</span>
       <h2>Field notes</h2>
     </div>
     <!-- [A13] stagger class added -->
@@ -585,7 +614,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-paper" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">05 · FAQ</span>
+      <span class="kicker">06 · FAQ</span>
       <h2>Frequently asked</h2>
     </div>
     <div class="faq reveal">
@@ -593,6 +622,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
       <div class="faq-item"><button class="faq-q">Who is Volio for?<span class="pm">+</span></button><div class="faq-a"><p>Pilots, cabin crew, and everyone who works in or loves aviation. Whether you're a student on your first solo, an airline first officer, or a weekend bush flyer, every flight has a story worth sharing.</p></div></div>
       <div class="faq-item"><button class="faq-q">Does it cost anything to use Volio?<span class="pm">+</span></button><div class="faq-a"><p>Volio is free to download and start sharing your flights. Just grab it from the App Store or Google Play and log in.</p></div></div>
       <div class="faq-item"><button class="faq-q">Is my flight data private?<span class="pm">+</span></button><div class="faq-a"><p>You control what you share. Every flight can be posted to the community feed or kept to yourself, the choice is always yours, flight by flight.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Are the spotter photos moderated?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Every image is reviewed by our Volio spotter moderators before it appears in the feed, so that all photos in the Spotter category follow our <a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">spotter guidelines</a>.</p></div></div>
       <div class="faq-item"><button class="faq-q">Which devices is Volio available on?<span class="pm">+</span></button><div class="faq-a"><p>Volio is available now on both iOS and Android, download it from the App Store or Google Play and your flights sync across the community instantly.</p></div></div>
     </div>
   </div>
@@ -602,7 +632,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="partners">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">06 · Partners</span>
+      <span class="kicker">07 · Partners</span>
       <h2>In good company</h2>
       <p>We work with organisations across the aviation world. More announcements on the way.</p>
     </div>
@@ -622,7 +652,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-paper" id="team">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">07 · The team</span>
+      <span class="kicker">08 · The team</span>
       <h2>Built by enthusiasts</h2>
     </div>
     <div class="team-grid">
@@ -658,7 +688,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-cirrus" id="follow">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">08 · Follow us</span>
+      <span class="kicker">09 · Follow us</span>
       <h2>Follow along</h2>
     </div>
     <div class="follow-grid">
@@ -686,7 +716,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="press">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">09 · They talk about us</span>
+      <span class="kicker">10 · They talk about us</span>
       <h2>Interview with the founder</h2>
     </div>
     <div class="reveal">
@@ -751,7 +781,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
         <p>The social network for the aviation world. Share your flights, connect with your crew, inspire the community.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#follow">Follow us</a></div>
+        <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#how">How it works</a><a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">Spotter guidelines</a><a href="#faq">FAQ</a><a href="#follow">Follow us</a></div>
         <div class="foot-col"><h4>Company</h4><a href="#team">Team</a><a href="#partners">Partners</a><a href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener">LinkedIn</a></div>
         <div class="foot-col"><h4>Connect</h4><a href="https://www.instagram.com/volioapp" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener">LinkedIn</a></div>
         <div class="foot-col"><h4>Legal</h4><a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="https://www.volioapp.it/account-deletion/" target="_blank" rel="noopener">Account deletion</a><a href="#" id="footContact">Contact</a></div>
@@ -841,6 +871,26 @@ if(nlBtn&&nlEmail&&nlConsent){
   });
   nlEmail.addEventListener('keydown',e=>{if(e.key==='Enter')nlBtn.click();});
 }
+
+/* ---- SPOTTERS : phone drifts bottom-to-top while the section scrolls by ---- */
+(function(){
+  var ph=document.getElementById('spotPhone'),sec=document.getElementById('spotters');
+  if(!ph||!sec)return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var win=sec.querySelector('.spot-visual'),ticking=false;
+  function update(){
+    ticking=false;
+    var r=sec.getBoundingClientRect(),vh=window.innerHeight||document.documentElement.clientHeight;
+    if(r.bottom<-100||r.top>vh+100)return;
+    var shift=Math.max(0,ph.offsetHeight-win.clientHeight);
+    var p=(vh-r.top)/(vh+r.height);            /* 0 = entra dal basso, 1 = esce in alto */
+    p=Math.min(1,Math.max(0,(p-0.40)/0.44));   /* resta fermo sulla parte alta, poi scorre */
+    ph.style.transform='translate3d(0,'+(-shift*p).toFixed(1)+'px,0)';
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+  window.addEventListener('resize',update,{passive:true});
+  update();
+})();
 
 /* ---- FOOTER CONTACT : reveal the address, then copy it ---- */
 const footContact=document.getElementById('footContact');
@@ -955,35 +1005,41 @@ stepDescs:[
 `Decolla come sempre. Dopo l'atterraggio, cerca la tua immatricolazione: l'integrazione ADS-B la registra per te.`,
 `Il tuo volo appare nel feed. Aggiungi un titolo, un commento e mostra la traccia a tutta la community.`,
 `Fai vedere ad amici e colleghi il tuo ultimo volo. Potrebbe ispirare la loro prossima avventura.`],
-whyKicker:`03 · Community`,
+spotKicker:`03 · Spotter`,
+spotH2:`Gli aviation spotter sono i benvenuti!`,
+spotP:`Con il nuovo aggiornamento gli spotter possono condividere le loro foto nell'app, accanto ai voli. Mostra il tuo lavoro nel feed e connettiti con i piloti.`,
+spotBtn:`Leggi le linee guida spotter`,
+whyKicker:`04 · Community`,
 whyH2:`Fatto per connettere il mondo dell'aviazione`,
 whyP:`Volio è una piattaforma per connettere amici, colleghi, istruttori ed equipaggi: tutta la community dell'aviazione. Ogni volo che condividi è un nuovo modo per unire le persone.`,
 whyStats:[
 `<b>Utenti</b> che già volano con Volio e condividono le loro rotte.`,
 `<b>Partner di lancio</b>, da Aelo Swiss Academy a Flight Horizon, con altri in arrivo.`,
 `<b>Voli</b> pronti per essere condivisi con la community dell'aviazione.`],
-voicesKicker:`04 · Dalla community`,
+voicesKicker:`05 · Dalla community`,
 voicesH2:`Testimonianze`,
-faqKicker:`05 · FAQ`,
+faqKicker:`06 · FAQ`,
 faqH2:`Domande frequenti`,
 faqQ:[
 `Come funziona l'import automatico ADS-B?<span class="pm">+</span>`,
 `A chi è rivolto Volio?<span class="pm">+</span>`,
 `Volio è a pagamento?<span class="pm">+</span>`,
 `I miei dati di volo sono privati?<span class="pm">+</span>`,
+`Le foto degli spotter sono moderate?<span class="pm">+</span>`,
 `Su quali dispositivi è disponibile Volio?<span class="pm">+</span>`],
 faqA:[
 `Dopo l'atterraggio inserisci l'immatricolazione dell'aeromobile. Volio la confronta con i dati di volo ADS-B trasmessi pubblicamente per ricostruire rotta, velocità al suolo, profilo di quota e durata: così l'intero volo si compila da solo.`,
 `Piloti, personale di cabina e chiunque lavori o ami l'aviazione. Che tu sia un allievo al primo assolo, un primo ufficiale di linea o un bush pilot del weekend, ogni volo ha una storia che merita di essere condivisa.`,
 `Volio è gratuito da scaricare e puoi iniziare subito a condividere i tuoi voli. Scaricalo dall'App Store o da Google Play e accedi.`,
 `Decidi tu cosa condividere. Ogni volo può essere pubblicato nel feed della community o restare privato: la scelta è sempre tua, volo per volo.`,
+`Sì. Ogni immagine viene controllata dai nostri moderatori spotter di Volio prima di comparire nel feed, così tutte le foto nella categoria Spotter rispettano le nostre <a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">linee guida spotter</a>.`,
 `Volio è disponibile ora sia su iOS che su Android: scaricalo dall'App Store o da Google Play e i tuoi voli si sincronizzano subito con la community.`],
-partnersKicker:`06 · Partner`,
+partnersKicker:`07 · Partner`,
 partnersH2:`In buona compagnia`,
 partnersP:`Collaboriamo con organizzazioni di tutto il mondo dell'aviazione. Altri annunci in arrivo.`,
 ctaT:`Diventa partner`,
 ctaG:`Contattaci →`,
-teamKicker:`07 · Il team`,
+teamKicker:`08 · Il team`,
 teamH2:`Costruito da appassionati`,
 memberRl:[`PILOTA COMMERCIALE · ING. AEROSPAZIALE`,`ING. DEI SISTEMI COMPLESSI · MGMT`],
 memberBio:[
@@ -991,7 +1047,7 @@ memberBio:[
 `L'imprenditorialità è sempre stata la mentalità. Guidato da precisione, disciplina e un forte approccio ingegneristico, mi concentro sul gestire la complessità, ottimizzare i sistemi e trasformare le sfide in soluzioni efficienti e scalabili.`],
 missionP:`Ogni volo ha una storia che merita di essere condivisa. Dai primi assoli alle rotazioni di linea, l'aviazione è fatta di momenti che meritano di essere ricordati. Volio aiuta piloti, equipaggi e appassionati a <span class="hl">condividere i propri viaggi, connettersi tra loro</span> e ispirare una community unita dal cielo.`,
 missionBy:`La missione di Volio`,
-followKicker:`08 · Seguici`,
+followKicker:`09 · Seguici`,
 followH2:`Seguici`,
 followDesc:[
 `Aggiornamenti dietro le quinte, storie di volo e il percorso di costruzione di Volio: seguici su Instagram.`,
@@ -999,11 +1055,11 @@ followDesc:[
 followBtn:[`Segui su Instagram`,`Connettiti su LinkedIn`],
 footBrand:`Il social network del mondo dell'aviazione. Condividi i tuoi voli, connettiti con il tuo equipaggio, ispira la community.`,
 footCols:[`Prodotto`,`Azienda`,`Contatti`,`Legale`],
-footProductLinks:[`Funzioni`,`Come funziona`,`FAQ`,`Seguici`],
+footProductLinks:[`Funzioni`,`Come funziona`,`Linee guida spotter`,`FAQ`,`Seguici`],
 footCompanyLinks:[`Team`,`Partner`],
 footLegal:[`Privacy Policy`,`Termini e Condizioni`,`Cancellazione account`,`Contatti`],
 footCopy:`© 2026 VOLIO · Volio App S.r.l. · Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia`,
-pressKicker:`09 · Parlano di noi`,
+pressKicker:`10 · Parlano di noi`,
 pressH2:`Intervista al founder`,
 pressNote:`Non vedi il player? <a href="https://www.youtube.com/watch?v=uy31t_89ocA" target="_blank" rel="noopener">Guarda su YouTube →</a>`,
 nlText:`Tienimi aggiornato`,
@@ -1026,6 +1082,7 @@ const T=[
 ['#features .kicker',IT.featKicker],['#features h2',IT.featH2],['#features .sec-head p',IT.featP],
 ['#features .feat-item h3',IT.featTitles],['#features .feat-item p',IT.featDescs],
 ['#how .kicker',IT.howKicker],['#how h2',IT.howH2],['#how .step-no',IT.stepLabels],['#how .step h3',IT.stepTitles],['#how .step p',IT.stepDescs],
+['#spotters .kicker',IT.spotKicker],['#spotH2',IT.spotH2],['#spotP',IT.spotP],['#spotBtn',IT.spotBtn],
 ['#why .kicker',IT.whyKicker],['#why h2',IT.whyH2],['#why .sec-head p',IT.whyP],['#why .why-stat .c',IT.whyStats],
 ['#voices .kicker',IT.voicesKicker],['#voices h2',IT.voicesH2],
 ['#faq .kicker',IT.faqKicker],['#faq h2',IT.faqH2],['#faq .faq-q',IT.faqQ],['#faq .faq-a p',IT.faqA],
