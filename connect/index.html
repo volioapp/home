@@ -13,7 +13,10 @@
   .avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: 60% 35%; display: block; box-shadow: 0 0 0 4px #fff, 0 4px 14px rgba(26,26,46,.12); }
   .badge { position: absolute; bottom: -2px; right: -2px; width: 32px; height: 32px; border-radius: 50%; background: #1A1A2E; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #F8FAFC; }
   .badge svg { width: 17px; height: 17px; fill: #fff; }
+  .name-row { display: flex; align-items: center; justify-content: center; gap: 7px; }
   h1 { font-size: min(6.2vw, 24px); font-weight: 700; color: #1A1A2E; line-height: 1.25; letter-spacing: -.3px; }
+  .li-link { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 6px; background: #1A1A2E; flex-shrink: 0; }
+  .li-link svg { width: 13px; height: 13px; fill: #fff; }
   .role { font-size: 14.5px; color: #6B7280; margin-top: 4px; }
   p { font-size: 16px; color: #6B7280; margin-top: 10px; }
   .contact { margin-top: 18px; display: flex; flex-direction: column; gap: 6px; }
@@ -35,7 +38,12 @@
     <img class="avatar" src="iz.jpg" alt="Issak Zanini">
     <div class="badge" aria-hidden="true"><svg viewBox="0 0 642.95 641.29" aria-label="Volio"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></div>
   </div>
-  <h1>Issak Zanini</h1>
+  <div class="name-row">
+    <h1>Issak Zanini</h1>
+    <a class="li-link" href="https://www.linkedin.com/in/issak-zanini-957897168/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+      <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+    </a>
+  </div>
   <div class="role">Founder - Volio App</div>
   <p>Let's connect your organisation to the network.</p>
 
