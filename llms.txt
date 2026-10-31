@@ -1,0 +1,40 @@
+# Volio
+
+> Volio is the social network for aviation, made by Volio App S.r.l. (Olgiate Comasco, Italy). It works like the activity-tracking social apps athletes use, but for flights: pilots track and log their flights automatically, see their stats, follow each other and share. Cabin crew, passengers and spotters are part of the same community. Free on iOS and Android.
+
+## What Volio does
+- Automatic flight tracking: enter the aircraft registration and Volio rebuilds the flight from ADS-B data, with the route on a map, distance, duration, average speed and maximum altitude
+- A personal log of every flight on your profile, with photos and notes (not a replacement for an official pilot logbook)
+- A feed of the pilots, crew and spotters you follow, with likes and sharing
+- Share a flight to Instagram stories as a sticker with your track
+- A spotter feed for aircraft photography, with every photo reviewed by a person
+- Spotter-pilot matching: spotter photos are matched to the pilot who was flying by flight time, location and registration; the pilot approves them before they appear on their profile
+- Verified accounts for flight schools, clubs, operators and aviation brands
+
+## Who uses it
+Private pilots, student pilots, flight instructors, airline pilots, cabin crew, passengers and plane spotters, mostly in Europe (Italy, Switzerland and beyond).
+
+## Pages
+- [Home](https://www.volioapp.it/): what Volio is, flight cards with ADS-B auto-import, FAQ
+- [Spotter](https://www.volioapp.it/spotters.html): the spotter photo feed, human review, and Spotter-Pilot matching (photos matched to pilots by flight time, location and registration; pilots approve before anything appears on their profile)
+- [Photo submission guidelines](https://www.volioapp.it/spotter/): what a spotter photo needs to pass review
+- [Organisations](https://www.volioapp.it/organisations.html): organisation accounts and who is already on Volio
+- [Team](https://www.volioapp.it/team.html): the people building Volio
+
+## Organisations on Volio
+- [AELO Swiss Academy](https://www.volioapp.it/organisations/aelo-swiss-academy/): AELO Swiss Academy is a Swiss approved training organisation at Locarno Airport, training airline pilots through integrated ATPL and MPL programmes.
+- [ItalFly](https://www.volioapp.it/organisations/italfly/): ItalFly is a flight school and executive aviation company in Trento, Italy, with around forty years of helicopter and aeroplane training behind it.
+- [SkyDeals Europe](https://www.volioapp.it/organisations/skydeals-europe/): SkyDeals Europe is an online marketplace where aircraft owners, buyers, brokers and aviation businesses list and find aircraft, helicopters and parts.
+- [Atmosoar](https://www.volioapp.it/organisations/atmosoar/): Atmosoar provides aviation-grade weather intelligence for drone operations: multi-model forecasts, flight-safety analysis and mission-planning tools.
+- [Flight Horizon](https://www.volioapp.it/organisations/flight-horizon/): Flight Horizon is a Swiss aviation education project created by an air traffic controller, teaching VFR radio phraseology and how Swiss ATC works.
+- [ESA – English School for Aviation](https://www.volioapp.it/organisations/english-school-for-aviation/): E.S.A. – English School for Aviation is an Italian school teaching aviation English and ICAO exam preparation online, one to one, with airline pilots as instructors.
+- [Skyfuns](https://www.volioapp.it/organisations/skyfuns/): Skyfuns is a flight-sharing platform where private pilots publish seats on their flights and passengers join them, sharing the direct costs with no profit.
+- [Jester Aviation Academy](https://www.volioapp.it/organisations/jester-aviation-academy/): Jester Aviation Academy is a flight dispatch and flight operations school at Milan Malpensa, training flight dispatchers to ICAO Doc 10106.
+- [Hangar Digitale](https://www.volioapp.it/organisations/hangar-digitale/): Hangar Digitale is an Italian aviation blog run by young enthusiasts, covering military aviation, airshows and flight simulation with their own photography.
+- [solaero](https://www.volioapp.it/organisations/solaero/): solaero makes sunglasses for pilots: beta-titanium, 17 to 23 grams, deliberately non-polarised. Developed by two ATPL students from Berlin, built for the cockpit.
+- [Ali in Alto](https://www.volioapp.it/organisations/ali-in-alto/): Ali in Alto is an Italian podcast for people who love aviation, telling its curiosities, history, technology and secrets in a simple, accessible way.
+- [Turbolenze Mentali AI](https://www.volioapp.it/organisations/turbolenze-mentali-ai/): Turbolenze Mentali AI is an Italian aviation content page on Instagram and TikTok, telling the world of flying through its own illustrated characters.
+
+## Apps
+- [App Store](https://apps.apple.com/it/app/volio/id6761468707)
+- [Google Play](https://play.google.com/store/apps/details?id=com.littleendian.volare)

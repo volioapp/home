@@ -4,453 +4,29 @@
 <script type="text/javascript" src="https://embeds.iubenda.com/widgets/d6124918-07c4-4675-9292-7ba1ebc20bf6.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Volio: The Social Network for Aviation</title>
-<meta name="description" content="Volio is the social network for aviation. Pilots, cabin crew, and aviation workers, capture every flight with ADS-B auto-import, plot every route, and share your stories with the community." />
+<title>Volio: flight tracking &amp; social app for pilots, crew and spotters</title>
+<meta name="description" content="Track, log and share your flights. Enter your registration and Volio builds the flight from ADS-B data: route on the map, distance, duration, speed and altitude. Add photos, follow other pilots and share. Free on iOS and Android." />
 <link rel="canonical" href="https://www.volioapp.it/" />
 <meta name="google-site-verification" content="hOPM2BKu4RWvzux-toqYmgabvqhRwvNGpyw0NbWupwU" />
-<meta property="og:title" content="Volio: The Social Network for Aviation" />
+<meta property="og:title" content="Volio: flight tracking &amp; social app for pilots, crew and spotters" />
 <meta property="og:description" content="Enter your registration. Volio draws your flight. Share it with the crew." />
 <meta property="og:image" content="https://www.volioapp.it/share.png" />
+<meta property="og:image:alt" content="Volio, the new aviation social network: a flight from Locarno on a phone, with App Store and Google Play badges" />
+<meta property="og:site_name" content="Volio" />
+<meta property="og:locale" content="en_GB" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.volioapp.it/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Volio: flight tracking &amp; social app for pilots, crew and spotters" />
+<meta name="twitter:description" content="Enter your registration. Volio draws your flight. Share it with the crew." />
+<meta name="twitter:image" content="https://www.volioapp.it/share.png" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.volioapp.it/#org", "name": "Volio", "legalName": "Volio App S.r.l.", "url": "https://www.volioapp.it/", "logo": "https://www.volioapp.it/apple-touch-icon.png", "description": "Volio makes the social network for aviation: a free app where pilots, cabin crew, passengers and spotters track, log and share their flights and aircraft photos.", "address": {"@type": "PostalAddress", "streetAddress": "Via Mazzini 10", "postalCode": "22077", "addressLocality": "Olgiate Comasco", "addressRegion": "CO", "addressCountry": "IT"}, "vatID": "IT04312420138", "founder": [{"@type": "Person", "name": "Issak Zanini"}, {"@type": "Person", "name": "Gavriel Barlevi"}], "sameAs": ["https://www.instagram.com/volioapp", "https://www.linkedin.com/company/volioapp/", "https://apps.apple.com/it/app/volio/id6761468707", "https://play.google.com/store/apps/details?id=com.littleendian.volare"]}, {"@type": "WebSite", "@id": "https://www.volioapp.it/#website", "name": "Volio", "url": "https://www.volioapp.it/", "publisher": {"@id": "https://www.volioapp.it/#org"}, "inLanguage": "en"}]}</script>
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="favicon-64.png" sizes="64x64" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-/* ============ TOKENS ============ */
-:root{
-  --navy:#060E1E;          /* exact Volio brand navy */
-  --navy-2:#0D1B33;        /* lifted panel */
-  --navy-3:#13284a;        /* hover panel */
-  --cobalt:#1D419F;
-  --cobalt-2:#2B57C4;
-  --cirrus:#EAEEF6;        /* one cool rest tone */
-  --paper:#F6F7F9;
-  --white:#FFFFFF;
-  --green:#23B883;         /* used very sparingly: live/positive only */
-  --ink:#101A29;
-  --muted:#5C6573;
-  --muted-2:#8A93A2;
-  --hair:#E4E8F0;
-  --hair-d:rgba(255,255,255,.12);
-
-  --head:'Barlow Condensed',sans-serif;
-  --body:'Inter',sans-serif;
-
-
-  --maxw:1180px;
-  --r:6px;
-  --r-lg:12px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3{font-family:var(--head);text-transform:uppercase;line-height:.96;letter-spacing:.4px}
-a{color:inherit}
-img{max-width:100%;display:block}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(22px,5vw,56px)}
-.mono{font-family:var(--body)}
-
-/* kicker = numbered section label */
-.kicker{display:inline-flex;align-items:center;gap:12px;font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt)}
-.kicker::before{content:'';width:26px;height:1px;background:var(--cobalt);opacity:.6}
-.kicker.on-dark{color:#7d97d6}
-.kicker.on-dark::before{background:#7d97d6}
-
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:background .2s,color .2s,transform .2s;border-radius:var(--r)}
-.btn-primary{background:var(--cobalt);color:#fff;padding:14px 28px;font-size:15px}
-.btn-primary:hover{background:var(--cobalt-2)}
-.btn-line{background:transparent;border:1px solid var(--hair);color:var(--ink);padding:13px 26px;font-size:15px}
-.btn-line:hover{border-color:var(--ink)}
-
-/* store buttons, flat, bordered, not glossy */
-.store-row{display:flex;gap:12px;flex-wrap:wrap}
-.store-btn{display:inline-flex;align-items:center;gap:11px;background:#fff;border:1px solid #fff;color:var(--navy);border-radius:var(--r);padding:11px 18px;text-decoration:none;transition:transform .2s,box-shadow .2s}
-.store-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
-.store-btn svg{width:22px;height:22px;flex-shrink:0;fill:var(--navy)}
-.store-btn .st{display:flex;flex-direction:column;line-height:1.1;text-align:left}
-.store-btn .st small{font-family:var(--body);font-size:9.5px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;opacity:.6}
-.store-btn .st b{font-family:var(--head);font-weight:800;font-size:18px;letter-spacing:.4px}
-.store-btn.light{border-color:var(--hair);color:var(--ink)}
-.store-btn.light svg{fill:var(--ink)}
-.store-btn.light:hover{border-color:var(--ink);background:transparent}
-
-/* ============ PRELOADER ============ */
-html.preloading{overflow:hidden}
-#preloader{position:fixed;inset:0;z-index:99999999;background:var(--navy);display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .6s ease}
-#preloader.done{opacity:0;pointer-events:none}
-#preloader svg{width:clamp(72px,10vw,112px);height:auto;overflow:visible}
-#preloader path{fill:#fff;fill-opacity:0;stroke:#fff;stroke-width:11;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:4000;stroke-dashoffset:4000;animation:drawStroke 1.15s cubic-bezier(.65,0,.35,1) forwards,fillIn .45s ease .95s forwards}
-/* il banner cookie resta nascosto finché il loading non è finito */
-#iubenda-cs-banner,.iubenda-cs-container{transition:opacity .45s ease}
-html.preloading #iubenda-cs-banner,html.preloading .iubenda-cs-container{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
-@keyframes drawStroke{to{stroke-dashoffset:0}}
-@keyframes fillIn{to{fill-opacity:1}}
-@media(prefers-reduced-motion:reduce){
-  #preloader path{animation:none;stroke:none;fill-opacity:1;stroke-dashoffset:0}
-}
-
-/* ============ NAV ============ */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.brand-mark{width:30px;height:30px;border-radius:7px;background:var(--navy);display:flex;align-items:center;justify-content:center}
-.brand-mark svg{width:18px;height:18px;fill:#fff}
-.brand-text{font-family:var(--head);font-weight:800;font-size:25px;letter-spacing:.6px;color:var(--navy)}
-.nav-links{display:flex;align-items:center;gap:32px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{background:var(--navy);color:#fff;font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 20px;border-radius:var(--r);text-decoration:none;transition:background .2s}
-.nav-cta:hover{background:var(--navy-3)}
-.nav-right{display:flex;align-items:center;gap:12px}
-.nav-org{background:transparent;border:1px solid var(--hair);color:var(--ink);font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:10px 18px;border-radius:var(--r);text-decoration:none;white-space:nowrap;transition:border-color .2s,color .2s}
-.nav-org:hover{border-color:var(--navy);color:var(--navy)}
-@media(max-width:620px){.nav-right{gap:8px}.nav-org,.nav-cta{padding:9px 12px;font-size:11px;letter-spacing:.04em}}
-@media(max-width:430px){.nav-cta{display:none}}
-.lang-toggle{background:none;border:1px solid var(--hair);color:var(--muted);font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.06em;padding:8px 12px;border-radius:var(--r);cursor:pointer;transition:border-color .2s,color .2s}
-.lang-toggle:hover{border-color:var(--ink);color:var(--ink)}
-@media(max-width:860px){.nav-links{display:none}}
-
-/* [A7] nav link underline + shadow when scrolled */
-.nav-links a{position:relative}
-.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:100%;height:1.5px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
-.nav-links a:hover::after{transform:scaleX(1)}
-nav.scrolled{box-shadow:0 8px 28px rgba(6,14,30,.09)}
-
-/* ============ HERO ============ */
-.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;padding:clamp(54px,7vw,92px) 0 0}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,56px);align-items:end;padding-bottom:clamp(70px,8vw,120px)}
-.hero-visual{position:relative}
-.hero-visual::after{content:'';position:absolute;top:-1500px;bottom:-1500px;left:0;right:-100vw;background:#fff;z-index:-1}
-@media(max-width:880px){.hero-visual::after{display:none}}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:30px}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
-.hero h1{font-weight:900;font-size:clamp(42px,7vw,84px);line-height:.92;letter-spacing:-.5px;white-space:nowrap}
-.hero h1 .ln2{color:#fff}
-.hero-coords{font-family:var(--body);font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.06em;margin-top:22px}
-.hero-desc{font-size:clamp(15px,1.5vw,17.5px);line-height:1.7;color:rgba(255,255,255,.74);max-width:430px;margin:14px 0 30px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.hero-grid{align-items:center}
-.hero-phone{display:flex;justify-content:flex-end;transform:translateX(clamp(24px,6vw,110px))}
-@media(max-width:880px){.hero-phone{justify-content:center;transform:none}}
-.hero-phone img{max-height:660px;width:auto;display:block;filter:drop-shadow(0 34px 70px rgba(0,0,0,.55))}
-.hero-phone.noimg img{display:none}
-.hero-phone.noimg{width:290px;height:590px;margin:0 auto;border:1.5px dashed rgba(255,255,255,.22);border-radius:40px;display:flex;align-items:center;justify-content:center}
-.hero-phone.noimg::after{content:'PHONE SCREENSHOT\A↓\Aassets/hero-phone.png';white-space:pre;text-align:center;font-family:var(--body);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.4);line-height:2.2}
-@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:42px;align-items:start}.hero-visual{order:2}.hero-phone img{max-height:560px}}
-
-/* [A2] staggered hero load-in */
-@keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-.hero h1{animation:riseIn .7s cubic-bezier(.22,1,.36,1) backwards}
-.hero-desc{animation:riseIn .7s cubic-bezier(.22,1,.36,1) .2s backwards}
-.hero-actions{animation:riseIn .7s cubic-bezier(.22,1,.36,1) .32s backwards}
-.hero-visual{animation:riseIn .9s cubic-bezier(.22,1,.36,1) .25s backwards}
-
-/* [A3] phone slow float loop */
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.hero-phone img{animation:floatY 6s ease-in-out 1.4s infinite}
-
-/* ============ FLIGHT CARD (signature) ============ */
-.flight-card{background:#fff;color:var(--ink);border-radius:var(--r-lg);box-shadow:0 30px 70px rgba(0,0,0,.4);padding:18px;max-width:380px;margin:0 auto;border:1px solid #eef0f4}
-.fc-head{display:flex;align-items:center;gap:11px;margin-bottom:13px}
-.fc-av{width:42px;height:42px;border-radius:50%;background:var(--cirrus);color:var(--cobalt);display:flex;align-items:center;justify-content:center;font-family:var(--body);font-weight:500;font-size:13px;flex-shrink:0}
-.fc-name{font-weight:600;font-size:14.5px;color:var(--navy)}
-.fc-meta{display:flex;align-items:center;gap:8px;margin-top:2px}
-.fc-date{font-family:var(--body);font-size:11px;color:var(--muted-2)}
-.fc-reg{font-family:var(--body);font-size:10.5px;font-weight:500;letter-spacing:.04em;color:var(--cobalt);background:#eef2fb;padding:2px 7px;border-radius:4px}
-.fc-title{font-family:var(--body);font-size:16.5px;font-weight:600;color:var(--navy);margin-bottom:5px;letter-spacing:-.1px}
-.fc-route{display:flex;align-items:center;gap:9px;font-family:var(--body);font-size:12px;font-weight:500;letter-spacing:.05em;color:var(--muted);margin-bottom:12px}
-.fc-route .seg{flex:1;height:1px;background:repeating-linear-gradient(90deg,#c6cedd 0 4px,transparent 4px 8px)}
-.fc-map{position:relative;height:168px;border-radius:8px;overflow:hidden;margin-bottom:13px;background:#f1f4f9;border:1px solid #e9edf4}
-.fc-map svg{position:absolute;inset:0;width:100%;height:100%}
-.fc-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #eef0f5;border-bottom:1px solid #eef0f5;padding:11px 0;margin-bottom:12px}
-.fc-stat{text-align:center;border-right:1px solid #eef0f5}
-.fc-stat:last-child{border-right:none}
-.fc-stat .v{font-family:var(--head);font-weight:800;font-size:21px;color:var(--navy);line-height:1}
-.fc-stat .l{font-family:var(--body);font-size:9px;color:var(--muted-2);margin-top:4px;text-transform:uppercase;letter-spacing:.08em}
-.fc-actions{display:flex;gap:18px;align-items:center}
-.fc-act{display:flex;align-items:center;gap:6px;font-family:var(--body);font-size:12px;font-weight:500;color:var(--muted-2);cursor:pointer;transition:color .2s}
-.fc-act svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8}
-.fc-act.liked{color:#d24a72}
-.fc-act.liked svg{fill:#d24a72;stroke:#d24a72}
-.fc-act:hover{color:var(--cobalt)}
-
-/* ============ SECTIONS ============ */
-.sec{padding:clamp(60px,8vw,104px) 0}
-.bg-paper{background:var(--paper)}
-.bg-cirrus{background:var(--cirrus)}
-.bg-navy{background:var(--navy);color:#fff}
-.sec-head{max-width:560px;margin-bottom:clamp(38px,5vw,58px)}
-.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
-.sec-head .kicker{margin-bottom:18px}
-.sec-head h2{font-weight:800;font-size:clamp(34px,5vw,58px);color:var(--navy)}
-.bg-navy .sec-head h2{color:#fff}
-.sec-head p{margin-top:16px;font-size:16px;line-height:1.7;color:var(--muted)}
-.bg-navy .sec-head p{color:rgba(255,255,255,.7)}
-
-/* [A12] anchor links land below the sticky nav */
-section[id],header[id]{scroll-margin-top:76px}
-
-/* ============ FEATURES ============ */
-.feat-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,6vw,80px);align-items:center}
-.feat-list{display:flex;flex-direction:column}
-.feat-item{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;padding:26px 0;border-top:1px solid var(--hair)}
-.feat-item:last-child{border-bottom:1px solid var(--hair)}
-.feat-no{font-family:var(--head);font-weight:800;font-size:17px;color:var(--cobalt);padding-top:2px}
-.feat-item h3{font-family:var(--body);font-weight:600;font-size:19px;text-transform:none;letter-spacing:-.2px;color:var(--navy);margin-bottom:6px}
-.feat-item p{font-size:14.5px;line-height:1.62;color:var(--muted)}
-.feat-card-img{display:flex;justify-content:center}
-.feat-card-img img{width:100%;max-width:420px;display:block;filter:drop-shadow(0 26px 60px rgba(5,14,30,.20));transition:transform .35s ease}
-.feat-card-img:hover img{transform:translateY(-6px)}
-@media(max-width:840px){.feat-layout{grid-template-columns:1fr;gap:46px}.feat-visual{order:-1}.feat-card-img img{max-width:340px}}
-/* one-line section titles (01 + 02) */
-#features .sec-head,#how .sec-head{max-width:none}
-#features .sec-head p{max-width:560px}
-
-/* [A6] feature number nudge on hover */
-.feat-no{transition:transform .25s ease,color .25s ease}
-.feat-item:hover .feat-no{transform:translateX(4px);color:var(--cobalt-2)}
-
-/* ============ STEPS ============ */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.step{padding:40px 32px;border:1px solid var(--hair);border-radius:var(--r-lg);background:#fff;position:relative;transition:border-color .2s,transform .2s}
-.step:hover{border-color:var(--muted-2);transform:translateY(-3px)}
-.step-no{font-family:var(--head);font-weight:800;font-size:15px;letter-spacing:.4px;color:var(--cobalt);margin-bottom:26px}
-.step-ic{width:34px;height:34px;margin-bottom:16px}
-.step-ic svg{width:34px;height:34px;fill:none;stroke:var(--navy);stroke-width:1.6}
-.step h3{font-family:var(--body);font-weight:600;text-transform:none;font-size:22px;letter-spacing:-.3px;color:var(--navy);margin-bottom:9px}
-.step p{font-size:14.5px;line-height:1.65;color:var(--muted)}
-@media(max-width:780px){.steps{grid-template-columns:1fr}}
-
-/* [A5] steps: progress line + card-by-card stagger */
-.steps{position:relative}
-.steps::before{content:'';position:absolute;top:-26px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cobalt),var(--cobalt-2));opacity:.3;transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.22,1,.36,1) .15s}
-.steps.in::before{transform:scaleX(1)}
-.steps.stagger:not(.in) .step{opacity:0}
-.steps.stagger.in .step{animation:riseIn .6s cubic-bezier(.22,1,.36,1) backwards}
-.steps.stagger.in .step:nth-child(2){animation-delay:.14s}
-.steps.stagger.in .step:nth-child(3){animation-delay:.28s}
-
-/* ============ SPOTTERS ============ */
-.spot-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(34px,6vw,78px);align-items:center}
-.spot-copy .kicker{margin-bottom:18px}
-.spot-copy h2{font-weight:800;font-size:clamp(32px,4.6vw,54px);color:var(--navy)}
-.spot-copy p{margin-top:18px;font-size:16px;line-height:1.7;color:var(--muted);max-width:480px}
-.spot-copy .btn{margin-top:28px}
-.spot-visual{position:relative;height:clamp(300px,38vw,430px);overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
-.spot-phone{display:flex;justify-content:center;will-change:transform}
-.spot-phone img{width:100%;max-width:330px;display:block;filter:drop-shadow(0 28px 62px rgba(5,14,30,.22))}
-@media(max-width:840px){.spot-layout{grid-template-columns:1fr;gap:42px}.spot-visual{order:-1;height:clamp(260px,64vw,340px)}.spot-phone img{max-width:280px}}
-@media(prefers-reduced-motion:reduce){.spot-phone{transform:none!important}}
-
-/* ============ WHY (editorial stat row) ============ */
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,90px);align-items:center}
-.why-stats{display:flex;flex-direction:column}
-.why-stat{display:grid;grid-template-columns:150px 1fr;gap:28px;align-items:center;padding:26px 0;border-top:1px solid var(--hair-d)}
-.why-stat:last-child{border-bottom:1px solid var(--hair-d)}
-.why-stat .n{font-family:var(--head);font-weight:900;font-size:clamp(40px,5vw,64px);color:#fff;line-height:1;min-width:130px}
-.why-stat .n em{font-style:normal;color:var(--green)}
-.why-stat .c{font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.66)}
-.why-stat .c b{color:#fff;font-weight:600}
-@media(max-width:820px){.why-grid{grid-template-columns:1fr;gap:40px}}
-
-/* ============ TESTIMONIALS (field notes) ============ */
-.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--hair)}
-.note{padding:36px 30px 34px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);display:flex;flex-direction:column;gap:18px}
-.note:last-child{border-right:none}
-.note .q{font-size:16px;line-height:1.6;color:var(--ink);letter-spacing:-.1px}
-.note .src{display:flex;flex-direction:column;gap:3px;margin-top:auto}
-.note .src .nm{font-weight:600;font-size:14px;color:var(--navy)}
-.note .src .rl{font-family:var(--body);font-size:11.5px;letter-spacing:.04em;color:var(--muted-2)}
-.note .qmark{font-family:var(--head);font-weight:900;font-size:54px;line-height:.6;color:#7d97d6;display:block;height:26px}
-@media(max-width:840px){.notes{grid-template-columns:1fr;border-top:none}.note{border-right:none}}
-
-/* [A13] testimonials: stagger + photo zoom-settle */
-.notes.stagger:not(.in) .note{opacity:0}
-.notes.stagger.in .note{animation:riseIn .6s cubic-bezier(.22,1,.36,1) backwards}
-.notes.stagger.in .note:nth-child(2){animation-delay:.14s}
-.notes.stagger.in .note:nth-child(3){animation-delay:.28s}
-
-
-/* ============ FAQ ============ */
-.faq{max-width:820px}
-.faq-item{border-top:1px solid var(--hair)}
-.faq-item:last-child{border-bottom:1px solid var(--hair)}
-.faq-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;font-family:var(--body);font-weight:600;font-size:18px;color:var(--navy)}
-.faq-q .pm{font-family:var(--body);font-size:20px;color:var(--cobalt);transition:transform .3s;flex-shrink:0}
-.faq-item.open .pm{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-a p{padding:0 0 26px;font-size:15px;line-height:1.7;color:var(--muted);max-width:92%}
-
-/* [A8] FAQ answer fades/slides in with the expand */
-.faq-a p{opacity:0;transform:translateY(-6px);transition:opacity .3s ease,transform .3s ease}
-.faq-item.open .faq-a p{opacity:1;transform:none;transition-delay:.08s}
-
-/* ============ PARTNERS ============ */
-.partner-logos{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;margin-top:6px}
-.partner-logos>*{grid-column:span 2}
-.partner-logos>*:nth-child(4){grid-column:1/span 2}
-.plogo{width:100%;height:120px;border:1px solid var(--hair);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;padding:24px 34px;transition:border-color .2s;text-decoration:none}
-.plogo-cta{flex-direction:column;gap:5px;border-style:dashed;text-align:center}
-.plogo-cta .t{font-family:var(--body);font-weight:500;font-size:15px;color:var(--muted);line-height:1.55}
-.plogo-cta .g{font-family:var(--body);font-weight:600;font-size:14.5px;color:var(--cobalt)}
-.plogo-cta:hover{border-color:var(--cobalt)}
-.partner-logos .plogo-cta{grid-column:1/-1}
-@media(max-width:780px){.partner-logos{grid-template-columns:1fr}.partner-logos>*,.partner-logos>*:nth-child(4){grid-column:1/-1}}
-.plogo:hover{border-color:var(--muted-2)}
-.plogo img{max-height:100%;object-fit:contain;filter:grayscale(100%);opacity:.65;transition:.2s}
-.plogo:hover img{filter:grayscale(0);opacity:1}
-.plogo.ghost{opacity:.45;pointer-events:none;background:repeating-linear-gradient(45deg,#f0f2f5 0 8px,#f6f7f9 8px 16px);border-style:dashed}
-
-/* [A9] arrow / icon nudge on hover */
-.plogo-cta .g{display:inline-block;transition:transform .25s ease}
-.plogo-cta:hover .g{transform:translateX(5px)}
-.follow-btn svg{transition:transform .25s ease}
-.follow-btn:hover svg{transform:translateX(3px)}
-
-/* ============ TEAM ============ */
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.member{border:1px solid var(--hair);border-radius:var(--r-lg);padding:36px 32px;display:flex;flex-direction:column;transition:border-color .2s}
-.member:hover{border-color:var(--muted-2)}
-.member .top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.member .av{width:64px;height:64px;border-radius:50%;background:var(--navy);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--body);font-weight:500;font-size:18px;color:#fff;flex-shrink:0}
-.member .av img{width:100%;height:100%;object-fit:cover}
-.member .nm{font-family:var(--head);font-weight:800;font-size:23px;letter-spacing:.3px;color:var(--navy)}
-.member .rl{font-family:var(--body);font-size:11.5px;letter-spacing:.04em;color:var(--cobalt);margin-top:4px}
-.member .bio{font-size:14px;line-height:1.7;color:var(--muted);margin-bottom:22px}
-.member .links{display:flex;gap:10px;margin-top:auto}
-.member .links a{font-family:var(--body);font-size:11.5px;letter-spacing:.04em;color:var(--muted);text-decoration:none;border:1px solid var(--hair);border-radius:var(--r);padding:8px 14px;transition:.2s}
-.member .links a:hover{border-color:var(--navy);color:var(--navy)}
-@media(max-width:720px){.team-grid{grid-template-columns:1fr}}
-
-/* ============ MISSION ============ */
-.mission{max-width:880px}
-.mission p{font-family:var(--head);font-weight:700;text-transform:none;font-size:clamp(24px,3.4vw,40px);line-height:1.18;color:#fff;letter-spacing:-.2px}
-.mission p .hl{color:var(--cobalt-2)}
-.mission .by{font-family:var(--body);margin-top:30px;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-
-/* ============ DOWNLOAD ============ */
-.dl{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.dl-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,70px);align-items:center}
-.dl-inner{position:relative;max-width:520px}
-.dl h2{font-weight:900;font-size:clamp(38px,5.5vw,72px);color:#fff}
-.dl p{margin:18px 0 30px;font-size:16px;line-height:1.7;color:rgba(255,255,255,.74);max-width:460px}
-.dl-note{font-family:var(--body);margin-top:18px;font-size:11.5px;letter-spacing:.06em;color:rgba(255,255,255,.45);text-transform:uppercase}
-.dl-phone{display:flex;justify-content:center}
-.dl-phone img{max-height:580px;width:auto;display:block;filter:drop-shadow(0 30px 64px rgba(0,0,0,.5))}
-.dl-phone.noimg img{display:none}
-.dl-phone.noimg{width:270px;height:540px;border:1.5px dashed rgba(255,255,255,.22);border-radius:38px;display:flex;align-items:center;justify-content:center}
-.dl-phone.noimg::after{content:'PHONE MOCKUP\A↓\Aassets/download-phone.png';white-space:pre;text-align:center;font-family:var(--body);font-size:11px;letter-spacing:.08em;color:rgba(255,255,255,.4);line-height:2.2}
-@media(max-width:820px){.dl-grid{grid-template-columns:1fr;gap:44px}.dl-phone{order:-1}.dl-phone img{max-height:480px}}
-
-/* ============ FOLLOW US ============ */
-.follow-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
-.follow-card{background:#fff;border:1px solid var(--hair);border-radius:var(--r-lg);padding:44px 36px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;box-shadow:0 2px 22px rgba(5,14,30,.05);transition:border-color .2s,transform .2s}
-.follow-card:hover{border-color:var(--muted-2);transform:translateY(-4px)}
-.follow-top{display:flex;align-items:center;gap:16px}
-.follow-ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.follow-ic.ig{background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7);padding:3px}
-.follow-ic .inner{width:100%;height:100%;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
-.follow-ic .inner svg{width:26px;height:26px;fill:#fff}
-.follow-ic.li{background:#0A66C2}
-.follow-ic.li svg{width:30px;height:30px;fill:#fff}
-.follow-h{font-family:var(--head);font-weight:800;font-size:26px;letter-spacing:.4px;color:var(--navy)}
-.follow-desc{font-size:14.5px;line-height:1.6;color:var(--muted);max-width:340px}
-.follow-btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:14.5px;color:#fff;padding:13px 26px;border-radius:50px;text-decoration:none;transition:opacity .2s,transform .2s;margin-top:4px}
-.follow-btn{margin-top:auto}
-.follow-btn:hover{transform:translateY(-2px);opacity:.92}
-.follow-btn svg{width:18px;height:18px;fill:#fff}
-.follow-btn.ig{background:var(--navy)}
-.follow-btn.li{background:#0A66C2}
-@media(max-width:760px){.follow-grid{grid-template-columns:1fr}}
-
-/* ============ PRESS / PODCAST ============ */
-#press .sec-head{max-width:none}
-#press .sec-head h2{white-space:nowrap;font-size:clamp(21px,5.2vw,58px)}
-.video-wrap{position:relative;width:100%;max-width:860px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;background:var(--navy);box-shadow:0 26px 60px rgba(6,14,30,.20)}
-.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.video-note{max-width:860px;margin:16px auto 0;text-align:center;font-size:13.5px;color:var(--muted)}
-.video-note a{color:var(--cobalt);font-weight:500;text-decoration:none}
-.video-note a:hover{text-decoration:underline}
-
-/* ============ NEWSLETTER ============ */
-.newsletter{background:var(--cobalt);padding:clamp(34px,5vw,48px) 0}
-.newsletter-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.newsletter-text{font-family:var(--head);font-weight:800;font-size:clamp(26px,3.2vw,38px);line-height:1;letter-spacing:.4px;text-transform:uppercase;color:#fff}
-.newsletter-body{display:flex;flex-direction:column;gap:10px;flex:1;max-width:520px;min-width:280px}
-.newsletter-form{display:flex;gap:12px}
-.newsletter-input,.newsletter-name-input{flex:1;width:100%;padding:13px 20px;border-radius:50px;border:none;font-family:var(--body);font-size:14px;color:var(--ink);outline:none}
-.btn-subscribe{background:#fff;color:var(--navy);font-family:var(--body);font-weight:700;font-size:13px;padding:13px 26px;border-radius:50px;border:none;cursor:pointer;white-space:nowrap;transition:opacity .2s}
-.btn-subscribe:hover:not(:disabled){opacity:.85}
-.btn-subscribe:disabled{opacity:.35;cursor:not-allowed}
-.newsletter-consent-row{display:flex;align-items:flex-start;gap:8px}
-.newsletter-consent-row input[type="checkbox"]{margin-top:2px;width:14px;height:14px;flex-shrink:0;accent-color:#fff;cursor:pointer}
-.newsletter-consent-row label{font-family:var(--body);font-size:11px;line-height:1.55;color:rgba(255,255,255,.78);cursor:pointer}
-.newsletter-consent-row label a{color:#fff;text-decoration:underline}
-.newsletter-done{font-family:var(--body);font-size:15px;font-weight:600;color:#fff}
-@media(max-width:760px){.newsletter-inner{flex-direction:column;align-items:flex-start}.newsletter-body{max-width:none;width:100%}}
-
-/* ============ EMAIL MODAL ============ */
-.modal-overlay{position:fixed;inset:0;background:rgba(6,14,30,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease}
-.modal-overlay.open{opacity:1;pointer-events:all}
-.modal{background:#fff;border-radius:18px;padding:44px 38px;max-width:420px;width:90%;text-align:center;position:relative;transform:scale(.94) translateY(18px);transition:transform .35s cubic-bezier(.34,1.4,.64,1);box-shadow:0 40px 90px rgba(6,14,30,.45)}
-.modal-overlay.open .modal{transform:scale(1) translateY(0)}
-.modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:20px;line-height:1;color:var(--muted-2);cursor:pointer;transition:color .2s}
-.modal-close:hover{color:var(--navy)}
-.modal-mark{width:52px;height:52px;border-radius:13px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.modal-mark svg{width:30px;height:30px;fill:#fff}
-.modal-title{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:30px;letter-spacing:.4px;color:var(--navy);margin-bottom:8px}
-.modal-sub{font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:26px}
-.modal-input{width:100%;padding:14px 20px;border:1.5px solid var(--hair);border-radius:50px;font-family:var(--body);font-size:15px;color:var(--ink);outline:none;margin-bottom:12px;transition:border-color .2s}
-.modal-input:focus{border-color:var(--navy)}
-.modal-consent{display:flex;align-items:flex-start;gap:8px;text-align:left;margin:4px 0 18px}
-.modal-consent input[type="checkbox"]{margin-top:2px;width:14px;height:14px;flex-shrink:0;accent-color:var(--cobalt);cursor:pointer}
-.modal-consent label{font-family:var(--body);font-size:11px;line-height:1.55;color:var(--muted);cursor:pointer}
-.modal-consent label a{color:var(--cobalt);text-decoration:underline}
-.modal-submit{width:100%;background:var(--navy);color:#fff;font-family:var(--body);font-weight:700;font-size:15px;padding:14px;border-radius:50px;border:none;cursor:pointer;transition:opacity .2s}
-.modal-submit:hover:not(:disabled){opacity:.85}
-.modal-submit:disabled{opacity:.45;cursor:not-allowed}
-.modal-success{display:none;flex-direction:column;align-items:center;gap:10px}
-.modal-success.show{display:flex}
-.modal-form.hide{display:none}
-.success-icon{width:60px;height:60px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:4px}
-.success-title{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:26px;letter-spacing:.4px;color:var(--navy)}
-.success-sub{font-size:14px;line-height:1.6;color:var(--muted)}
-
-/* ============ FOOTER ============ */
-footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;border-top:1px solid var(--hair-d)}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;padding-bottom:36px;border-bottom:1px solid var(--hair-d)}
-.foot-brand{max-width:300px}
-.foot-brand .brand-text{color:#fff}
-.foot-brand p{margin-top:14px;font-size:13.5px;line-height:1.65}
-.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
-.foot-col h4{font-family:var(--body);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:15px}
-.foot-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);text-decoration:none;margin-bottom:11px;transition:color .2s}
-.foot-col a:hover{color:#fff}
-.foot-legal{display:flex;gap:18px}
-.foot-legal a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
-.foot-legal a:hover{color:#fff;text-decoration:underline}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px;font-family:var(--body);font-size:11.5px;letter-spacing:.03em;color:rgba(255,255,255,.45)}
-.foot-socials{display:flex;gap:12px}
-.foot-socials a{width:34px;height:34px;border-radius:var(--r);border:1px solid var(--hair-d);display:flex;align-items:center;justify-content:center;transition:.2s}
-.foot-socials a:hover{border-color:rgba(255,255,255,.5)}
-.foot-socials svg{width:15px;height:15px;fill:rgba(255,255,255,.7)}
-
-/* ============ REVEAL ============ */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-.rd1{transition-delay:.07s}.rd2{transition-delay:.14s}.rd3{transition-delay:.21s}
-/* stagger containers: container itself doesn't move, its children do */
-.reveal.stagger{opacity:1;transform:none;transition:none}
-@media(prefers-reduced-motion:reduce){
-  .reveal{transition:none;opacity:1;transform:none}
-  .hero h1,.hero-desc,.hero-actions,.hero-visual,.hero-phone img{animation:none}
-  .steps::before{transition:none;transform:scaleX(1)}
-  .steps.stagger:not(.in) .step,.notes.stagger:not(.in) .note{opacity:1}
-  .steps.stagger.in .step,.notes.stagger.in .note{animation:none}
-}
-</style>
-  <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <meta name="theme-color" content="#1D419F">
+<link rel="stylesheet" href="styles.css?v=202610311108" />
 </head>
 <body>
 
@@ -458,54 +34,45 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <div id="preloader" aria-hidden="true">
   <svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg>
 </div>
-<script>
-(function(){
-  var p=document.getElementById('preloader');if(!p)return;
-  var path=p.querySelector('path');
-  try{var L=path.getTotalLength();path.style.strokeDasharray=L;path.style.strokeDashoffset=L;}catch(e){}
-  document.documentElement.classList.add('preloading');
-  var t0=Date.now(),MIN=1500,done=false;
-  function hide(){
-    if(done)return;done=true;
-    setTimeout(function(){
-      p.classList.add('done');
-      document.documentElement.classList.remove('preloading');
-      setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p);},700);
-    },Math.max(0,MIN-(Date.now()-t0)));
-  }
-  if(document.readyState==='complete')hide();else window.addEventListener('load',hide);
-  setTimeout(hide,6000);
-})();
-</script>
 
 <!-- NAV -->
 <nav>
   <div class="wrap nav-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="brand-mark"><svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></span>
       <span class="brand-text">volio</span>
     </a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#why">Why Volio</a>
-      <a href="#faq">FAQ</a>
-      <a href="#team">Team</a>
+      <a href="index.html#features">The App</a>
+      <a href="spotters.html">Spotter</a>
+      <a href="organisations.html">Organisations</a>
+      <a href="team.html">Team</a>
     </div>
     <div class="nav-right">
       <button id="langToggle" class="lang-toggle" aria-label="Switch language">IT</button>
-      <a class="nav-org" href="https://forms.cloud.microsoft/e/S8HHcKQFM6" target="_blank" rel="noopener">Organisation</a>
-      <a class="nav-cta" href="#top">Download now</a>
+      <a class="nav-cta" href="https://www.volioapp.it/download/">Get the app</a>
+      <button class="nav-burger" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-inner">
+    <a href="index.html#features">The App</a>
+    <a href="spotters.html">Spotter</a>
+    <a href="organisations.html">Organisations</a>
+    <a href="team.html">Team</a>
+    <a href="https://www.volioapp.it/download/">Get the app</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-left reveal in">
       <h1>Share your<br><span class="ln2">next flight</span></h1>
-      <p class="hero-desc">The social network for aviation. Pilots, cabin crew, and aviation workers, enter your registration and Volio draws the flight for you. Then share it with the community.</p>
+      <p class="hero-desc">The social network for aviation. Type your registration and Volio tracks the flight for you: route on the map, distance, time, speed and altitude, with your photos and notes on it. Post a photo or a few words on their own. Share what you shoot from the fence. Follow the people you fly with.</p>
       <div class="hero-actions">
         <div class="store-row">
           <a class="store-btn" href="https://apps.apple.com/it/app/volio/id6761468707" target="_blank" rel="noopener" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M17.564 12.77c-.028-2.83 2.31-4.19 2.414-4.256-1.314-1.922-3.36-2.186-4.087-2.216-1.74-.176-3.396 1.023-4.28 1.023-.88 0-2.24-.997-3.68-.97-1.894.028-3.64 1.1-4.613 2.795-1.966 3.41-.503 8.46 1.41 11.223.936 1.353 2.05 2.873 3.51 2.818 1.41-.056 1.942-.912 3.646-.912 1.703 0 2.184.912 3.674.883 1.517-.028 2.478-1.38 3.406-2.74 1.073-1.57 1.515-3.09 1.542-3.168-.034-.014-2.96-1.136-2.99-4.51zM14.79 4.47c.775-.94 1.3-2.25 1.157-3.553-1.118.045-2.473.744-3.275 1.682-.72.832-1.35 2.163-1.18 3.44 1.247.098 2.522-.634 3.297-1.57z"/></svg><span class="st"><small>Download on the</small><b>App Store</b></span></a>
@@ -526,19 +93,20 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="features">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">01 · Built around your flight</span>
+      <span class="kicker">01 &middot; Built around your flight</span>
       <h2>One card captures everything</h2>
-      <p>Enter a tail number. Volio handles the rest, automatically.</p>
+      <p>Enter a tail number and Volio fills the flight in. Have something to say without one? Post it anyway.</p>
     </div>
     <div class="feat-layout">
       <div class="feat-visual reveal">
-        <div class="feat-card-img"><img src="feed-3d.png" alt="Volio app, flight feed on iPhone"></div>
+        <div class="feat-card-img is-card"><img src="flight-card.webp" alt="Volio flight card: Locarno to Sion via the Gotthard, with the route on the map, the pilot's photos, distance, duration, speed and altitude" width="668" height="1304"></div>
       </div>
       <div class="feat-list">
-        <div class="feat-item reveal"><span class="feat-no">01</span><div><h3>ADS-B auto-import</h3><p>Enter your registration and Volio pulls your route, speed, altitude and duration automatically, no manual entry, ever.</p></div></div>
-        <div class="feat-item reveal rd1"><span class="feat-no">02</span><div><h3>Route map</h3><p>Every flight plotted on a live map with departure and arrival pins, and the exact track you flew.</p></div></div>
-        <div class="feat-item reveal rd2"><span class="feat-no">03</span><div><h3>Your story</h3><p>Add a title and a personal note to every flight, give your adventure the context it deserves.</p></div></div>
-        <div class="feat-item reveal rd3"><span class="feat-no">04</span><div><h3>Likes &amp; sharing</h3><p>The community reacts to each other's flights and shares them in one tap, building a real aviation network.</p></div></div>
+        <div class="feat-item reveal"><span class="feat-no">01</span><div><h3>ADS-B auto-import</h3><p>Enter your registration and Volio pulls your route, speed, altitude and duration automatically, then plots the exact track you flew with departure and arrival pins. No manual entry, ever.</p></div></div>
+        <div class="feat-item reveal rd1"><span class="feat-no">02</span><div><h3>Your photos, your story</h3><p>Add a title, a personal note and your own photos to every flight, give your adventure the context it deserves.</p></div></div>
+        <div class="feat-item reveal rd2"><span class="feat-no">03</span><div><h3>Post text, a photo, or both</h3><p>Not everything needs a flight behind it. A thought, a photo from the ramp, a question for the crew: post it straight to the feed.</p></div></div>
+        <div class="feat-item reveal rd3"><span class="feat-no">04</span><div><h3>Find your people</h3><p>Search for pilots, crew and enthusiasts by name, follow them, and keep up with where they have been flying.</p></div></div>
+        <div class="feat-item reveal rd3"><span class="feat-no">05</span><div><h3>Likes &amp; sharing</h3><p>The community reacts to each other's flights and shares them in one tap, building a real aviation network.</p></div></div>
       </div>
     </div>
   </div>
@@ -548,31 +116,45 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-paper" id="how">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">02 · How it works</span>
+      <span class="kicker">02 &middot; How it works</span>
       <h2>Share your flight in a minute</h2>
     </div>
-    <!-- [A5] stagger class added -->
-    <div class="steps reveal stagger">
+    <div class="how-layout">
+    <div class="how-visual reveal"><img src="shareflight.webp" alt="Volio app feed on iPhone, with the menu to post a flight, a spotter photo or a post" width="800" height="1200" loading="lazy"></div>
+    <div class="steps steps-col reveal stagger">
       <div class="step"><div class="step-no">STEP 01</div><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5L21 16z"/></svg></div><h3>Fly</h3><p>Take off as usual. After you land, just look up your registration, the ADS-B integration captures it for you.</p></div>
-      <div class="step"><div class="step-no">STEP 02</div><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H7l-3 3z"/></svg></div><h3>Share</h3><p>Your flight appears on the feed. Add a title, a comment, and show the track to everyone in the community.</p></div>
+      <div class="step"><div class="step-no">STEP 02</div><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H7l-3 3z"/></svg></div><h3>Share</h3><p>Your flight appears on the feed with its title, your photos and the track. No flight today? Post a photo or a few words on their own.</p></div>
       <div class="step"><div class="step-no">STEP 03</div><div class="step-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6.5H21l-5.2 4 2 6.5L12 16.5 6.2 20l2-6.5-5.2-4h6.5z"/></svg></div><h3>Inspire</h3><p>Let friends and colleagues see your latest flight. It could spark the idea for their next adventure.</p></div>
+    </div>
     </div>
   </div>
 </section>
 
-<!-- SPOTTERS -->
-<section class="sec" id="spotters">
-  <div class="wrap spot-layout">
-    <div class="spot-copy reveal">
-      <span class="kicker">03 · Spotters</span>
-      <h2 id="spotH2">Aviation spotters are welcome!</h2>
-      <p id="spotP">With the new update, spotters can now share their pictures in the app alongside the flights. Show your work in the feed and connect with the pilots.</p>
-      <a class="btn btn-primary" id="spotBtn" href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">Read the spotter guidelines</a>
+<!-- MORE THAN FLIGHTS -->
+<section class="sec" id="more">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">03 &middot; Also on Volio</span>
+      <h2>More than flights</h2>
+      <p>Volio started with the flights you fly. It now covers the people who photograph them, and the organisations behind them.</p>
     </div>
-    <div class="spot-visual reveal rd1">
-      <div class="spot-phone" id="spotPhone">
-        <img src="spotter.png" alt="Volio app, spotter photo shared in the feed" loading="lazy">
-      </div>
+    <div class="cross-grid reveal">
+      <a class="cross-card" href="spotters.html">
+        <div class="cc-top">
+          <span class="cc-ic"><svg viewBox="0 0 24 24"><path d="M9 3 7.2 5H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 5.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></span>
+        </div>
+        <h3>The spotter feed</h3>
+        <p>A feed of its own for the people on the other side of the fence. Post your shot, link it to the tail number and the aircraft, and it lands on your spotter profile alongside everything else you have caught.</p>
+        <span class="cc-go">See how spotting works &rarr;</span>
+      </a>
+      <a class="cross-card" href="organisations.html">
+        <div class="cc-top">
+          <span class="cc-ic"><svg viewBox="0 0 24 24"><path d="M3 21V7l7-4 7 4v3h4v11h-7v-5h-4v5H3zm9-11.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></span>
+        </div>
+        <h3>For organisations</h3>
+        <p>Flight schools, clubs, operators and aviation brands get a verified account, an audience that is only aviation, text and photo posts, and a link people can actually tap. Registrations are open.</p>
+        <span class="cc-go">See the organisation plan &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -581,15 +163,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-navy" id="why">
   <div class="wrap why-grid">
     <div class="sec-head reveal" style="margin-bottom:0">
-      <span class="kicker on-dark">04 · Community</span>
+      <span class="kicker on-dark">04 &middot; Community</span>
       <h2>Made to connect the aviation world</h2>
       <p>Volio is a platform to connect friends, colleagues, instructors and crew, everyone in the aviation community. Every flight you share is a new way to bring people together.</p>
     </div>
     <div class="why-stats reveal rd1">
-      <!-- [A4] data-count spans for count-up -->
-      <div class="why-stat"><div class="n"><span data-count="500">0</span><em>+</em></div><div class="c"><b>Users</b> already flying with Volio and sharing their routes.</div></div>
-      <div class="why-stat"><div class="n"><span data-count="6">0</span></div><div class="c"><b>Launch partners</b>, from Aelo Swiss Academy to Flight Horizon, with more coming.</div></div>
-      <div class="why-stat"><div class="n">∞</div><div class="c"><b>Flights</b> waiting to be shared with the aviation community.</div></div>
+      <div class="why-stat"><div class="n"><span data-count="1000">0</span><em>+</em></div><div class="c"><b>Users</b> already on Volio: pilots, cabin crew, passengers and spotters.</div></div>
+      <div class="why-stat"><div class="n"><span data-count="12">0</span></div><div class="c"><b>Launch partners</b>, from Aelo Swiss Academy to Flight Horizon, with more coming.</div></div>
+      <div class="why-stat"><div class="n">&infin;</div><div class="c"><b>Flights</b> waiting to be shared with the aviation community.</div></div>
     </div>
   </div>
 </section>
@@ -598,14 +179,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="voices">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">05 · From the community</span>
+      <span class="kicker">05 &middot; Field notes</span>
       <h2>Field notes</h2>
     </div>
-    <!-- [A13] stagger class added -->
-    <div class="notes reveal stagger">
-      <div class="note"><span class="qmark">“</span><p class="q">It’s just a nice way to show your flight route and potentially have it as an inspiration for upcoming cross-country flights.</p><div class="src"><span class="nm">Isabelle S.</span><span class="rl">ATPL(A) CADET STUDENT</span></div></div>
-      <div class="note"><span class="qmark">“</span><p class="q">It’s a fresh idea with huge potential, it can appeal to many different kinds of people in aviation.</p><div class="src"><span class="nm">Lukas P.</span><span class="rl">FIRST OFFICER</span></div></div>
-      <div class="note"><span class="qmark">“</span><p class="q">Mi piace la facilità di upload dei voli in app. Digiti il numero di registrazione dell’aereo e tutti i dati vengono automaticamente caricati.</p><div class="src"><span class="nm">Morena C.</span><span class="rl">CABIN CREW</span></div></div>
+    <div class="notes-wrap reveal">
+      <button class="notes-arrow prev" id="notesPrev" aria-label="Previous notes"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg></button>
+      <div class="notes-track" id="notesTrack" tabindex="0" role="group" aria-label="What the community says">
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">It&rsquo;s just a nice way to show your flight route and potentially have it as an inspiration for upcoming cross-country flights.</p><div class="src"><span class="nm">Isabelle</span><span class="rl">ATPL(A) CADET STUDENT</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">It&rsquo;s a fresh idea with huge potential, it can appeal to many different kinds of people in aviation.</p><div class="src"><span class="nm">Lukas</span><span class="rl">FIRST OFFICER</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">What I like is how easy it is to upload flights. You type the aircraft registration and all the data loads by itself.</p><div class="src"><span class="nm">Morena</span><span class="rl">CABIN CREW</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">With auto-tag, my photos reach the pilots who were actually flying. Seeing a pilot approve a shot of their own landing is the best feedback a spotter can get.</p><div class="src"><span class="nm">Aviovovi</span><span class="rl">SPOTTER</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">Finally one place to show the photos from my flights, right on the route I flew, instead of leaving them lost in my camera roll.</p><div class="src"><span class="nm">Enrico</span><span class="rl">FIRST OFFICER</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">On Volio my content reaches people who genuinely love aviation. It&rsquo;s exactly the audience I want to talk to.</p><div class="src"><span class="nm">Daniele</span><span class="rl">FOUNDER &middot; TURBOLENZE MENTALI</span></div></div>
+        <div class="note"><span class="qmark">&ldquo;</span><p class="q">It&rsquo;s like Strava for pilots. I can share my flight track straight to my Instagram Stories, my students love seeing where we flew, and it takes seconds.</p><div class="src"><span class="nm">Davide</span><span class="rl">FLIGHT INSTRUCTOR</span></div></div>
+      </div>
+      <button class="notes-arrow next" id="notesNext" aria-label="More notes"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
     </div>
   </div>
 </section>
@@ -614,15 +202,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec bg-paper" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">06 · FAQ</span>
+      <span class="kicker">06 &middot; FAQ</span>
       <h2>Frequently asked</h2>
     </div>
     <div class="faq reveal">
       <div class="faq-item"><button class="faq-q">How does the ADS-B auto-import work?<span class="pm">+</span></button><div class="faq-a"><p>After you land, you enter your aircraft's registration. Volio matches it against publicly broadcast ADS-B flight data to reconstruct your route, ground speed, altitude profile and duration, so the whole flight fills itself in.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Who is Volio for?<span class="pm">+</span></button><div class="faq-a"><p>Pilots, cabin crew, and everyone who works in or loves aviation. Whether you're a student on your first solo, an airline first officer, or a weekend bush flyer, every flight has a story worth sharing.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Who is Volio for?<span class="pm">+</span></button><div class="faq-a"><p>Pilots, cabin crew, passengers, spotters, and everyone who works in or loves aviation. Whether you're a student on your first solo, an airline first officer, a passenger with a window seat, or someone at the fence with a long lens, every flight has a story worth sharing.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I add my own photos to a flight?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Every flight takes a title, a personal note and your own photos, so the card is the flight as you experienced it, not just the data behind it.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I post without a flight?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Posts can be text, a photo, or both, and they go straight to the feed without a flight attached. The flight card is there when you have flown; the post is there when you have something to say.</p></div></div>
+      <div class="faq-item"><button class="faq-q">What is the spotter feed?<span class="pm">+</span></button><div class="faq-a"><p>A feed built for aviation photographers rather than for the people on board. You post a shot, link it to the aircraft's registration and type, and it appears on the spotter feed and on your spotter profile. <a href="spotters.html">Read more about spotting on Volio</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can spotters' photos of my flight appear on my profile?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Volio matches spotters' photos to your flight using the flight time, the location and the registration. You get a notification, and a photo only appears on your profile and in the Volio feed once you approve it. You can also send a tag request on a photo a spotter has already uploaded. <a href="spotters.html#match">How Spotter &times; Pilot matching works</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I share my flight on Instagram?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Volio exports your flight as a sticker with your track on it, ready to add to your Instagram stories.</p></div></div>
       <div class="faq-item"><button class="faq-q">Does it cost anything to use Volio?<span class="pm">+</span></button><div class="faq-a"><p>Volio is free to download and start sharing your flights. Just grab it from the App Store or Google Play and log in.</p></div></div>
       <div class="faq-item"><button class="faq-q">Is my flight data private?<span class="pm">+</span></button><div class="faq-a"><p>You control what you share. Every flight can be posted to the community feed or kept to yourself, the choice is always yours, flight by flight.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Are the spotter photos moderated?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Every image is reviewed by our Volio spotter moderators before it appears in the feed, so that all photos in the Spotter category follow our <a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">spotter guidelines</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q">I run a flight school. Can we be on Volio?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Organisation accounts are open: a verified profile, text and photo posts to an audience that is only aviation, and a tappable link, with the plan and price built around what you need. <a href="organisations.html">See what an organisation account includes</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Can I keep a log of all my flights?<span class="pm">+</span></button><div class="faq-a"><p>Yes. Every flight you add stays on your profile with its route, distance, duration, speed and altitude, so you build up a visual record of where you have flown and can scroll back through it any time. It is a personal flight log to share, not a replacement for your official pilot logbook.</p></div></div>
       <div class="faq-item"><button class="faq-q">Which devices is Volio available on?<span class="pm">+</span></button><div class="faq-a"><p>Volio is available now on both iOS and Android, download it from the App Store or Google Play and your flights sync across the community instantly.</p></div></div>
     </div>
   </div>
@@ -632,63 +226,36 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <section class="sec" id="partners">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">07 · Partners</span>
+      <span class="kicker">07 &middot; Partners</span>
       <h2>In good company</h2>
       <p>We work with organisations across the aviation world. More announcements on the way.</p>
     </div>
     <div class="partner-logos reveal">
-      <a class="plogo" href="https://aeloswissacademy.com/" target="_blank" rel="noopener"><img src="aelo.png" alt="Aelo Swiss Academy" onerror="this.parentNode.classList.add('ghost');this.remove();"></a>
-      <a class="plogo" href="https://www.italfly.com/" target="_blank" rel="noopener"><img src="italfly.png" alt="ItalFly" onerror="this.parentNode.classList.add('ghost');this.remove();"></a>
-      <a class="plogo" href="https://www.skydealseurope.com/" target="_blank" rel="noopener"><img src="skydeals.png" alt="SkyDeals Europe"></a>
-      <a class="plogo" href="https://atmosoar.io/" target="_blank" rel="noopener"><img src="atmosoar.png" alt="Atmosoar"></a>
-      <a class="plogo" href="https://www.flighthorizon.ovh/" target="_blank" rel="noopener"><img src="flighthorizon.PNG" alt="Flight Horizon"></a>
-      <a class="plogo" href="https://www.esaviation.it/" target="_blank" rel="noopener"><img src="esa.png" alt="ESA - English School for Aviation"></a>
-      <a class="plogo plogo-cta" href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener"><span class="t">Become a partner</span><span class="g">Get in touch →</span></a>
+      <a class="plogo" href="organisations/aelo-swiss-academy/index.html" title="AELO Swiss Academy on Volio"><img src="aelo.png" alt="AELO Swiss Academy"></a>
+      <a class="plogo" href="organisations/italfly/index.html" title="ItalFly on Volio"><img src="italfly.png" alt="ItalFly"></a>
+      <a class="plogo" href="organisations/skydeals-europe/index.html" title="SkyDeals Europe on Volio"><img src="skydeals.png" alt="SkyDeals Europe"></a>
+      <a class="plogo" href="organisations/atmosoar/index.html" title="Atmosoar on Volio"><img src="atmosoar.png" alt="Atmosoar"></a>
+      <a class="plogo" href="organisations/flight-horizon/index.html" title="Flight Horizon on Volio"><img src="flighthorizon.png" alt="Flight Horizon"></a>
+      <a class="plogo" href="organisations/english-school-for-aviation/index.html" title="ESA – English School for Aviation on Volio"><img src="esa.png" alt="ESA – English School for Aviation"></a>
+      <a class="plogo is-extra" href="organisations/skyfuns/index.html" title="Skyfuns on Volio"><img src="skyfuns.png" alt="Skyfuns" loading="lazy"></a>
+      <a class="plogo is-extra" href="organisations/jester-aviation-academy/index.html" title="Jester Aviation Academy on Volio"><img src="jester.png" alt="Jester Aviation Academy" loading="lazy"></a>
+      <a class="plogo is-extra" href="organisations/hangar-digitale/index.html" title="Hangar Digitale on Volio"><img src="hangar-digitale.png" alt="Hangar Digitale" loading="lazy"></a>
+      <a class="plogo is-extra" href="organisations/solaero/index.html" title="solaero on Volio"><img src="solaero.png" alt="solaero" loading="lazy"></a>
+      <a class="plogo is-extra" href="organisations/ali-in-alto/index.html" title="Ali in Alto on Volio"><img src="aliinalto.jpg" alt="Ali in Alto" loading="lazy"></a>
+      <a class="plogo is-extra" href="organisations/turbolenze-mentali-ai/index.html" title="Turbolenze Mentali AI on Volio"><img src="turbolenze-mentali-ai.jpg" alt="Turbolenze Mentali AI" loading="lazy"></a>
+      <button class="plogo-more" id="partnersMore" type="button" aria-expanded="false">Show more <span>+6</span></button>
+      <a class="plogo plogo-cta" href="organisations.html"><span class="t">Become a partner</span><span class="g">See organisation accounts &rarr;</span></a>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
-<section class="sec bg-paper" id="team">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">08 · The team</span>
-      <h2>Built by enthusiasts</h2>
-    </div>
-    <div class="team-grid">
-      <div class="member reveal">
-        <div class="top">
-          <div class="av"><img src="iz.jpg" alt="Issak Zanini" onerror="this.remove();this.parentNode.textContent='IZ';"></div>
-          <div><div class="nm">Issak Zanini</div><div class="rl">COMMERCIAL PILOT · AEROSPACE ENG.</div></div>
-        </div>
-        <p class="bio">From a young age, working in aviation has been a dream. Curiosity, determination, and an open mind have shaped my journey, driven by the idea of being part of an industry that moves people and inspires global connection.</p>
-        <div class="links"><a href="https://www.linkedin.com/in/issak-zanini-957897168/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.instagram.com/issak_zanini/" target="_blank" rel="noopener">Instagram</a></div>
-      </div>
-      <div class="member reveal rd1">
-        <div class="top">
-          <div class="av"><img src="gb.jpg" alt="Gavriel Barlevi" onerror="this.remove();this.parentNode.textContent='GB';"></div>
-          <div><div class="nm">Gavriel Barlevi</div><div class="rl">COMPLEX SYSTEMS ENG. · MGMT</div></div>
-        </div>
-        <p class="bio">Entrepreneurship has always been the mindset. Driven by precision, discipline, and a strong engineering approach, the focus is on navigating complexity, optimizing systems, and turning challenges into efficient, scalable solutions.</p>
-        <div class="links"><a href="https://www.linkedin.com/in/gavriel-barlevi-4222b6241/" target="_blank" rel="noopener">LinkedIn</a></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- MISSION -->
-<section class="sec bg-navy">
-  <div class="wrap mission reveal">
-    <p>Every flight has a story worth sharing. From first solos to airline rotations, aviation is built on moments that deserve to be remembered. Volio helps pilots, crew, and enthusiasts <span class="hl">share their journeys, connect with each other,</span> and inspire a community connected by the sky.</p>
-    <div class="by">The Volio mission</div>
-  </div>
-</section>
 
-<!-- DOWNLOAD -->
+<!-- FOLLOW -->
 <section class="sec bg-cirrus" id="follow">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <span class="kicker">09 · Follow us</span>
+      <span class="kicker">08 &middot; Follow us</span>
       <h2>Follow along</h2>
     </div>
     <div class="follow-grid">
@@ -712,21 +279,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
   </div>
 </section>
 
-<!-- THEY TALK ABOUT US -->
-<section class="sec" id="press">
-  <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="kicker">10 · They talk about us</span>
-      <h2>Interview with the founder</h2>
-    </div>
-    <div class="reveal">
-      <div class="video-wrap">
-        <iframe src="https://www.youtube-nocookie.com/embed/uy31t_89ocA" title="Volio on YouTube" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p class="video-note" id="videoNote">Can't see the player? <a href="https://www.youtube.com/watch?v=uy31t_89ocA" target="_blank" rel="noopener">Watch on YouTube →</a></p>
+
+<!-- GET THE APP -->
+<section class="sec bg-navy" id="get">
+  <div class="wrap cta-band reveal">
+    <h2>Your next adventure<br>belongs here</h2>
+    <p>Free to download. Type a registration, add your photos, and put the flight in front of the people who understand what it took to fly it.</p>
+    <div class="cta-actions">
+      <a class="store-btn" href="https://apps.apple.com/it/app/volio/id6761468707" target="_blank" rel="noopener" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M17.564 12.77c-.028-2.83 2.31-4.19 2.414-4.256-1.314-1.922-3.36-2.186-4.087-2.216-1.74-.176-3.396 1.023-4.28 1.023-.88 0-2.24-.997-3.68-.97-1.894.028-3.64 1.1-4.613 2.795-1.966 3.41-.503 8.46 1.41 11.223.936 1.353 2.05 2.873 3.51 2.818 1.41-.056 1.942-.912 3.646-.912 1.703 0 2.184.912 3.674.883 1.517-.028 2.478-1.38 3.406-2.74 1.073-1.57 1.515-3.09 1.542-3.168-.034-.014-2.96-1.136-2.99-4.51zM14.79 4.47c.775-.94 1.3-2.25 1.157-3.553-1.118.045-2.473.744-3.275 1.682-.72.832-1.35 2.163-1.18 3.44 1.247.098 2.522-.634 3.297-1.57z"/></svg><span class="st"><small>Download on the</small><b>App Store</b></span></a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.littleendian.volare" target="_blank" rel="noopener" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.397 12l2.301-2.492zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.635z"/></svg><span class="st"><small>Get it on</small><b>Google Play</b></span></a>
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does the ADS-B auto-import work?", "acceptedAnswer": {"@type": "Answer", "text": "After you land, you enter your aircraft's registration. Volio matches it against publicly broadcast ADS-B flight data to reconstruct your route, ground speed, altitude profile and duration, so the whole flight fills itself in."}}, {"@type": "Question", "name": "Who is Volio for?", "acceptedAnswer": {"@type": "Answer", "text": "Pilots, cabin crew, passengers, spotters, and everyone who works in or loves aviation. Whether you're a student on your first solo, an airline first officer, a passenger with a window seat, or someone at the fence with a long lens, every flight has a story worth sharing."}}, {"@type": "Question", "name": "Can I add my own photos to a flight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every flight takes a title, a personal note and your own photos, so the card is the flight as you experienced it, not just the data behind it."}}, {"@type": "Question", "name": "Can I post without a flight?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Posts can be text, a photo, or both, and they go straight to the feed without a flight attached. The flight card is there when you have flown; the post is there when you have something to say."}}, {"@type": "Question", "name": "What is the spotter feed?", "acceptedAnswer": {"@type": "Answer", "text": "A feed built for aviation photographers rather than for the people on board. You post a shot, link it to the aircraft's registration and type, and it appears on the spotter feed and on your spotter profile. Read more about spotting on Volio."}}, {"@type": "Question", "name": "Can spotters' photos of my flight appear on my profile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Volio matches spotters' photos to your flight using the flight time, the location and the registration. You get a notification, and a photo only appears on your profile and in the Volio feed once you approve it. You can also send a tag request on a photo a spotter has already uploaded. How Spotter × Pilot matching works."}}, {"@type": "Question", "name": "Can I share my flight on Instagram?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Volio exports your flight as a sticker with your track on it, ready to add to your Instagram stories."}}, {"@type": "Question", "name": "Does it cost anything to use Volio?", "acceptedAnswer": {"@type": "Answer", "text": "Volio is free to download and start sharing your flights. Just grab it from the App Store or Google Play and log in."}}, {"@type": "Question", "name": "Is my flight data private?", "acceptedAnswer": {"@type": "Answer", "text": "You control what you share. Every flight can be posted to the community feed or kept to yourself, the choice is always yours, flight by flight."}}, {"@type": "Question", "name": "I run a flight school. Can we be on Volio?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Organisation accounts are open: a verified profile, text and photo posts to an audience that is only aviation, and a tappable link, with the plan and price built around what you need. See what an organisation account includes."}}, {"@type": "Question", "name": "Can I keep a log of all my flights?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every flight you add stays on your profile with its route, distance, duration, speed and altitude, so you build up a visual record of where you have flown and can scroll back through it any time. It is a personal flight log to share, not a replacement for your official pilot logbook."}}, {"@type": "Question", "name": "Which devices is Volio available on?", "acceptedAnswer": {"@type": "Answer", "text": "Volio is available now on both iOS and Android, download it from the App Store or Google Play and your flights sync across the community instantly."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Volio", "operatingSystem": "iOS, Android", "applicationCategory": "SocialNetworkingApplication", "description": "Volio is a free flight tracking and social app for aviation. Pilots enter their aircraft registration and Volio rebuilds the flight from ADS-B data, with the route on a map, distance, duration, speed and altitude. They add photos and notes, keep a log of every flight on their profile, follow other pilots, crew and spotters, and share flights to the feed or as a sticker to Instagram stories. Spotters post aircraft photos that Volio matches to the pilot who was flying.", "featureList": ["Automatic flight tracking from ADS-B data", "Flight route map with distance, duration, speed and altitude", "Photos and notes on every flight", "Personal log of every flight on your profile", "Follow pilots, crew and spotters", "Likes and sharing", "Share flights to Instagram stories", "Spotter photo feed", "Spotter and pilot photo matching", "Verified organisation accounts"], "audience": {"@type": "Audience", "audienceType": "Pilots, student pilots, cabin crew, passengers and plane spotters"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "downloadUrl": ["https://apps.apple.com/it/app/volio/id6761468707", "https://play.google.com/store/apps/details?id=com.littleendian.volare"], "publisher": {"@id": "https://www.volioapp.it/#org"}, "screenshot": "https://www.volioapp.it/share.png"}</script>
 
 <!-- NEWSLETTER -->
 <section class="newsletter" id="newsletter">
@@ -751,7 +318,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
 <!-- EMAIL MODAL -->
 <div class="modal-overlay" id="emailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
-    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <button class="modal-close" id="modalClose" aria-label="Close">&#10005;</button>
     <div class="modal-form" id="modalForm">
       <div class="modal-mark"><svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></div>
       <div class="modal-title" id="modalTitle">Stay in the loop</div>
@@ -765,7 +332,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
       <button class="modal-submit" id="modalSubmit">Count me in</button>
     </div>
     <div class="modal-success" id="modalSuccess">
-      <div class="success-icon">✓</div>
+      <div class="success-icon">&#10003;</div>
       <div class="success-title" id="modalSuccessTitle">You're on the list!</div>
       <p class="success-sub" id="modalSuccessSub">We'll be in touch as soon as there's news from Volio.</p>
     </div>
@@ -777,360 +344,28 @@ footer{background:var(--navy);color:rgba(255,255,255,.6);padding:56px 0 30px;bor
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="#top"><span class="brand-mark"><svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></span><span class="brand-text">volio</span></a>
-        <p>The social network for the aviation world. Share your flights, connect with your crew, inspire the community.</p>
+        <a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 642.95 641.29"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></span><span class="brand-text">volio</span></a>
+        <p>The social network for the aviation world. Share your flights, post what you shoot, connect with the community.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h4>Product</h4><a href="#features">Features</a><a href="#how">How it works</a><a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">Spotter guidelines</a><a href="#faq">FAQ</a><a href="#follow">Follow us</a></div>
-        <div class="foot-col"><h4>Company</h4><a href="#team">Team</a><a href="#partners">Partners</a><a href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="foot-col"><h4>Product</h4><a href="index.html#features">The App</a><a href="spotters.html">Spotter</a><a href="organisations.html">Organisations</a><a href="index.html#faq">FAQ</a></div>
+        <div class="foot-col"><h4>Company</h4><a href="team.html">Team</a><a href="index.html#partners">Partners</a><a href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener">LinkedIn</a></div>
         <div class="foot-col"><h4>Connect</h4><a href="https://www.instagram.com/volioapp" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/volioapp/" target="_blank" rel="noopener">LinkedIn</a></div>
         <div class="foot-col"><h4>Legal</h4><a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Terms &amp; Conditions</a><a href="https://www.volioapp.it/account-deletion/" target="_blank" rel="noopener">Account deletion</a><a href="#" id="footContact">Contact</a></div>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 VOLIO · Volio App S.r.l. · Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia</span>
+      <span>&copy; 2026 VOLIO &middot; Volio App S.r.l. &middot; Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia</span>
       <span class="foot-legal"><a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Terms &amp; Conditions</a></span>
-      <span class="foot-piva">P. IVA 04312420138 · Registro Imprese di Como-Lecco · REA CO - 435595 · Capitale sociale € 10.000,00 i.v.</span>
+      <span class="foot-piva">P. IVA 04312420138 &middot; Registro Imprese di Como-Lecco &middot; REA CO - 435595 &middot; Capitale sociale &euro; 10.000,00 i.v.</span>
     </div>
   </div>
 </footer>
 
 <script>
-const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* [A4] count-up on the Why stats */
-function countUp(el){
-  const target=+el.dataset.count, suffix=el.dataset.suffix||'', dur=1200, t0=performance.now();
-  function step(t){const p=Math.min((t-t0)/dur,1),eased=1-Math.pow(1-p,3);el.textContent=Math.round(target*eased).toLocaleString()+suffix;if(p<1)requestAnimationFrame(step);}
-  requestAnimationFrame(step);
-}
-const whySec=document.getElementById('why');
-if(whySec){
-  const whyIO=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
-    whySec.querySelectorAll('[data-count]').forEach(el=>{
-      if(reduceMotion){el.textContent=el.dataset.count;}else{countUp(el);}
-    });
-    whyIO.disconnect();
-  }})},{threshold:.4});
-  whyIO.observe(whySec);
-}
-
-/* [A7] nav shadow once scrolled */
-const navEl=document.querySelector('nav');
-window.addEventListener('scroll',()=>navEl.classList.toggle('scrolled',window.scrollY>10),{passive:true});
-
-document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
-  const item=q.parentNode,a=item.querySelector('.faq-a'),open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;});
-  if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
-});});
-
-/* ---- NEWSLETTER : Brevo via AWS Lambda ---- */
-const LAMBDA_URL='https://9ek2lcmtx8.execute-api.eu-west-1.amazonaws.com/prod/subscribe';
-async function subscribeToBrevo(email,firstName=''){
-  try{
-    const res=await fetch(LAMBDA_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,firstName})});
-    if(res.ok)return{ok:true};
-    const data=await res.json().catch(()=>({}));
-    return{ok:false,message:data.error||data.message||('HTTP '+res.status)};
-  }catch(err){
-    console.error('[Volio] Subscribe error:',err);
-    return{ok:false,message:'Network error — please try again.'};
-  }
-}
-const nlBtn=document.getElementById('newsletterBtn');
-const nlEmail=document.getElementById('newsletterEmail');
-const nlFirst=document.getElementById('newsletterFirstName');
-const nlConsent=document.getElementById('newsletterConsent');
-if(nlBtn&&nlEmail&&nlConsent){
-  const isIT=()=>document.documentElement.lang==='it';
-  nlBtn.disabled=true;
-  nlConsent.addEventListener('change',()=>{nlBtn.disabled=!nlConsent.checked;});
-  nlBtn.addEventListener('click',async()=>{
-    if(!nlConsent.checked)return;
-    const email=nlEmail.value.trim();
-    if(!email||!email.includes('@')){
-      nlEmail.style.outline='2px solid #e74c3c';nlEmail.focus();
-      setTimeout(()=>nlEmail.style.outline='',1500);
-      return;
-    }
-    nlBtn.disabled=true;nlBtn.style.opacity='1';nlBtn.textContent='...';
-    const result=await subscribeToBrevo(email,nlFirst?nlFirst.value.trim():'');
-    if(result.ok){
-      document.querySelector('.newsletter-body').innerHTML='<span class="newsletter-done">✓ &nbsp;'+(isIT()?'Sei in lista!':"You're on the list!")+'</span>';
-      try{sessionStorage.setItem('volio_popup_shown','1');}catch(e){}
-      if(window.goatcounter)window.goatcounter.count({path:'newsletter-subscribe',title:'Newsletter: subscribe',event:true});
-    }else{
-      nlBtn.disabled=false;nlBtn.textContent=isIT()?'Riprova':'Try again';
-      nlEmail.style.outline='2px solid #e74c3c';
-      setTimeout(()=>nlEmail.style.outline='',2000);
-    }
-  });
-  nlEmail.addEventListener('keydown',e=>{if(e.key==='Enter')nlBtn.click();});
-}
-
-/* ---- SPOTTERS : phone drifts bottom-to-top while the section scrolls by ---- */
-(function(){
-  var ph=document.getElementById('spotPhone'),sec=document.getElementById('spotters');
-  if(!ph||!sec)return;
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  var win=sec.querySelector('.spot-visual'),ticking=false;
-  function update(){
-    ticking=false;
-    var r=sec.getBoundingClientRect(),vh=window.innerHeight||document.documentElement.clientHeight;
-    if(r.bottom<-100||r.top>vh+100)return;
-    var shift=Math.max(0,ph.offsetHeight-win.clientHeight);
-    var p=(vh-r.top)/(vh+r.height);            /* 0 = entra dal basso, 1 = esce in alto */
-    p=Math.min(1,Math.max(0,(p-0.40)/0.44));   /* resta fermo sulla parte alta, poi scorre */
-    ph.style.transform='translate3d(0,'+(-shift*p).toFixed(1)+'px,0)';
-  }
-  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
-  window.addEventListener('resize',update,{passive:true});
-  update();
-})();
-
-/* ---- FOOTER CONTACT : reveal the address, then copy it ---- */
-const footContact=document.getElementById('footContact');
-if(footContact){
-  const ADDR='support@volioapp.it';
-  footContact.addEventListener('click',e=>{
-    e.preventDefault();
-    if(footContact.textContent.indexOf('@')===-1){footContact.textContent=ADDR;return;}
-    if(navigator.clipboard){
-      navigator.clipboard.writeText(ADDR).then(()=>{
-        footContact.textContent=document.documentElement.lang==='it'?'Copiata!':'Copied!';
-        setTimeout(()=>footContact.textContent=ADDR,1400);
-      }).catch(()=>{});
-    }
-  });
-}
-
-/* ---- EMAIL POPUP : delayed, and never on top of the cookie banner ---- */
-const POPUP_DELAY=25000;      /* how long before it can appear */
-const POPUP_GRACE=5000;       /* breathing room after the cookie banner goes away */
-const modal=document.getElementById('emailModal');
-if(modal){
-  const mdClose=document.getElementById('modalClose');
-  const mdForm=document.getElementById('modalForm');
-  const mdSuccess=document.getElementById('modalSuccess');
-  const mdSubmit=document.getElementById('modalSubmit');
-  const mdEmail=document.getElementById('modalEmail');
-  const mdFirst=document.getElementById('modalFirstName');
-  const mdConsent=document.getElementById('modalConsent');
-  const isIT=()=>document.documentElement.lang==='it';
-  const seen=()=>{try{return !!sessionStorage.getItem('volio_popup_shown');}catch(e){return false;}};
-  const markSeen=()=>{try{sessionStorage.setItem('volio_popup_shown','1');}catch(e){}};
-
-  function cookieBannerUp(){
-    const el=document.querySelector('#iubenda-cs-banner,.iubenda-cs-container,#iubenda-cs-brand');
-    if(!el)return false;
-    const r=el.getBoundingClientRect();
-    return r.height>0&&r.width>0&&getComputedStyle(el).visibility!=='hidden';
-  }
-  function openModal(){
-    mdForm.classList.remove('hide');mdSuccess.classList.remove('show');
-    mdEmail.value='';mdFirst.value='';mdConsent.checked=false;
-    modal.classList.add('open');
-    setTimeout(()=>mdFirst.focus(),350);
-  }
-  function closeModal(){modal.classList.remove('open');markSeen();}
-
-  function schedulePopup(){
-    if(seen())return;
-    setTimeout(function waitForBanner(){
-      if(seen())return;
-      if(cookieBannerUp()){setTimeout(waitForBanner,2000);return;}
-      setTimeout(()=>{if(seen())return;openModal();markSeen();},POPUP_GRACE);
-    },POPUP_DELAY);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',schedulePopup);
-  else schedulePopup();
-
-  mdClose.addEventListener('click',closeModal);
-  modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
-
-  mdSubmit.addEventListener('click',async()=>{
-    const email=mdEmail.value.trim();
-    if(!email||!email.includes('@')){
-      mdEmail.style.borderColor='#e74c3c';mdEmail.focus();
-      setTimeout(()=>mdEmail.style.borderColor='',1500);
-      return;
-    }
-    if(!mdConsent.checked){
-      const lb=document.getElementById('modalConsentLabel');
-      lb.style.color='#e74c3c';
-      setTimeout(()=>lb.style.color='',1500);
-      return;
-    }
-    mdSubmit.disabled=true;mdSubmit.textContent='...';
-    const result=await subscribeToBrevo(email,mdFirst.value.trim());
-    if(result.ok){
-      mdForm.classList.add('hide');mdSuccess.classList.add('show');
-      if(window.goatcounter)window.goatcounter.count({path:'popup-subscribe',title:'Popup: subscribe',event:true});
-      setTimeout(closeModal,3000);
-    }else{
-      mdSubmit.disabled=false;mdSubmit.textContent=isIT()?'Sono dentro':'Count me in';
-      mdEmail.style.borderColor='#e74c3c';mdEmail.focus();
-      setTimeout(()=>mdEmail.style.borderColor='',2000);
-    }
-  });
-  mdEmail.addEventListener('keydown',e=>{if(e.key==='Enter')mdSubmit.click();});
-}
-
-/* ---- i18n : English (default) / Italian ---- */
-const IT={
-navLinks:[`Funzioni`,`Come funziona`,`Perché Volio`,`FAQ`,`Team`],
-navCta:`Scarica ora`,
-navOrg:`Organizzazioni`,
-heroH1:`Condividi il tuo<br><span class="ln2">prossimo volo</span>`,
-heroDesc:`Il social network dell'aviazione. Piloti, personale di cabina e professionisti del volo: inserisci la tua immatricolazione e Volio disegna il volo per te. Poi condividilo con la community.`,
-featKicker:`01 · Costruito attorno al tuo volo`,
-featH2:`Una card cattura tutto`,
-featP:`Inserisci un'immatricolazione. Volio fa il resto, in automatico.`,
-featTitles:[`Importazione automatica ADS-B`,`Mappa della rotta`,`La tua storia`,`Like e condivisioni`],
-featDescs:[
-`Inserisci la tua immatricolazione e Volio recupera rotta, velocità, quota e durata in automatico. Nessun inserimento manuale, mai.`,
-`Ogni volo tracciato su una mappa dal vivo, con i pin di partenza e arrivo e la traccia esatta che hai volato.`,
-`Aggiungi un titolo e una nota personale a ogni volo: dai alla tua avventura il contesto che merita.`,
-`La community reagisce ai voli degli altri e li condivide con un tap, costruendo una vera rete dell'aviazione.`],
-howKicker:`02 · Come funziona`,
-howH2:`Condividi il tuo volo in un minuto`,
-stepLabels:[`FASE 01`,`FASE 02`,`FASE 03`],
-stepTitles:[`Vola`,`Condividi`,`Ispira`],
-stepDescs:[
-`Decolla come sempre. Dopo l'atterraggio, cerca la tua immatricolazione: l'integrazione ADS-B la registra per te.`,
-`Il tuo volo appare nel feed. Aggiungi un titolo, un commento e mostra la traccia a tutta la community.`,
-`Fai vedere ad amici e colleghi il tuo ultimo volo. Potrebbe ispirare la loro prossima avventura.`],
-spotKicker:`03 · Spotter`,
-spotH2:`Gli aviation spotter sono i benvenuti!`,
-spotP:`Con il nuovo aggiornamento gli spotter possono condividere le loro foto nell'app, accanto ai voli. Mostra il tuo lavoro nel feed e connettiti con i piloti.`,
-spotBtn:`Leggi le linee guida spotter`,
-whyKicker:`04 · Community`,
-whyH2:`Fatto per connettere il mondo dell'aviazione`,
-whyP:`Volio è una piattaforma per connettere amici, colleghi, istruttori ed equipaggi: tutta la community dell'aviazione. Ogni volo che condividi è un nuovo modo per unire le persone.`,
-whyStats:[
-`<b>Utenti</b> che già volano con Volio e condividono le loro rotte.`,
-`<b>Partner di lancio</b>, da Aelo Swiss Academy a Flight Horizon, con altri in arrivo.`,
-`<b>Voli</b> pronti per essere condivisi con la community dell'aviazione.`],
-voicesKicker:`05 · Dalla community`,
-voicesH2:`Testimonianze`,
-faqKicker:`06 · FAQ`,
-faqH2:`Domande frequenti`,
-faqQ:[
-`Come funziona l'import automatico ADS-B?<span class="pm">+</span>`,
-`A chi è rivolto Volio?<span class="pm">+</span>`,
-`Volio è a pagamento?<span class="pm">+</span>`,
-`I miei dati di volo sono privati?<span class="pm">+</span>`,
-`Le foto degli spotter sono moderate?<span class="pm">+</span>`,
-`Su quali dispositivi è disponibile Volio?<span class="pm">+</span>`],
-faqA:[
-`Dopo l'atterraggio inserisci l'immatricolazione dell'aeromobile. Volio la confronta con i dati di volo ADS-B trasmessi pubblicamente per ricostruire rotta, velocità al suolo, profilo di quota e durata: così l'intero volo si compila da solo.`,
-`Piloti, personale di cabina e chiunque lavori o ami l'aviazione. Che tu sia un allievo al primo assolo, un primo ufficiale di linea o un bush pilot del weekend, ogni volo ha una storia che merita di essere condivisa.`,
-`Volio è gratuito da scaricare e puoi iniziare subito a condividere i tuoi voli. Scaricalo dall'App Store o da Google Play e accedi.`,
-`Decidi tu cosa condividere. Ogni volo può essere pubblicato nel feed della community o restare privato: la scelta è sempre tua, volo per volo.`,
-`Sì. Ogni immagine viene controllata dai nostri moderatori spotter di Volio prima di comparire nel feed, così tutte le foto nella categoria Spotter rispettano le nostre <a href="https://www.volioapp.it/spotter/" target="_blank" rel="noopener">linee guida spotter</a>.`,
-`Volio è disponibile ora sia su iOS che su Android: scaricalo dall'App Store o da Google Play e i tuoi voli si sincronizzano subito con la community.`],
-partnersKicker:`07 · Partner`,
-partnersH2:`In buona compagnia`,
-partnersP:`Collaboriamo con organizzazioni di tutto il mondo dell'aviazione. Altri annunci in arrivo.`,
-ctaT:`Diventa partner`,
-ctaG:`Contattaci →`,
-teamKicker:`08 · Il team`,
-teamH2:`Costruito da appassionati`,
-memberRl:[`PILOTA COMMERCIALE · ING. AEROSPAZIALE`,`ING. DEI SISTEMI COMPLESSI · MGMT`],
-memberBio:[
-`Fin da giovane, lavorare nell'aviazione è stato un sogno. Curiosità, determinazione e una mente aperta hanno guidato il mio percorso, spinto dall'idea di far parte di un settore che muove le persone e ispira connessioni globali.`,
-`L'imprenditorialità è sempre stata la mentalità. Guidato da precisione, disciplina e un forte approccio ingegneristico, mi concentro sul gestire la complessità, ottimizzare i sistemi e trasformare le sfide in soluzioni efficienti e scalabili.`],
-missionP:`Ogni volo ha una storia che merita di essere condivisa. Dai primi assoli alle rotazioni di linea, l'aviazione è fatta di momenti che meritano di essere ricordati. Volio aiuta piloti, equipaggi e appassionati a <span class="hl">condividere i propri viaggi, connettersi tra loro</span> e ispirare una community unita dal cielo.`,
-missionBy:`La missione di Volio`,
-followKicker:`09 · Seguici`,
-followH2:`Seguici`,
-followDesc:[
-`Aggiornamenti dietro le quinte, storie di volo e il percorso di costruzione di Volio: seguici su Instagram.`,
-`Costruiamo il livello social dell'aviazione, un volo alla volta. Segui la nostra pagina aziendale per traguardi di prodotto, aggiornamenti dal team e la visione dietro Volio.`],
-followBtn:[`Segui su Instagram`,`Connettiti su LinkedIn`],
-footBrand:`Il social network del mondo dell'aviazione. Condividi i tuoi voli, connettiti con il tuo equipaggio, ispira la community.`,
-footCols:[`Prodotto`,`Azienda`,`Contatti`,`Legale`],
-footProductLinks:[`Funzioni`,`Come funziona`,`Linee guida spotter`,`FAQ`,`Seguici`],
-footCompanyLinks:[`Team`,`Partner`],
-footLegal:[`Privacy Policy`,`Termini e Condizioni`,`Cancellazione account`,`Contatti`],
-footCopy:`© 2026 VOLIO · Volio App S.r.l. · Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia`,
-pressKicker:`10 · Parlano di noi`,
-pressH2:`Intervista al founder`,
-pressNote:`Non vedi il player? <a href="https://www.youtube.com/watch?v=uy31t_89ocA" target="_blank" rel="noopener">Guarda su YouTube →</a>`,
-nlText:`Tienimi aggiornato`,
-nlBtn:`Iscriviti`,
-nlConsent:`Ho letto e accetto la <a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a> e i <a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Termini e Condizioni</a>.`,
-nlFirstName:`Nome`,
-nlEmail:`indirizzo email`,
-mdTitle:`Resta aggiornato`,
-mdSub:`Niente spam, solo aggiornamenti sul lancio, novità sull'accesso anticipato e tutto ciò che succede in Volio.`,
-mdSubmit:`Sono dentro`,
-mdConsent:`Ho letto e accetto la <a href="https://www.volioapp.it/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a> e i <a href="https://www.volioapp.it/termsandconditions/" target="_blank" rel="noopener">Termini e Condizioni</a>.`,
-mdSuccessT:`Sei in lista!`,
-mdSuccessS:`Ti scriviamo appena ci sono novità da Volio.`,
-mdFirstName:`Nome`,
-mdEmail:`latua@email.com`
-};
-const T=[
-['.nav-links a',IT.navLinks],['.nav-cta',IT.navCta],['.nav-org',IT.navOrg],
-['#top h1',IT.heroH1],['#top .hero-desc',IT.heroDesc],
-['#features .kicker',IT.featKicker],['#features h2',IT.featH2],['#features .sec-head p',IT.featP],
-['#features .feat-item h3',IT.featTitles],['#features .feat-item p',IT.featDescs],
-['#how .kicker',IT.howKicker],['#how h2',IT.howH2],['#how .step-no',IT.stepLabels],['#how .step h3',IT.stepTitles],['#how .step p',IT.stepDescs],
-['#spotters .kicker',IT.spotKicker],['#spotH2',IT.spotH2],['#spotP',IT.spotP],['#spotBtn',IT.spotBtn],
-['#why .kicker',IT.whyKicker],['#why h2',IT.whyH2],['#why .sec-head p',IT.whyP],['#why .why-stat .c',IT.whyStats],
-['#voices .kicker',IT.voicesKicker],['#voices h2',IT.voicesH2],
-['#faq .kicker',IT.faqKicker],['#faq h2',IT.faqH2],['#faq .faq-q',IT.faqQ],['#faq .faq-a p',IT.faqA],
-['#partners .kicker',IT.partnersKicker],['#partners h2',IT.partnersH2],['#partners .sec-head p',IT.partnersP],['#partners .plogo-cta .t',IT.ctaT],['#partners .plogo-cta .g',IT.ctaG],
-['#team .kicker',IT.teamKicker],['#team h2',IT.teamH2],['#team .member .rl',IT.memberRl],['#team .member .bio',IT.memberBio],
-['.mission p',IT.missionP],['.mission .by',IT.missionBy],
-['#follow .kicker',IT.followKicker],['#follow h2',IT.followH2],['#follow .follow-desc',IT.followDesc],['#follow .follow-btn',IT.followBtn,'icon'],
-['#press .kicker',IT.pressKicker],['#press h2',IT.pressH2],['#videoNote',IT.pressNote],
-['.newsletter-text',IT.nlText],['#newsletterBtn',IT.nlBtn],['#newsletterConsentLabel',IT.nlConsent],
-['#modalTitle',IT.mdTitle],['#modalSub',IT.mdSub],['#modalSubmit',IT.mdSubmit],['#modalConsentLabel',IT.mdConsent],['#modalSuccessTitle',IT.mdSuccessT],['#modalSuccessSub',IT.mdSuccessS],
-['.foot-brand p',IT.footBrand],['.foot-col h4',IT.footCols],['.foot-col:nth-of-type(1) a',IT.footProductLinks],['.foot-col:nth-of-type(2) a',IT.footCompanyLinks],['.foot-col:nth-of-type(4) a',IT.footLegal],['.foot-legal a',IT.footLegal],['.foot-bottom span:first-child',IT.footCopy]
-];
-const PH=[['#newsletterFirstName',IT.nlFirstName],['#newsletterEmail',IT.nlEmail],['#modalFirstName',IT.mdFirstName],['#modalEmail',IT.mdEmail]];
-const _en=new WeakMap(),_ph=new WeakMap();
-function setLang(lang){
-  PH.forEach(([sel,val])=>{
-    const el=document.querySelector(sel);if(!el)return;
-    if(!_ph.has(el))_ph.set(el,el.placeholder);
-    el.placeholder=lang==='it'?val:_ph.get(el);
-  });
-  T.forEach(([sel,val,mode])=>{
-    document.querySelectorAll(sel).forEach((el,i)=>{
-      if(!_en.has(el))_en.set(el,el.innerHTML);
-      if(lang==='it'){
-        const s=Array.isArray(val)?val[i]:val;
-        if(s==null)return;
-        if(mode==='icon'){const g=el.querySelector('svg');el.innerHTML=(g?g.outerHTML+' ':'')+s;}
-        else el.innerHTML=s;
-      }else{el.innerHTML=_en.get(el);}
-    });
-  });
-  document.documentElement.lang=lang;
-  try{localStorage.setItem('volio-lang',lang);}catch(e){}
-  const b=document.getElementById('langToggle');if(b)b.textContent=lang==='it'?'EN':'IT';
-}
-(function(){
-  let saved='en';try{saved=localStorage.getItem('volio-lang')||'en';}catch(e){}
-  setLang(saved);
-  const b=document.getElementById('langToggle');
-  if(b)b.addEventListener('click',()=>{
-    const next=document.documentElement.lang==='it'?'en':'it';
-    setLang(next);
-    if(next==='it'&&window.goatcounter){
-      window.goatcounter.count({path:'lang-switch-italian',title:'Language Switch: Italian',event:true});
-    }
-  });
-})();
+window.VOLIO_I18N = {"T": [[".nav-links a", ["L'App", "Spotter", "Organizzazioni", "Team"]], [".mobile-menu a", ["L'App", "Spotter", "Organizzazioni", "Team", "Scarica l'app"]], [".nav-cta", "Scarica l'app"], ["#top h1", "Condividi il tuo<br><span class=\"ln2\">prossimo volo</span>"], ["#top .hero-desc", "Il social network dell'aviazione. Inserisci la tua immatricolazione e Volio traccia il volo per te: rotta sulla mappa, distanza, durata, velocità e quota, con le tue foto e le tue note. Pubblica una foto o due righe anche da sole. Condividi gli scatti fatti da terra. Segui le persone con cui voli."], ["#features .kicker", "01 · Costruito attorno al tuo volo"], ["#features h2", "Una card cattura tutto"], ["#features .sec-head p", "Inserisci un'immatricolazione e Volio compila il volo. Hai qualcosa da dire senza un volo? Pubblicalo lo stesso."], ["#features .feat-item h3", ["Importazione automatica ADS-B", "Le tue foto, la tua storia", "Pubblica testo, foto o entrambi", "Trova le tue persone", "Like e condivisioni"]], ["#features .feat-item p", ["Inserisci la tua immatricolazione e Volio recupera rotta, velocità, quota e durata in automatico, poi traccia il percorso esatto che hai volato con i pin di partenza e arrivo. Nessun inserimento manuale, mai.", "Aggiungi un titolo, una nota personale e le tue foto a ogni volo: dai alla tua avventura il contesto che merita.", "Non tutto ha bisogno di un volo dietro. Un pensiero, una foto dal piazzale, una domanda per l'equipaggio: pubblicalo direttamente nel feed.", "Cerca piloti, equipaggi e appassionati per nome, seguili e scopri dove hanno volato.", "La community reagisce ai voli degli altri e li condivide con un tap, costruendo una vera rete dell'aviazione."]], ["#how .kicker", "02 · Come funziona"], ["#how h2", "Condividi il tuo volo in un minuto"], ["#how .step-no", ["FASE 01", "FASE 02", "FASE 03"]], ["#how .step h3", ["Vola", "Condividi", "Ispira"]], ["#how .step p", ["Decolla come sempre. Dopo l'atterraggio, cerca la tua immatricolazione: l'integrazione ADS-B la registra per te.", "Il tuo volo appare nel feed con il titolo, le tue foto e la traccia. Oggi non hai volato? Pubblica una foto o due righe anche da sole.", "Fai vedere ad amici e colleghi il tuo ultimo volo. Potrebbe ispirare la loro prossima avventura."]], ["#more .kicker", "03 · Anche su Volio"], ["#more h2", "Non solo voli"], ["#more .sec-head p", "Volio è nato dai voli che fai. Ora comprende anche chi li fotografa e le organizzazioni che ci stanno dietro."], ["#more .cross-card h3", ["Il feed spotter", "Per le organizzazioni"]], ["#more .cross-card p", ["Un feed dedicato a chi sta dall'altra parte della recinzione. Pubblica il tuo scatto, collegalo all'immatricolazione e all'aeromobile, e finisce sul tuo profilo spotter insieme a tutto il resto.", "Scuole di volo, aeroclub, operatori e brand dell'aviazione ottengono un account verificato, un pubblico fatto solo di aviazione, post di testo e foto, e un link davvero cliccabile. Le registrazioni sono aperte."]], ["#more .cc-go", ["Scopri come funziona lo spotting →", "Scopri il piano organizzazioni →"]], ["#why .kicker", "04 · Community"], ["#why h2", "Fatto per connettere il mondo dell'aviazione"], ["#why .sec-head p", "Volio è una piattaforma per connettere amici, colleghi, istruttori ed equipaggi: tutta la community dell'aviazione. Ogni volo che condividi è un nuovo modo per unire le persone."], ["#why .why-stat .c", ["<b>Utenti</b> già su Volio: piloti, equipaggi, passeggeri e spotter.", "<b>Partner di lancio</b>, da Aelo Swiss Academy a Flight Horizon, con altri in arrivo.", "<b>Voli</b> pronti per essere condivisi con la community dell'aviazione."]], ["#voices .kicker", "05 · Note dal campo"], ["#voices h2", "Testimonianze"], ["#voices .note:not(.is-placeholder) .q", ["È un bel modo per mostrare la tua rotta e magari ispirare i prossimi voli di navigazione.", "È un'idea fresca con un potenziale enorme: può piacere a tante persone diverse nell'aviazione.", "Mi piace la facilità di upload dei voli in app. Digiti il numero di registrazione dell'aereo e tutti i dati vengono automaticamente caricati.", "Con il tag automatico le mie foto arrivano ai piloti che stavano davvero volando. Vedere un pilota approvare lo scatto del proprio atterraggio è il miglior riscontro che uno spotter possa avere.", "Finalmente un posto unico dove mostrare le foto dei miei voli, direttamente sulla rotta che ho volato, invece di lasciarle perse nel rullino.", "Su Volio i miei contenuti arrivano a persone che amano davvero l'aviazione. È esattamente il pubblico con cui voglio parlare.", "È come Strava per i piloti. Posso condividere la traccia del volo direttamente nelle storie di Instagram, ai miei allievi piace vedere dove abbiamo volato, e ci vogliono pochi secondi."]], ["#faq .kicker", "06 · FAQ"], ["#faq h2", "Domande frequenti"], ["#faq .faq-q", ["Come funziona l'import automatico ADS-B?<span class=\"pm\">+</span>", "A chi è rivolto Volio?<span class=\"pm\">+</span>", "Posso aggiungere le mie foto a un volo?<span class=\"pm\">+</span>", "Posso pubblicare senza un volo?<span class=\"pm\">+</span>", "Cos'è il feed spotter?<span class=\"pm\">+</span>", "Le foto degli spotter del mio volo possono apparire sul mio profilo?<span class=\"pm\">+</span>", "Posso condividere il mio volo su Instagram?<span class=\"pm\">+</span>", "Volio è a pagamento?<span class=\"pm\">+</span>", "I miei dati di volo sono privati?<span class=\"pm\">+</span>", "Gestisco una scuola di volo. Possiamo essere su Volio?<span class=\"pm\">+</span>", "Posso tenere traccia di tutti i miei voli?<span class=\"pm\">+</span>", "Su quali dispositivi è disponibile Volio?<span class=\"pm\">+</span>"]], ["#faq .faq-a p", ["Dopo l'atterraggio inserisci l'immatricolazione dell'aeromobile. Volio la confronta con i dati di volo ADS-B trasmessi pubblicamente per ricostruire rotta, velocità al suolo, profilo di quota e durata: così l'intero volo si compila da solo.", "Piloti, personale di cabina, passeggeri, spotter e chiunque lavori o ami l'aviazione. Che tu sia un allievo al primo assolo, un primo ufficiale di linea, un passeggero con il posto al finestrino o qualcuno alla recinzione con un teleobiettivo, ogni volo ha una storia che merita di essere condivisa.", "Sì. Ogni volo accetta un titolo, una nota personale e le tue foto: la card è il volo come l'hai vissuto, non solo i dati che ci stanno dietro.", "Sì. Un post può essere testo, una foto o entrambi, e va direttamente nel feed senza un volo collegato. La card di volo c'è quando hai volato; il post c'è quando hai qualcosa da dire.", "Un feed pensato per i fotografi di aviazione, non per chi è a bordo. Pubblichi uno scatto, lo colleghi all'immatricolazione e al tipo di aeromobile, e appare nel feed spotter e sul tuo profilo. <a href=\"spotters.html\">Scopri di più sullo spotting su Volio</a>.", "Sì. Volio abbina le foto degli spotter al tuo volo usando orario, luogo e immatricolazione. Ricevi una notifica, e una foto compare sul tuo profilo e nel feed di Volio solo dopo che l'hai approvata. Puoi anche inviare una richiesta di tag su una foto che uno spotter ha già caricato. <a href=\"spotters.html#match\">Come funziona l'abbinamento Spotter × Pilota</a>.", "Sì. Volio esporta il tuo volo come sticker con la traccia, pronto da aggiungere alle tue storie di Instagram.", "Volio è gratuito da scaricare e puoi iniziare subito a condividere i tuoi voli. Scaricalo dall'App Store o da Google Play e accedi.", "Decidi tu cosa condividere. Ogni volo può essere pubblicato nel feed della community o restare privato: la scelta è sempre tua, volo per volo.", "Sì. Gli account per organizzazioni sono aperti: profilo verificato, post di testo e foto verso un pubblico fatto solo di aviazione, e un link cliccabile, con piano e prezzo costruiti su ciò che vi serve. <a href=\"organisations.html\">Scopri cosa include un account organizzazione</a>.", "Sì. Ogni volo che aggiungi resta sul tuo profilo con rotta, distanza, durata, velocità e quota, così costruisci un registro visivo di dove hai volato e puoi riguardarlo quando vuoi. È un diario di volo personale da condividere, non un sostituto del tuo libretto di volo ufficiale.", "Volio è disponibile ora sia su iOS che su Android: scaricalo dall'App Store o da Google Play e i tuoi voli si sincronizzano subito con la community."]], ["#partners .kicker", "07 · Partner"], ["#partners h2", "In buona compagnia"], ["#partners .sec-head p", "Collaboriamo con organizzazioni di tutto il mondo dell'aviazione. Altri annunci in arrivo."], ["#partners .plogo-cta .t", "Diventa partner"], ["#partnersMore", "Mostra altri <span>+6</span>"], ["#partners .plogo-cta .g", "Scopri gli account organizzazione →"], ["#follow .kicker", "08 · Seguici"], ["#follow h2", "Seguici"], ["#follow .follow-desc", ["Aggiornamenti dietro le quinte, storie di volo e il percorso di costruzione di Volio: seguici su Instagram.", "Costruiamo il livello social dell'aviazione, un volo alla volta. Segui la nostra pagina aziendale per traguardi di prodotto, aggiornamenti dal team e la visione dietro Volio."]], ["#follow .follow-btn", ["Segui su Instagram", "Connettiti su LinkedIn"], "icon"], ["#get h2", "La tua prossima avventura<br>va qui"], ["#get .cta-band p", "Gratis da scaricare. Digita un'immatricolazione, aggiungi le tue foto e metti il volo davanti a chi capisce cosa è servito per farlo."], [".newsletter-text", "Tienimi aggiornato"], ["#newsletterBtn", "Iscriviti"], ["#newsletterConsentLabel", "Ho letto e accetto la <a href=\"https://www.volioapp.it/privacypolicy/\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a> e i <a href=\"https://www.volioapp.it/termsandconditions/\" target=\"_blank\" rel=\"noopener\">Termini e Condizioni</a>."], ["#modalTitle", "Resta aggiornato"], ["#modalSub", "Niente spam, solo aggiornamenti sul lancio, novità sull'accesso anticipato e tutto ciò che succede in Volio."], ["#modalSubmit", "Sono dentro"], ["#modalConsentLabel", "Ho letto e accetto la <a href=\"https://www.volioapp.it/privacypolicy/\" target=\"_blank\" rel=\"noopener\">Privacy Policy</a> e i <a href=\"https://www.volioapp.it/termsandconditions/\" target=\"_blank\" rel=\"noopener\">Termini e Condizioni</a>."], ["#modalSuccessTitle", "Sei in lista!"], ["#modalSuccessSub", "Ti scriviamo appena ci sono novità da Volio."], [".foot-brand p", "Il social network del mondo dell'aviazione. Condividi i tuoi voli, pubblica i tuoi scatti, connettiti con la community."], [".foot-col h4", ["Prodotto", "Azienda", "Contatti", "Legale"]], [".foot-col:nth-of-type(1) a", ["L'App", "Spotter", "Organizzazioni", "FAQ"]], [".foot-col:nth-of-type(2) a", ["Team", "Partner"]], [".foot-col:nth-of-type(4) a", ["Privacy Policy", "Termini e Condizioni", "Cancellazione account", "Contatti"]], [".foot-legal a", ["Privacy Policy", "Termini e Condizioni"]], [".foot-bottom span:first-child", "© 2026 VOLIO · Volio App S.r.l. · Via Mazzini n. 10, 22077 Olgiate Comasco (CO), Italia"]], "PH": [["#newsletterFirstName", "Nome"], ["#newsletterEmail", "indirizzo email"], ["#modalFirstName", "Nome"], ["#modalEmail", "latua@email.com"]]};
 </script>
+<script src="site.js?v=202610311108"></script>
 
 <!-- ANALYTICS: GoatCounter (cookieless, no consent required) -->
 <script data-goatcounter="https://volioapp.goatcounter.com/count"
