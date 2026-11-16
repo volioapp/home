@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volio</title>
+  <!-- Fallback: if JavaScript is disabled, redirect after 2s (not counted) -->
+  <meta http-equiv="refresh" content="2; url=https://volioapp.it/">
+  <link rel="canonical" href="https://volioapp.it/">
+  <style>
+    body { font-family: system-ui, sans-serif; display: flex; align-items: center;
+           justify-content: center; height: 100vh; margin: 0; color: #444; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <p>Reindirizzamento a <a href="https://volioapp.it/">volioapp.it</a>…</p>
 
+  <script>
+    // ==== CONFIG ====
+    var GOATCOUNTER_CODE = "volioapp";          // same GoatCounter as volioapp.it
+    var TARGET           = "https://volioapp.it/";
+
+    // Ambassador name = folder name in the URL (volioapp.github.io/paula/ -> "paula").
+    // The same file works for every ambassador: just copy it into a new folder.
+    var AMBASSADOR = (location.pathname.split("/").filter(Boolean)[0] || "unknown").toLowerCase();
+    var COUNT_PATH  = "ambassador-" + AMBASSADOR;           // event name in the dashboard
+    var COUNT_TITLE = "Ambassador: " + AMBASSADOR;
+    // ================
+
+    var done = false;
+    function go() {
+      if (done) return;
+      done = true;
+      // Pass along any query string (e.g. ?ref=qr) and tag the source for volioapp.it's own analytics
+      var qs = location.search ? location.search.slice(1) + "&" : "";
+      location.replace(TARGET + "?" + qs + "utm_source=ambassador&utm_campaign=" + encodeURIComponent(AMBASSADOR));
+    }
+
+    try {
+      var url = "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count"
+              + "?p=" + encodeURIComponent(COUNT_PATH)
+              + "&t=" + encodeURIComponent(COUNT_TITLE)
+              + "&e=true"
+              + "&r=" + encodeURIComponent(document.referrer)
+              + "&rnd=" + Math.random().toString(36).slice(2);
+
+      // keepalive lets the request finish even after the page navigates away
+      fetch(url, { mode: "no-cors", keepalive: true, cache: "no-store" })
+        .then(go, go);
+    } catch (e) {
+      go();
+    }
+
+    // Never keep the user waiting more than 800 ms
+    setTimeout(go, 800);
+  </script>
+</body>
+</html>
