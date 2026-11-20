@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volio – The Social Network for Aviation</title>
+  <!-- Link preview (WhatsApp, iMessage, Instagram…): same as the homepage -->
+  <meta name="description" content="Volio is the social network for aviation. Pilots, cabin crew, and aviation workers — log your flights, share your stories, and connect with the aviation community.">
+  <meta property="og:title" content="Volio – The Social Network for Aviation">
+  <meta property="og:description" content="The social network for aviation. Pilots, cabin crew, and all aviation workers — share your flights and connect with your community.">
+  <meta property="og:image" content="https://www.volioapp.it/share.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.volioapp.it/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.volioapp.it/share.png">
+  <meta name="twitter:title" content="Volio – The Social Network for Aviation">
+  <meta name="twitter:description" content="The social network for aviation. Pilots, cabin crew, and all aviation workers — share your flights and connect with your community.">
+  <link rel="icon" type="image/png" href="/app-icon.png">
+  <link rel="apple-touch-icon" href="/app-icon.png">
+  <!-- Fallback: if JavaScript is disabled, redirect after 2s (not counted) -->
+  <meta http-equiv="refresh" content="2; url=https://share.volioapp.it/profile/92d53474-0071-70fc-3beb-1e8aaed9b8ff">
+  <meta name="robots" content="noindex">
+  <style>
+    body { font-family: system-ui, sans-serif; display: flex; align-items: center;
+           justify-content: center; height: 100vh; margin: 0; color: #444; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <p>Apertura del profilo su <a href="https://share.volioapp.it/profile/92d53474-0071-70fc-3beb-1e8aaed9b8ff">Volio</a>…</p>
 
+  <script>
+    // ==== CONFIG ====
+    var GOATCOUNTER_CODE = "volioapp";          // same GoatCounter as volioapp.it
+    var TARGET           = "https://share.volioapp.it/profile/92d53474-0071-70fc-3beb-1e8aaed9b8ff";
+
+    // QR name = last folder in the URL (volioapp.it/qr/pcl-aelo-21-11/ -> "pcl-aelo-21-11").
+    // For another QR: copy this folder inside qr/, rename it and change TARGET.
+    var QR_NAME     = (location.pathname.split("/").filter(Boolean).pop() || "unknown").toLowerCase();
+    var COUNT_PATH  = "qr-" + QR_NAME;                    // event name in the dashboard
+    var COUNT_TITLE = "QR: " + QR_NAME;
+    // ================
+
+    var done = false;
+    function go() {
+      if (done) return;
+      done = true;
+      location.replace(TARGET);
+    }
+
+    try {
+      var url = "https://" + GOATCOUNTER_CODE + ".goatcounter.com/count"
+              + "?p=" + encodeURIComponent(COUNT_PATH)
+              + "&t=" + encodeURIComponent(COUNT_TITLE)
+              + "&e=true"
+              + "&r=" + encodeURIComponent(document.referrer)
+              + "&rnd=" + Math.random().toString(36).slice(2);
+
+      // keepalive lets the request finish even after the page navigates away
+      fetch(url, { mode: "no-cors", keepalive: true, cache: "no-store" })
+        .then(go, go);
+    } catch (e) {
+      go();
+    }
+
+    // Never keep the user waiting more than 800 ms
+    setTimeout(go, 800);
+  </script>
+</body>
+</html>
