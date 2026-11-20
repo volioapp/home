@@ -19,17 +19,88 @@
   .store-btn .st { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
   .store-btn .st small { font-size: 9.5px; text-transform: uppercase; letter-spacing: .08em; opacity: .7; }
   .store-btn .st b { font-size: 17px; }
+  .site-btn { display: block; margin-top: 10px; border: 1.5px solid #1A1A2E; color: #1A1A2E; background: transparent; border-radius: 10px; padding: 13px 20px; font-size: 16px; font-weight: 600; text-decoration: none; }
+  .site-btn:hover { background: #1A1A2E; color: #fff; }
+  .lang { margin-top: 22px; font-size: 13px; color: #9CA3AF; }
+  .lang button { background: none; border: 0; font: inherit; color: inherit; cursor: pointer; padding: 2px 4px; }
+  .lang button[aria-pressed="true"] { color: #1A1A2E; font-weight: 700; }
 </style>
 </head>
 <body>
 <main>
   <div class="logo"><svg viewBox="0 0 642.95 641.29" aria-label="Volio"><path d="M548.44,93.27h-93.42c-10.16,33.68-30.08,69.98-58.73,103.46-68.08,79.55-159.5,113.02-204.2,74.77-38.27-32.76-29.84-107.48,16.11-178.23h-91.67c-10.26,0-18.65,8.39-18.65,18.66v431.91c0,10.26,8.39,18.65,18.65,18.65h55.87l.4-.21c9.88,0,19.29-3.35,26.63-11.5L567.1,111.93c0-10.26-8.39-18.66-18.66-18.66Z"/></svg></div>
-  <h1>You don't have the app yet?</h1>
-  <p>Download here for iOS and Android.</p>
+  <h1 data-i18n="title">You don't have the app yet?</h1>
+  <p data-i18n="subtitle">Download here for iOS and Android.</p>
   <div class="store-row">
-    <a class="store-btn" href="https://apps.apple.com/it/app/volio/id6761468707" rel="noopener" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M17.564 12.77c-.028-2.83 2.31-4.19 2.414-4.256-1.314-1.922-3.36-2.186-4.087-2.216-1.74-.176-3.396 1.023-4.28 1.023-.88 0-2.24-.997-3.68-.97-1.894.028-3.64 1.1-4.613 2.795-1.966 3.41-.503 8.46 1.41 11.223.936 1.353 2.05 2.873 3.51 2.818 1.41-.056 1.942-.912 3.646-.912 1.703 0 2.184.912 3.674.883 1.517-.028 2.478-1.38 3.406-2.74 1.073-1.57 1.515-3.09 1.542-3.168-.034-.014-2.96-1.136-2.99-4.51zM14.79 4.47c.775-.94 1.3-2.25 1.157-3.553-1.118.045-2.473.744-3.275 1.682-.72.832-1.35 2.163-1.18 3.44 1.247.098 2.522-.634 3.297-1.57z"/></svg><span class="st"><small>Download on the</small><b>App Store</b></span></a>
-    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.littleendian.volare" rel="noopener" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.397 12l2.301-2.492zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.635z"/></svg><span class="st"><small>Get it on</small><b>Google Play</b></span></a>
+    <a class="store-btn" id="ios-btn" href="https://apps.apple.com/it/app/volio/id6761468707" rel="noopener" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M17.564 12.77c-.028-2.83 2.31-4.19 2.414-4.256-1.314-1.922-3.36-2.186-4.087-2.216-1.74-.176-3.396 1.023-4.28 1.023-.88 0-2.24-.997-3.68-.97-1.894.028-3.64 1.1-4.613 2.795-1.966 3.41-.503 8.46 1.41 11.223.936 1.353 2.05 2.873 3.51 2.818 1.41-.056 1.942-.912 3.646-.912 1.703 0 2.184.912 3.674.883 1.517-.028 2.478-1.38 3.406-2.74 1.073-1.57 1.515-3.09 1.542-3.168-.034-.014-2.96-1.136-2.99-4.51zM14.79 4.47c.775-.94 1.3-2.25 1.157-3.553-1.118.045-2.473.744-3.275 1.682-.72.832-1.35 2.163-1.18 3.44 1.247.098 2.522-.634 3.297-1.57z"/></svg><span class="st"><small data-i18n="ios_small">Download on the</small><b>App Store</b></span></a>
+    <a class="store-btn" id="android-btn" href="https://play.google.com/store/apps/details?id=com.littleendian.volare" rel="noopener" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.397 12l2.301-2.492zM5.864 2.658L16.802 8.99l-2.302 2.302-8.636-8.635z"/></svg><span class="st"><small data-i18n="android_small">Get it on</small><b>Google Play</b></span></a>
+  </div>
+  <a class="site-btn" id="site-btn" href="https://volioapp.it/" data-i18n="website">Go to the website</a>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="it" aria-pressed="false">IT</button> · <button type="button" data-lang="en" aria-pressed="true">EN</button>
   </div>
 </main>
+<script>
+(function () {
+  var T = {
+    en: {
+      doc_title: "Get the app — Volio App",
+      title: "You don't have the app yet?",
+      subtitle: "Download here for iOS and Android.",
+      ios_small: "Download on the",
+      android_small: "Get it on",
+      ios_label: "Download on the App Store",
+      android_label: "Get it on Google Play",
+      website: "Go to the website"
+    },
+    it: {
+      doc_title: "Scarica l'app — Volio App",
+      title: "Non hai ancora l'app?",
+      subtitle: "Scaricala qui per iOS e Android.",
+      ios_small: "Scarica su",
+      android_small: "Disponibile su",
+      ios_label: "Scarica su App Store",
+      android_label: "Disponibile su Google Play",
+      website: "Vai al sito web"
+    }
+  };
+
+  function apply(lang) {
+    var t = T[lang] || T.en;
+    document.documentElement.lang = lang;
+    document.title = t.doc_title;
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      el.textContent = t[el.getAttribute("data-i18n")];
+    });
+    document.getElementById("ios-btn").setAttribute("aria-label", t.ios_label);
+    document.getElementById("android-btn").setAttribute("aria-label", t.android_label);
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+  }
+
+  function detect() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && T[q]) return q;
+    try { var s = localStorage.getItem("volio_lang"); if (s && T[s]) return s; } catch (e) {}
+    var langs = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < langs.length; i++) {
+      var l = (langs[i] || "").slice(0, 2).toLowerCase();
+      if (T[l]) return l;
+    }
+    return "en";
+  }
+
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var l = b.getAttribute("data-lang");
+      try { localStorage.setItem("volio_lang", l); } catch (e) {}
+      apply(l);
+    });
+  });
+
+  apply(detect());
+})();
+</script>
 </body>
 </html>
