@@ -34,6 +34,7 @@ Private pilots, student pilots, flight instructors, airline pilots, cabin crew, 
 - [solaero](https://www.volioapp.it/organisations/solaero/): solaero makes sunglasses for pilots: beta-titanium, 17 to 23 grams, deliberately non-polarised. Developed by two ATPL students from Berlin, built for the cockpit.
 - [Ali in Alto](https://www.volioapp.it/organisations/ali-in-alto/): Ali in Alto is an Italian podcast for people who love aviation, telling its curiosities, history, technology and secrets in a simple, accessible way.
 - [Turbolenze Mentali AI](https://www.volioapp.it/organisations/turbolenze-mentali-ai/): Turbolenze Mentali AI is an Italian aviation content page on Instagram and TikTok, telling the world of flying through its own illustrated characters.
+- [ScanHorizon](https://www.volioapp.it/organisations/scanhorizon/): ScanHorizon is a free aircraft-recognition app for iPhone and Android: point your phone at an aircraft and it identifies it from live flight data, then adds it to your collection.
 
 ## Apps
 - [App Store](https://apps.apple.com/it/app/volio/id6761468707)
